@@ -8,6 +8,7 @@
 
 <div itemscope itemtype="http://schema.org/Person">
 
+  {% if author.avatar %}
   <div class="author__avatar">
     {% if author.avatar contains "://" %}
     	<img src="{{ author.avatar }}" alt="{{ author.name }}">
@@ -15,6 +16,7 @@
     	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
     {% endif %}
   </div>
+  {% endif %}
 
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
@@ -71,6 +73,9 @@
       {% endif %}
       {% if author.stackoverflow %}
         <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}"><i class="fa fab -fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow</a></li>
+      {% endif %}
+      {% if author.stackexchange %}
+        <li><a href="https://www.stackexchange.com/users/{{ author.stackexchange }}"><i class="fa fab fa-stack-exchange" aria-hidden="true"></i> Stackoverflow</a></li>
       {% endif %}
       {% if author.lastfm %}
         <li><a href="https://lastfm.com/user/{{ author.lastfm }}"><i class="fab fa-lastfm-square" aria-hidden="true"></i> Last.fm</a></li>
