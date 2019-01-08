@@ -7,13 +7,13 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Robert Dougherty-Bliss / Site Title"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : &name "Robert Dougherty-Bliss"
+description              : &description "foo"
+url                      : "https://rwbogl.github.io"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "rwbogl/rwbogl.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -80,14 +80,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
-  avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  name             : "Robert Dougherty-Bliss"
+  avatar           :
+  bio              : "Mathematics student"
+  location         : "Oglethorpe University"
   employer         :
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    :
   email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     :
   uri              :
   bitbucket        :
   codepen          :
@@ -95,19 +95,19 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "rwbogl"
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            :
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackexchange    : 6768229/rwbogl
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          :
   vine             :
   weibo            :
   xing             :
@@ -194,11 +194,13 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
       share: true
       related: true
+      sidebar:
+          nav: "main"
   # _pages
   - scope:
       path: ""
@@ -206,6 +208,8 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+          nav: "main"
   # _teaching
   - scope:
       path: ""
@@ -215,6 +219,8 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      sidebar:
+          nav: "main"
   # _publications
   - scope:
       path: ""
@@ -224,6 +230,8 @@ defaults:
       author_profile: true
       share: true
       comments: true
+      sidebar:
+          nav: "main"
   # _portfolio
   - scope:
       path: ""
@@ -233,6 +241,8 @@ defaults:
       author_profile: true
       share: true
       comment: true
+      sidebar:
+          nav: "main"
   # _talks
   - scope:
       path: ""
@@ -241,6 +251,8 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+      sidebar:
+          nav: "main"
 
 # Sass/SCSS
 sass:
@@ -252,7 +264,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/New_York # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
