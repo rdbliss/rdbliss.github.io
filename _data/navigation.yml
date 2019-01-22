@@ -2,5 +2,5 @@ main:
     - title: "Welcome"
       url: /
 
-    - title: "Blog Posts"
-      url: /year-archive/
+    - title: "Blog"
+      url: /blog/
