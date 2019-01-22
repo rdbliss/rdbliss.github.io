@@ -247,5 +247,5 @@ big takeaways here?
    function](https://en.wikipedia.org/wiki/M%C3%B6bius_function) in number
    theory, which is famous for inverting sums over integer divisors.)
 
-3. Sequences are uniquely determined by the first entry in every row of its
-   difference table.
+3. Sequences are uniquely determined by the first entry in every row of their
+   difference tables.
