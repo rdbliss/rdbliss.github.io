@@ -13,7 +13,9 @@ of units in the Gaussian integers modulo $3^k$.) I started playing around with
 it and noticed a curious property of its difference table: the first entry of
 every row was a power of $2$. The sequence itself ended up being fairly simple
 to guess---it's just $9^k \cdot 8$---but my experiments made me wonder what
-a proof would look like if we just knew that first entry.
+a proof would look like if we just knew that first entry. There is a fairly
+well-known way to do this via the binomial transform, which I have joyfully
+rediscovered.
 
 To be more precise, the difference table looked like this:
 
@@ -237,15 +239,14 @@ functions. The resulting generating functions gave us some interesting
 equalities, which wound up being invertible binomial transforms. What are the
 big takeaways here?
 
-1. Difference tables are amenable to attack by generating functions. The
-   defining recurrence is quite simple to sum over for the natural generating
-   functions we might consider. When we know some boundary condition, we might
-   be able to wiggle our way into a nice equality.
+1. Difference tables are amenable to attack by generating functions. In
+   particular, *the first diagonal of a difference table is the binomial
+   transform of the first row*.
 
 2. Useless-looking equalities can sometimes be quite helpful. The binomial
    transform is one of those. (For more examples, see the [Möbius
    function](https://en.wikipedia.org/wiki/M%C3%B6bius_function) in number
    theory, which is famous for inverting sums over integer divisors.)
 
-3. Sequences are uniquely determined by the first entry in every row of their
-   difference tables.
+3. Sequences are uniquely determined by the first diagonal of their difference
+   tables.
