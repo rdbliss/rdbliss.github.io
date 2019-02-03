@@ -77,8 +77,8 @@ $$
 $$
 
 Since we must have $n \geq 0$, by our definition of $f$ we get $f(n + 1, 0)
-= 0$. If $n \geq 1$, then we also get $f(n + 1, 0) = 0$. Thus, for $n \geq 1$,
-we obtain
+= 0$. If $n \geq 1$, then we also get $f(n, 0) = 0$. Thus, for $n \geq 1$, we
+obtain
 
 $$
     A_{n + 1}(x) = (1 - x) A_n(x) \qquad (n \geq 1)
