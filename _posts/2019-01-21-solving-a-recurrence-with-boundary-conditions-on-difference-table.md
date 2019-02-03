@@ -142,7 +142,7 @@ $$
 \end{align*}
 $$
 
-Finally, equating the coefficients from both sides gives us the lovely equation
+Finally, equating the coefficients from both sides gives us the equation
 
 $$
     g(n + 1) = \sum_{j = 0}^{n + 1} {n + 1 \choose j} (-1)^{n + 1 - j} f(0, j),
@@ -191,8 +191,8 @@ $$
 $$
 
 valid for $n \geq 1$. Note that this holds for $n = 0$ as well, for $f(0, 0)
-= g(0)$. Our initial inequality---that seemingly had no direct way
-forward---has been solved.
+= g(0)$. Our initial equality---that seemingly had no direct way forward---has
+been solved.
 
 Let's try it out on our original problem. I noticed that the $g$ function was
 $g(n) = 2^{3(n + 1)}$. That means that, according to our results,
