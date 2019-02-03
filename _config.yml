@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Robert Dougherty-Bliss / Site Title"
+title                    : "Robert Dougherty-Bliss"
 title_separator          : "-"
 name                     : &name "Robert Dougherty-Bliss"
 description              : &description "foo"
