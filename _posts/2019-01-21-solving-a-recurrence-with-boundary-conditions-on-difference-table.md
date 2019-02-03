@@ -34,9 +34,9 @@ More formally, suppose that we have some function $f(n, k)$ defined on
 nonnegative integers by the equations
 $$
 \begin{align}
-    f(n + 1, k + 1) &= f(n, k + 1) - f(n, k) \qquad (k \geq n \geq 0) \\
-    f(n, n) &= g(n) \qquad (n \geq 0) \\
-    f(n, k) &= 0 \text{ if $k < n$},
+    f(n + 1, k + 1) &= f(n, k + 1) - f(n, k) &(k \geq n \geq 0) \\
+    f(n, n) &= g(n) &(n \geq 0) \\
+    f(n, k) &= 0 &($k < n$),
 \end{align}
 $$
 where $g$ is some "known" function. This says that $f$ is a difference table of
