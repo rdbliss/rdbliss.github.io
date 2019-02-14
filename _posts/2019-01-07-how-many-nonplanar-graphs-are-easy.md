@@ -7,9 +7,9 @@ tags:
 
 There's a simple algebraic way to show that some graphs are nonplanar. If $G$
 is a connected graph with $v$ vertices and $e$ edges, then it is nonplanar if
-$e > 3(v - 2)$. If it is also triangle-free, then it is nonplanar if $e > 2(v -
-2)$. The first inequality shows that $K_5$ is nonplanar. The second shows that
-the utility graph is nonplanar. These are, essentially, [the only "simple"
+$e > 3(v - 2)$. If it is also triangle-free, then it is nonplanar if $e > 2(v
+- 2)$. The first inequality shows that $K_5$ is nonplanar. The second shows
+that the utility graph is nonplanar. These are, essentially, [the only "simple"
 nonplanar graphs](https://en.wikipedia.org/wiki/Kuratowski%27s_theorem). How
 many nonplanar graphs can actually be detected with this inequality?
 
@@ -69,12 +69,13 @@ This still isn't quite enough data to conclude anything.
 
 # An answer!
 
-I recently posted [this question] to the mathematics stack exchange.
-Surprisingly, my gut feelings were completely wrong! Through studying
-properties of random graphs, it turns out that we can say that "almost all" (in
-a probabilistic / counting sense) graphs are "obviously nonplanar," in the
-sense that they violate the inequality $e \leq 3(v - 2)$. In particular, almost
-all graphs have average degree close to $n / 2$, while a graph with $e \leq 3(v
-- 2)$ has average degree a bit less than $6$.
+I recently posted [this
+question](https://math.stackexchange.com/questions/3066830) to the mathematics
+stack exchange. Surprisingly, my gut feelings were completely wrong! Through
+studying properties of random graphs, it turns out that we can say that "almost
+all" (in a probabilistic / counting sense) graphs are "obviously nonplanar," in
+the sense that they violate the inequality $e \leq 3(v - 2)$. In particular,
+almost all graphs have average degree close to $n / 2$, while a graph with $e
+\leq 3(v - 2)$ has average degree a bit less than $6$.
 
 Astounding!
