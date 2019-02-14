@@ -7,11 +7,12 @@ tags:
 
 There's a simple algebraic way to show that some graphs are nonplanar. If $G$
 is a connected graph with $v$ vertices and $e$ edges, then it is nonplanar if
-$e > 3(v - 2)$. If it is also triangle-free, then it is nonplanar if $e > 2(v
-- 2)$. The first inequality shows that $K_5$ is nonplanar. The second shows
-that the utility graph is nonplanar. These are, essentially, [the only "simple"
-nonplanar graphs](https://en.wikipedia.org/wiki/Kuratowski%27s_theorem). How
-many nonplanar graphs can actually be detected with this inequality?
+$e > 3(v - 2)$. If it is also triangle-free, then it is nonplanar if
+$e > 2(v - 2)$. The first inequality shows that $K_5$ is nonplanar. The second
+shows that the utility graph is nonplanar. These are, essentially, [the only
+"simple" nonplanar
+graphs](https://en.wikipedia.org/wiki/Kuratowski%27s_theorem). How many
+nonplanar graphs can actually be detected with this inequality?
 
 We may answer this question using the wonderful `geng` program, part of the
 [`nauty`](http://users.cecs.anu.edu.au/~bdm/nauty/) distribution, which
