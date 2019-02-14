@@ -3,12 +3,11 @@ title: Strengthening Fatou's Lemma in Stein and Shakarchi
 ---
 
 My real analysis course at Emory is using Stein and Shakarchi's *Real
-Analysis*. Concurrently I'm chewing on Rudin's *Real and Complex Analysis*,
-since I really enjoyed *Principles of Mathematical Analysis*. Thus far, I feel
-that both are about the same level of difficulty, but Stein and Shakarchi's
-presentation is too complicated for a text that puts off general measure
-theory. As an example, look at Stein and Shakarchi's statement of Fatou's
-lemma.
+Analysis*. Concurrently I'm chewing on Rudin's *Real and Complex Analysis*
+since I really enjoyed *Principles of Mathematical Analysis*. So far, I feel
+that Stein and Shakarchi complicate matters a lot for a text that puts off
+general measure theory for several chapters. As an example, I want to look at
+Stein and Shakarchi's statement of Fatou's lemma.
 
 First, let's compare the differences in presentation of the Lebesgue integral
 for nonnegative functions:
@@ -44,10 +43,10 @@ that converge to the function $f$, then
 >
 $$\int f \leq \liminf \int f_n.$$
 
-To prove this Stein and Shakarchi go out of their way to prove a "bounded
-convergence theorem" for bounded functions with finite support. The result is
-time spent introducing supports, proving the bounded convergence theorem, and
-producing a proof about the same length as Rudin's, but not in a general
+To prove this, Stein and Shakarchi go out of their way to prove a "bounded
+convergence theorem" for bounded functions with finite support. After all the
+time spent introducing supports and proving the bounded convergence theorem,
+they produce a proof about the same length as Rudin's, but not in a general
 measure space, plus an extra hypothesis and a weaker conclusion. Sad!
 
 We can improve Stein and Shakarchi's result by applying their result to
@@ -62,11 +61,6 @@ where the last inequality comes from $g_n \leq f_n$.
 
 This *still* doesn't get us what we want in an arbitrary measure space. Stein
 and Shakarchi do, however, move to general measure spaces several chapters
-after their development of the Lebesgue integral. Though I find this slightly
-distasteful, there is pedagogical wisdom here. As Euler once wrote:
-
-> [I]t is not possible to understand a definition before its principles are
-sufficiently clearly seen.
-
-So perhaps slogging through some "real" proofs before the "abstract" ones is
-good. Who can tell?
+after their development of the Lebesgue integral. There is likely some
+pedagogical wisdom in this. It's all build up to the dominated convergence
+theorem and company anyway, I suppose.
