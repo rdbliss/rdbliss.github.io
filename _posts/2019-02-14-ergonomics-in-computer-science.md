@@ -150,7 +150,7 @@ right now, they are losing some ground. Many programming language research
 groups are focusing on newer, functional languages like Haskell and
 [F#][fsharp]. Python is becoming an increasingly popular first language for
 people to learn, and has an enormous community with a great set of ergonomic
-libraries. The historical trend shows an improvement that hopefully continues.
+libraries. The historical trend of improvement will hopefully continue.
 
 [java]: https://en.wikipedia.org/wiki/Java_(programming_language)
 [fsharp]: https://fsharp.org/
