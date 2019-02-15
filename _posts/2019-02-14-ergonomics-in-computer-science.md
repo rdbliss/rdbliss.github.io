@@ -12,9 +12,8 @@ essence, *how fast can we go?* Though this is an important consideration, it
 omits a crucial implementation detail: the human factor. Is the algorithm
 painful or tedious to write? Is it overly complicated for the average
 programmer? That is, *is it ergonomic to use?* It is easy to demand that
-performance trumps all, but this is a costly mistake. Decades of ergonomic
-research has produced a clear consensus: tools and environments must account
-for human factors.
+performance trumps all, but this is a costly mistake. Tools and environments
+must account for human factors; programming languages are no exception.
 
 Ergonomics is the study of human relationship with work. It seeks to make
 necessary burdens easier and more enjoyable. This goal is based upon the
