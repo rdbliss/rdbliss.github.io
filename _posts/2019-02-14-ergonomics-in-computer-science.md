@@ -7,35 +7,34 @@ tags:
 ---
 
 In computer science we often care about *computational complexity*. How long
-will an algorithm take asymptotically? How will it perform on average? In
-essence, *how fast can we go?* Though this is an important consideration, it
-omits a crucial implementation detail: the human factor. Is the algorithm
-painful or tedious to write? Is it overly complicated for the average
-programmer? That is, *is it ergonomic to use?* It is easy to demand that
-performance trumps all, but this is a costly mistake. Tools and environments
-must account for human factors; programming languages are no exception.
+will an algorithm take to run? How will it perform on average? In essence, *how
+fast can we go?* Though this is an important consideration, it omits a crucial
+implementation detail: the human factor. Is the algorithm painful or tedious to
+write? Is it overly complicated for the average programmer? That is, *is it
+ergonomic to use?* It is easy to demand that performance trumps all, but this
+is a costly mistake. Tools and environments must account for human factors;
+programming languages are no exception.
 
 Ergonomics is the study of human relationship with work. It seeks to make
 necessary burdens easier and more enjoyable. This goal is based upon the
 observation that "long faces are not always efficient, nor are smiling ones
-idle"[^hancock] .
-Ergonomics considers physical and psychological *human factors*, such as
-comfort and stress, respectively. It may, for example, suggest appropriate
-levels and types of lighting for the workplace to improve morale, or recommend
-chairs with a certain amount of back support to avoid long-term injury. This is
-all to improve the human condition and workplace efficiency.
+idle"[^hancock]. Ergonomics considers physical and psychological *human
+factors*, such as comfort and stress, respectively. It may, for example,
+suggest appropriate levels and types of lighting for the workplace to improve
+morale, or recommend chairs with a certain amount of back support to avoid
+long-term injury. This is all to improve the human condition and workplace
+efficiency.
 
 [^hancock]:
     ["On the Future of
     Work."](https://peterhancock.ucf.edu/on-the-future-of-work/) Peter Hancock,
     1997.
 
-It is important to remember ergonomics is not confined to study physical
-factors. Beginning in the 1970s, researchers in ergonomics began to study
-*mental workload*. Roughly, this is how mentally taxing certain tasks are. If
-a worker's mental workload is too high, they are likely to make mistakes or
-"burnout" faster than a relaxed employee. The following is a more technical
-definition:
+Ergonomics is not confined to study physical factors. Beginning in the 1970s,
+researchers in ergonomics began to study *mental workload*. Roughly, this is
+how mentally taxing certain tasks are. If a worker's mental workload is too
+high, they are likely to make mistakes or "burnout" faster than a relaxed
+employee. The following is a more technical definition:
 
 > [Mental workload is] the relation between the function relating the mental
 resources demanded by a task and those resources available to be supplied by
@@ -47,16 +46,17 @@ the human operator[^parasurman].
     Parasuraman et al., 2008.
 
 This problem is not constrained to office workers. Two studies in aviation
-accidents found that as much as 18% of pilot errors related to reading
-instruments were due to confusing instrument design that made it difficult for
-pilots to understand their readouts[^handbookhuman].
+accidents found that as much as 18% of pilot errors were due to confusing
+instrument design that made it difficult for pilots to understand their
+readouts[^handbookhuman].
 
 [^handbookhuman]: *Handbook of Human Factors and Ergonomics*, 4th edition, pg. 244.
 
 This is all to say that the tools we use and the tasks we complete should be
-simple and easy to understand. The consequences of ignoring this can range from
-decreased worker productivity and longevity, to introducing grave, avoidable
-mistakes.
+easy to understand. We should not be satisfied that clear design happens by
+accident; we should deliberately strive for it. The consequences of ignoring
+this can range from decreased worker productivity and longevity, to grave,
+avoidable mistakes.
 
 Consideration of mental workload is especially important in programming
 language design. Programming, more than other activities, is centered around
