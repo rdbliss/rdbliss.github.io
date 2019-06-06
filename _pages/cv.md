@@ -10,50 +10,148 @@ redirect_from:
 {% include base_path %}
 
 Education
-======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+=========
+* Rutgers University — New Brunswick.
+    * 2019–
+    * PhD Graduate student, mathematics.
 
-Work experience
-======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Oglethorpe University.
+    * 2014–2019.
+    * B.S. Mathematics; Computer Science minor.
+    * *Summa cum laude* with honors (completed honors thesis).
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+Research
+========
 
-Publications
+* Honors thesis, *Expressive Complexity of Computer Algebra Systems*.
+    * Oglethorpe University.
+    * Quantifies the complexity of popular computer algebra systems.
+
+* Summer fellow, Voting Rights Data Institute.
+    * 2018–2019.
+    * MIT and Tufts University.
+    * Program on the mathematics of gerrymandering; produced
+      [GerryChain](https://github.com/mggg/GerryChain).
+
+* Student researcher, REU: Bridging Applied and Theoretical Mathematics.
+    * 2016.
+    * Student researcher.
+    * Winthrop University.
+    * Program on cancer treatment models; produced paper for publication.
+
+Presentations
+=============
+
+2019
+----
+
+* How to Rig Elections.
+    * Liberal Arts and Sciences Symposium, Oglethorpe University.
+    * Introduction to modern gerrymandering research.
+
+* Math is Hard (And you should stop trying to do it).
+    * Liberal Arts and Sciences Symposium, Oglethorpe University.
+    * Honors thesis talk.
+
+2018
+----
+
+* Go Directly to Jail.
+    * Liberal Arts and Sciences Symposium.
+    * Talk on modeling *Monopoly* as a Markov chain.
+
+* Mathematics and Model and Predict our World.
+    * Scholarship Weekend, Oglethorpe University.
+    * Replaced professor at lecture given to incoming Freshmen.
+
+2017
+----
+
+* [The Number Two Does Not Exist](https://www.youtube.com/watch?v=CV7EZ-ZB9k8).
+    * Liberal Arts and Sciences Symposium.
+
+* Effects of Persistent Environmental Toxins on a Mother-Fetus System.
+    * Liberal Arts and Sciences Symposium.
+
+* Global Dynamics of a Cancer Stem Cell Treatment Model.
+    * Joint Mathematics Meetings, Atlanta.
+    * AMS Constributed Paper Session on Topics in Analysis III.
+
+2016
+----
+
+* Global Dynamics of a Cancer Stem Cell Treatment Model.
+    * REU Symposium, NSF Headquarters, Washington DC.
+    * Selected by the Council on Undergraduate Research to present REU findings.
+
+* Increasing Stock Market Profitability with Artificial Intelligence.
+    * Liberal Arts and Sciences Symposium, Oglethorpe University.
+
+2015
+----
+
+* Cervantes: How to be Jewish.
+    * Liberal Arts and Sciences Symposium, Oglethorpe University.
+    * Talk exploring possible Jewish themes in *Don Quixote* and in the life of
+      Cervantes.
+
+Awards
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
+
+* James Edward Oglethorpe Award.
+    * 2019.
+    * Oglethorpe University.
+    * In recognition of scholarship, leadership, and character.
+    * Awarded by university faculty vote.
+
+* Sally Hull Weltner Award for Scholarship.
+    * 2019.
+    * Oglethorpe University.
+    * Awarded to Senior with highest grade-point average.
+
+* Ronald L. Carlisle Prise.
+    * 2019.
+    * Oglethorpe University, Division IX (Mathematics and Computer Science).
+    * Given to outstanding Senior in mathematics and computer science.
+
+Organizations
+=============
+
+* [Omicron Delta Kappa](https://odk.org/).
+    * 2017.
+    * Oglethorpe University.
+    * President (2017–2019).
+    * National leadership honor society.
+
+* [Sigma Zeta](https://www.sigmazeta.org/).
+    * 2018.
+    * National science and mathematics honor society.
+
+* [Mathematical Association of America](https://www.maa.org/).
+    * 2016.
+
 Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+========
+
+2018
+----
+
+* Oglethorpe University.
+    * Supplemental instructor for MAT-120 (Introduction to Functions) and MAT-234
+      (Calculus III).
+    * University tutor in mathematics and computer science.
+
+2017
+----
+
+* Oglethorpe University.
+    * Supplemental instructor for MAT-120 (Introduction to Functions) and
+      MAT-241 (Proof and Logic).
+    * University tutor in mathematics and computer science.
+
+Programming languages and computers
+===================================
+
+* Fluent: Python, $\LaTeX$, Linux.
+
+* Experienced: C, Mathematica, Maple, Haskell.
