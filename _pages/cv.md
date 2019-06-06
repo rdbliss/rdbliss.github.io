@@ -11,11 +11,11 @@ redirect_from:
 
 Education
 =========
-* Rutgers University — New Brunswick.
+* Rutgers University — New Brunswick
     * 2019–
     * PhD Graduate student, mathematics.
 
-* Oglethorpe University.
+* Oglethorpe University
     * 2014–2019.
     * B.S. Mathematics; Computer Science minor.
     * *Summa cum laude* with honors (completed honors thesis).
@@ -23,17 +23,17 @@ Education
 Research
 ========
 
-* Honors thesis, *Expressive Complexity of Computer Algebra Systems*.
+* Honors thesis, *Expressive Complexity of Computer Algebra Systems*
     * Oglethorpe University.
     * Quantifies the complexity of popular computer algebra systems.
 
-* Summer fellow, Voting Rights Data Institute.
+* Summer fellow, Voting Rights Data Institute
     * 2018–2019.
     * MIT and Tufts University.
     * Program on the mathematics of gerrymandering; produced
       [GerryChain](https://github.com/mggg/GerryChain).
 
-* Student researcher, REU: Bridging Applied and Theoretical Mathematics.
+* Student researcher, REU: Bridging Applied and Theoretical Mathematics
     * 2016.
     * Student researcher.
     * Winthrop University.
@@ -45,52 +45,52 @@ Presentations
 2019
 ----
 
-* How to Rig Elections.
+* How to Rig Elections
     * Liberal Arts and Sciences Symposium, Oglethorpe University.
     * Introduction to modern gerrymandering research.
 
-* Math is Hard (And you should stop trying to do it).
+* Math is Hard (And you should stop trying to do it)
     * Liberal Arts and Sciences Symposium, Oglethorpe University.
     * Honors thesis talk.
 
 2018
 ----
 
-* Go Directly to Jail.
+* Go Directly to Jail
     * Liberal Arts and Sciences Symposium.
     * Talk on modeling *Monopoly* as a Markov chain.
 
-* Mathematics and Model and Predict our World.
+* Mathematics and Model and Predict our World
     * Scholarship Weekend, Oglethorpe University.
     * Replaced professor at lecture given to incoming Freshmen.
 
 2017
 ----
 
-* [The Number Two Does Not Exist](https://www.youtube.com/watch?v=CV7EZ-ZB9k8).
+* [The Number Two Does Not Exist](https://www.youtube.com/watch?v=CV7EZ-ZB9k8)
     * Liberal Arts and Sciences Symposium.
 
-* Effects of Persistent Environmental Toxins on a Mother-Fetus System.
+* Effects of Persistent Environmental Toxins on a Mother-Fetus System
     * Liberal Arts and Sciences Symposium.
 
-* Global Dynamics of a Cancer Stem Cell Treatment Model.
+* Global Dynamics of a Cancer Stem Cell Treatment Model
     * Joint Mathematics Meetings, Atlanta.
     * AMS Constributed Paper Session on Topics in Analysis III.
 
 2016
 ----
 
-* Global Dynamics of a Cancer Stem Cell Treatment Model.
+* Global Dynamics of a Cancer Stem Cell Treatment Model
     * REU Symposium, NSF Headquarters, Washington DC.
     * Selected by the Council on Undergraduate Research to present REU findings.
 
-* Increasing Stock Market Profitability with Artificial Intelligence.
+* Increasing Stock Market Profitability with Artificial Intelligence
     * Liberal Arts and Sciences Symposium, Oglethorpe University.
 
 2015
 ----
 
-* Cervantes: How to be Jewish.
+* Cervantes: How to be Jewish
     * Liberal Arts and Sciences Symposium, Oglethorpe University.
     * Talk exploring possible Jewish themes in *Don Quixote* and in the life of
       Cervantes.
@@ -98,18 +98,18 @@ Presentations
 Awards
 ======
 
-* James Edward Oglethorpe Award.
+* James Edward Oglethorpe Award
     * 2019.
     * Oglethorpe University.
     * In recognition of scholarship, leadership, and character.
     * Awarded by university faculty vote.
 
-* Sally Hull Weltner Award for Scholarship.
+* Sally Hull Weltner Award for Scholarship
     * 2019.
     * Oglethorpe University.
     * Awarded to Senior with highest grade-point average.
 
-* Ronald L. Carlisle Prise.
+* Ronald L. Carlisle Prise
     * 2019.
     * Oglethorpe University, Division IX (Mathematics and Computer Science).
     * Given to outstanding Senior in mathematics and computer science.
@@ -117,17 +117,17 @@ Awards
 Organizations
 =============
 
-* [Omicron Delta Kappa](https://odk.org/).
+* [Omicron Delta Kappa](https://odk.org/)
     * 2017.
     * Oglethorpe University.
-    * President (2017–2019).
+    * Circle President (2017–2019).
     * National leadership honor society.
 
-* [Sigma Zeta](https://www.sigmazeta.org/).
+* [Sigma Zeta](https://www.sigmazeta.org/)
     * 2018.
     * National science and mathematics honor society.
 
-* [Mathematical Association of America](https://www.maa.org/).
+* [Mathematical Association of America](https://www.maa.org/)
     * 2016.
 
 Teaching
@@ -136,7 +136,7 @@ Teaching
 2018
 ----
 
-* Oglethorpe University.
+* Oglethorpe University
     * Supplemental instructor for MAT-120 (Introduction to Functions) and MAT-234
       (Calculus III).
     * University tutor in mathematics and computer science.
@@ -144,7 +144,7 @@ Teaching
 2017
 ----
 
-* Oglethorpe University.
+* Oglethorpe University
     * Supplemental instructor for MAT-120 (Introduction to Functions) and
       MAT-241 (Proof and Logic).
     * University tutor in mathematics and computer science.
