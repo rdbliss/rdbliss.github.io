@@ -45,22 +45,23 @@ Presentations
 2019
 ----
 
-* How to Rig Elections
+* How to Rig Elections \[[Slides](/files/lass-2019-gerry.pdf)\]
     * Liberal Arts and Sciences Symposium, Oglethorpe University.
     * Introduction to modern gerrymandering research.
 
 * Math is Hard (And you should stop trying to do it)
+  \[[Slides](/files/lass-2019-honors.pdf)\]
     * Liberal Arts and Sciences Symposium, Oglethorpe University.
     * Honors thesis talk.
 
 2018
 ----
 
-* Go Directly to Jail
+* Go Directly to Jail \[[Slides](/files/lass-2018-markov.pdf)\]
     * Liberal Arts and Sciences Symposium.
     * Talk on modeling *Monopoly* as a Markov chain.
 
-* Mathematics and Model and Predict our World
+* Mathematics can Model and Predict our World
     * Scholarship Weekend, Oglethorpe University.
     * Replaced professor at lecture given to incoming Freshmen.
 
@@ -68,6 +69,7 @@ Presentations
 ----
 
 * [The Number Two Does Not Exist](https://www.youtube.com/watch?v=CV7EZ-ZB9k8)
+  \[[Slides](/files/lass-2019-two.pdf)\]
     * Liberal Arts and Sciences Symposium.
 
 * Effects of Persistent Environmental Toxins on a Mother-Fetus System
