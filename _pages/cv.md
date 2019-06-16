@@ -75,7 +75,7 @@ Presentations
 
 * Global Dynamics of a Cancer Stem Cell Treatment Model
     * Joint Mathematics Meetings, Atlanta.
-    * AMS Constributed Paper Session on Topics in Analysis III.
+    * AMS Contributed Paper Session on Topics in Analysis III.
 
 2016
 ----
@@ -109,7 +109,7 @@ Awards
     * Oglethorpe University.
     * Awarded to Senior with highest grade-point average.
 
-* Ronald L. Carlisle Prise
+* Ronald L. Carlisle Prize
     * 2019.
     * Oglethorpe University, Division IX (Mathematics and Computer Science).
     * Given to outstanding Senior in mathematics and computer science.
