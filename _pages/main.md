@@ -3,8 +3,8 @@ permalink: /
 title: "Welcome!"
 author_profile: true
 redirect_from: 
-  - /about/
-  - /about.html
+  - /main/
+  - /main.html
 ---
 
 I am a graduate student in the [math department at Rutgers
