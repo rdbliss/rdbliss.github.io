@@ -150,6 +150,7 @@ Teaching
     * Supplemental instructor for MAT-120 (Introduction to Functions) and
       MAT-241 (Proof and Logic).
     * University tutor in mathematics and computer science.
+    * Summer supplemental instructor for MAT-120 and MAT-130.
 
 Programming languages and computers
 ===================================
