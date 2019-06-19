@@ -10,3 +10,6 @@ main:
 
     - title: "About"
       url: /about/
+
+    - title: "Math art"
+      url: /art/
