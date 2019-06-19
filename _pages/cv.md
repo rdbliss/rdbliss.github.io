@@ -69,7 +69,7 @@ Presentations
 ----
 
 * [The Number Two Does Not Exist](https://www.youtube.com/watch?v=CV7EZ-ZB9k8)
-  \[[Slides](/files/lass-2019-two.pdf)\]
+  \[[Slides](/files/lass-2017-two.pdf)\]
     * Liberal Arts and Sciences Symposium.
 
 * Effects of Persistent Environmental Toxins on a Mother-Fetus System
