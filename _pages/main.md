@@ -9,7 +9,7 @@ redirect_from:
 
 I am a graduate student in the [math department at Rutgers
 University](https://www.math.rutgers.edu/). Other than math, I am also
-interested in computer science, philosophy, and politics, though I am merely
+interested in computer science, philosophy, and music, though I am merely
 a journeyman in these subjects. You may know me from my time at [Oglethorpe
 University](https://oglethorpe.edu/), or even further back from my time at
 [Lugoff-Elgin High School](https://www.kcsdschools.net/Domain/17).
