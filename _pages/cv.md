@@ -23,7 +23,7 @@ Education
 Research
 ========
 
-* Honors thesis, *Expressive Complexity of Computer Algebra Systems*
+* Honors thesis, *Expressive Complexity of Computer Algebra Systems* \[[pdf](/files/oglethorpe_thesis.pdf)\]
     * Oglethorpe University.
     * Quantifies the complexity of popular computer algebra systems.
 
