@@ -45,6 +45,9 @@ Presentations
 2019
 ----
 
+* [The Ergonomics of Computer Algebra](https://vimeo.com/367240163) \[[Slides](//sites.math.rutgers.edu/~zeilberg/expmath/RobertDB19.pdf)\]
+    * Experimental Mathematics Seminar, Rutgers University
+
 * How to Rig Elections \[[Slides](/files/lass-2019-gerry.pdf)\]
     * Liberal Arts and Sciences Symposium, Oglethorpe University.
     * Introduction to modern gerrymandering research.
