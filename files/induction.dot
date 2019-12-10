@@ -1,0 +1,45 @@
+Digraph {
+    graph [fontsize=20, dpi=300]
+
+    p [label="k + 1 prime"]
+    k -> p
+
+    c [label="k + 1 composite"]
+    k -> c
+
+    pp [label="k + 2 prime"]
+    p -> pp
+
+    pc [label="k + 2 composite"]
+    p -> pc
+
+    cp [label="k + 2 prime"]
+    c -> cp
+
+    cc [label="k + 2 composite"]
+    c -> cc
+
+    ppp [label="k + 3 prime"]
+    pp -> ppp
+
+    ppc [label="k + 3 composite"]
+    pp -> ppc
+
+    pcp [label="k + 3 prime"]
+    pc -> pcp
+
+    pcc [label="k + 3 composite"]
+    pc -> pcc
+
+    cpp [label="k + 3 prime"]
+    cp -> cpp
+
+    cpc [label="k + 3 composite"]
+    cp -> cpc
+
+    ccp [label="k + 3 prime"]
+    cc -> ccp
+
+    ccc [label="k + 3 composite"]
+    cc -> ccc
+}

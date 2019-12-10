@@ -1,0 +1,11 @@
+Digraph {
+    graph [fontsize=20, dpi=300]
+
+    "2k - 1" -> "2k"
+
+    "2k + 1p" [label="2k + 1 prime?"]
+    "2k + 1c" [label="2k + 1 composite?"]
+
+    "2k" -> "2k + 1p"
+    "2k" -> "2k + 1c"
+}

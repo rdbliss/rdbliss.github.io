@@ -1,0 +1,21 @@
+Digraph {
+    graph [fontsize=20, dpi=300]
+
+    "6k + 1" -> "6k + 2"
+    "6k + 2" -> "6k + 3"
+    "6k + 3" -> "6k + 4"
+
+
+    "6k + 5p" [label="6k + 5 prime?"]
+    "6k + 5c" [label="6k + 5 composite?"]
+
+    "6k + 4" -> "6k + 5p"
+    "6k + 4" -> "6k + 5c"
+
+    "6(k + 1)p" [label="6(k + 1)"]
+    "6(k + 1)c" [label="6(k + 1)"]
+
+    "6k + 5p" -> "6(k + 1)p"
+    "6k + 5c" -> "6(k + 1)c"
+}
+
