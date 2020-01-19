@@ -237,14 +237,23 @@ This identity is so general that it must have a combinatorial proof, yet it
 almost seems too general to believe that one could exist! I haven't come up
 with one yet, but I hope to learn one eventually.
 
-To be honest, I don't quite believe this last identity. Here is some code to at
-least numerically settle your stomach if you also have doubts:
+Here's a notable example: Let $h(n, k)$ be the number of 2-regular graphs on
+$n$ vertices with $k$ connected components. Then
+
+$$
+\begin{equation}
+    \sum_{\substack{v \in \{-1, 1\}^n \\ k}} (\sgn v) h(n, k) w(v)^k = 0.
+\end{equation}
+$$
+
+To be honest, I'm skeptical of these last few identities. Here is some code to
+at least numerically settle your stomach if you also have doubts:
 
 ```python
 import itertools
-from sympy import binomial
+from sympy import binomial, factorial, log
 from sympy.functions.combinatorial.numbers import stirling
-
+from sympy.abc import x
 
 def sgn(v):
     return (-1)**sum(1 for x in v if x == -1)
@@ -252,7 +261,7 @@ def sgn(v):
 def prod(a, v):
     return sum(a[k] * v[k] for k in range(len(a)))
 
-def weight(v):
+def norm(v):
     a = [1] * len(v)
     return prod(a, v)
 
@@ -268,12 +277,37 @@ def binomial_sum(a):
 
     return sum(sgn(v) * binomial(-prod(a, v), n) for v in vs)
 
-# This should always be 2^n * n!, which I don't quite believe.
-def stirling_sum(n, kind=2):
+def exponential_family_sum(h, n):
+    """
+    This should always equal
+
+        (2d)^n * n!
+
+    where d is the size of the weight-1 deck of the exponential family.
+
+    """
     vs = itertools.product([-1, 1], repeat=n)
 
-    return [sgn(v) * stirling(n, k, kind=kind) * weight(v)**k for v in vs for k in range(n + 1)]
+    return sum(sgn(v) * h(n, k) * norm(v)**k for v in vs for k in range(1, n + 1))
 
+def exponential_family_list(h, n):
+    vs = itertools.product([-1, 1], repeat=n)
+
+    return [sgn(v) * h(n, k) * norm(v)**k for v in vs for k in range(1, n + 1)]
+
+def two_regular_hand(n, k):
+    D = -(log(1 - x) + x + x**2 / 2) / 2
+
+    needed_power = n // k + 1
+    expr = (D.series(n=needed_power)**k / factorial(k)).expand()
+
+    return factorial(n) * expr.coeff(x**n)
+
+def two_regular_sum(n):
+    return exponential_family_sum(two_regular_hand, n)
+
+def stirling_sum(n, kind=2):
+    return exponential_family_sum(lambda n, k: stirling(n, k, kind=kind), n)
 ```
 
 # Credits
