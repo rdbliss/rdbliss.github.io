@@ -235,7 +235,7 @@ For example, \eqref{hand-sum} holds with $h(n, k)$ defined as the number of:
 
 This identity is so general that it must have a combinatorial proof, yet it
 almost seems too general to believe that one could exist! I haven't come up
-with one yet, but I learn one eventually.
+with one yet, but I hope to learn one eventually.
 
 To be honest, I don't quite believe this last identity. Here is some code to at
 least numerically settle your stomach if you also have doubts:
