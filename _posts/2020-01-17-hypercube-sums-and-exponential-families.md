@@ -28,8 +28,8 @@ a small collection of these.
 # Products, products, products
 
 Despite what I just said about hypercube sums being weird, they are actually
-natural to consider. If you ever want to expand a product of binomials into
-a sum, then you are secretly doing a hypercube sum: Given the product
+quite natural objects. If you ever want to expand a product of binomials into
+a sum, then you are secretly thinking about hypercube sums. Given the product
 
 $$\prod_{k = 1}^n (a_k + b_k),$$
 
@@ -237,7 +237,8 @@ This identity is so general that it must have a combinatorial proof, yet it
 almost seems too general to believe that one could exist! I haven't come up
 with one yet, but I learn one eventually.
 
-To check my work, here is some code to play with this:
+To be honest, I don't quite believe this last identity. Here is some code to at
+least numerically settle your stomach if you also have doubts:
 
 ```python
 import itertools
