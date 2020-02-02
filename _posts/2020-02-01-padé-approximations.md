@@ -40,9 +40,8 @@ $$
     \frac{(-1)^{n - m}}{2n + 1} {2n - m \choose 2(n - m)}.
 $$
 
-I have written the rest of this like an informal "lab journal" to show how
-I actually did every step. I have done little *ex post facto* cleaning to make
-everything look nice.
+I have written the rest of this like an informal "lab journal" with little *ex
+post facto* cleaning.
 
 # First steps
 
@@ -156,10 +155,10 @@ In [14]: [abs(a(k, 1)) for k in range(1, 10)]
 Out[14]: [1, 3, 6, 10, 15, 21, 28, 36, 45]
 ```
 
-This last sequence has a linear difference. It looks like `delta(a(n, 1))
-= 2 + n`, which means that `a(n, 1)` is probably some quadratic function. In
+This last sequence has a linear difference. It looks like $\Delta a(n, 1)
+= 2 + n$, which means that $a(n, 1)$ is probably some quadratic function. In
 fact, it's easy to see that these are just triangular numbers. These can be
-written `binomial(n, 2)`, and we should remember that for the next sequence.
+written ${n \choose 2}$, and we should remember that for the next sequence.
 
 ```python
 In [15]: [abs(a(k, 2)) for k in range(1, 10)]
@@ -184,7 +183,7 @@ Out[21]: array([1, 1, 1, 1, 1], dtype=object)
 
 These don't look *as* straightforward, but iterated differences tell us that
 these coefficients probably come from a quartic polynomial. Based on the last
-guess, I would say it's `binomial(n + 3, 4)`, and that looks right.
+guess, I would say it's ${n + 3 \choose 4}$, and that looks right.
 
 There seems to be a *meta-pattern* developing. Let's see one more to get the
 feel for what it should be.
@@ -209,17 +208,17 @@ to do it automatically, it pays to practice catching all the nasty mistakes you
 can make while staring at sequences.
 
 I started with `guess(n, k) = binomial(n + k + 1, 2k)`. This is definitely
-wrong. First of all, `a(n, k)` is sometimes negative. Oops. I forgot that
-I took the absolute value at some point. I suspect that the signs are just
-alternating in `k`, so I can just multiply by `(-1)^k` at the end to fix that.
+wrong. First of all, $a(n, k)$ is sometimes negative. Oops. I forgot that
+I took absolute values at some point. I suspect that the signs alternate in
+$k$, so I can just multiply by $(-1)^k$ at the end to fix that.
 
-The formula seems off. For example, `guess(4, 2) = 35` while `a(4, 2) = 15`.
-However `guess(3, 2) = 15`, so maybe we're just off by one. Looking back at the
-list-comprehension I used to create the binomial coefficients, I think I am. So
-let's say `guess(n, k) = binomial(n + k, 2k)`.
+The formula is off some other way as well. For example, `guess(4, 2) = 35`
+while `a(4, 2) = 15`. But `guess(3, 2) = 15`, so maybe we're just off by one in
+$n$. Looking back at the list-comprehension I used to create the binomial
+coefficients, I think I am. So let's say `guess(n, k) = binomial(n + k, 2k)`.
 
 Picking a value at random, we have `a(10, 3) = -1716` and `guess(10, 3)
-= 1716`. Good! And it looks like the signs do alternate in `k`, so maybe we
+= 1716`. Good! And it looks like the signs do alternate in $k$, so maybe we
 actually have `guess(n, k) = (-1)^k * binomial(n + k, 2k)`.
 
 Here's a quick verification that we might be right:
@@ -244,10 +243,10 @@ $$a(n, k) = (-1)^k {n + k \choose 2k}.$$
 # The denominator
 
 It feels like the denominator should be easier now that we know the numerator,
-but I've had some trouble with it.
+but that isn't exactly the case. The coefficients here aren't *just* binomial
+coefficients.
 
-The coefficients here aren't *just* binomial coefficients, so I have a helper
-functions to make meta-guessing easier:
+Here is a helper functions to make meta-guessing easier:
 
 ```python
 # I am using the `fit_poly()` functions described here:
@@ -263,11 +262,8 @@ def guess_denom_poly(k, deg, n_terms=10):
     return fit_poly(list(range(k, n_terms + k)), bs, n, degree=deg)[0].factor()
 ```
 
-Define the sequence $b(n, k)$ to be the coefficient of $x^{n - k}$ in the
-denominator of the $n$th diagonal Padé approximant. (This is the analogue of
-$a(n, k)$ for the denominator.) I suspect that `b(n, k)` is again a polynomial
-in `n` for each fixed `k`, hence all the stuff above about fitting and
-polynomials.
+I suspect that $b(n, k)$ is again a polynomial in $n$ for each fixed $k$, hence
+all the stuff above about fitting and polynomials.
 
 Let's see some examples:
 
@@ -301,8 +297,8 @@ These might look intimidating, but closer inspection reveals that we probably
 have `b(n, k) = binomial(n + 2k, 2k) * (2n + 2k + 1)`.
 
 The devil's in the details, though, and this ain't quite right. We fit these
-polynomials using values which started from `k`, so we probably need to shift
-`n` back by `k`. Maybe `guess2(n, k) = binomial(n + k, 2k) * (2n + 1)`?
+polynomials using values which started from $k$, so we probably need to shift
+$n$ back by $k$. Maybe `guess2(n, k) = binomial(n + k, 2k) * (2n + 1)`?
 
 I changed a line in the program to make sure that everything is starting at the
 same point, and now I get some more sensible results. For example:
@@ -331,9 +327,9 @@ n⋅(n - 3)⋅(n - 2)⋅(n - 1)⋅(n + 1)⋅(n + 2)⋅(n + 3)⋅(n + 4)⋅(2⋅n
 
 ```
 
-Looking at the `k = 4` case very hard, I notice that the denominator is
-`(2 * 4 + 1)!`, not `(2 * 4)!`. That means that we should probably have
-`guess2(n, k) = binomial(n + k, 2k) * (2n + 1) / (2k + 1)`. This seems to work!
+Looking at the $k = 4$ case very hard, I notice that the denominator is `(2
+* 4 + 1)!`, not `(2 * 4)!`. That means that we should probably have `guess2(n,
+k) = binomial(n + k, 2k) * (2n + 1) / (2k + 1)`. This seems to work!
 
 All that's left is to note that `b(n, k)` alternates in `k`, so we probably
 have
@@ -368,12 +364,10 @@ $$
 \end{align*}
 $$
 
-I put bounds on the final sum since $b(n, n - k) = 0$ if $k > n$ or $k < 0$,
-and the conjecture we have is only true for $0 \leq k \leq n$. But actually, if
-we take a second look, we see that the conjectured expression for $b(n, k)$
-vanishes if $k > n$ or $k < 0$ anyway, and the only part of the sum involving
-$m$ vanishes with $k > m$ and $k < 0$, so we can just drop the bounds. Thus we
-have (conjectured that)
+I put bounds on the final sum since $b(n, n - k) = 0$ if $k > n$ or $k < 0$.
+But the conjectured expression does this as well, and the only part of the sum
+involving $m$ vanishes with $k > m$ and $k < 0$, so we can just drop the
+bounds. Thus we have (conjectured that)
 
 $$
     [x^m] f(x) Q_n(x) = \sum_k (-1)^{n - k} {2n - k \choose 2(n - k)} \frac{2n + 1}{2(n - k) + 1} {2(m - k) \choose m - k}.
