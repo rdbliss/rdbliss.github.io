@@ -328,9 +328,9 @@ n⋅(n - 3)⋅(n - 2)⋅(n - 1)⋅(n + 1)⋅(n + 2)⋅(n + 3)⋅(n + 4)⋅(2⋅n
 
 ```
 
-Looking at the $k = 4$ case very hard, I notice that the denominator is `(2
-* 4 + 1)!`, not `(2 * 4)!`. That means that we should probably have `guess2(n,
-k) = binomial(n + k, 2k) * (2n + 1) / (2k + 1)`. This seems to work!
+Looking at the $k = 4$ case very hard, I notice that the denominator is
+`(2 * 4 + 1)!`, not `(2 * 4)!`. That means that we should probably have
+`guess2(n, k) = binomial(n + k, 2k) * (2n + 1) / (2k + 1)`. This seems to work!
 
 All that's left is to note that `b(n, k)` alternates in `k`, so we probably
 have
