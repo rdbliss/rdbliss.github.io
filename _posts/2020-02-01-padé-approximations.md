@@ -25,7 +25,8 @@ These are like "rational Taylor polynomials." Here, we take $a(n, 0) = 1$.
 
 ***Highlights:***
 
-- The sequences $a(n, k)$ and $b(n, k)$ are uniquely determined.
+- The sequences $a(n, k)$ and $b(n, k)$ are uniquely determined. For
+    $f(x) = (1 - 4x)^{-1/2}$, we have the following identities.
 
 - $a(n, k) = (-1)^k {n + k \choose 2k}$.
 
