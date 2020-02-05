@@ -7,26 +7,27 @@ Inspired by a section in [Zeilberger's](https://sites.math.rutgers.edu/~zeilberg
 DECONSTRUCTION" ([Z]), I have written a small Padé approximator in Python. Here
 I will attempt to experimentally discover the Padé approximation of $(1 - 4x)^{-1/2}$.
 
-An $(m, n)$th *Padé approximant* is a rational function $P_{n, m}(x) / Q_{n,
-m}(x)$ such that
+An $(m, n)$th *Padé approximant* is a rational function $P_{n, m}(x) / Q_{n, m}(x)$ such that
+
+$$f(x) - \frac{P_{n, m}(x)}{Q_{n, m}(x)} = O(x^{n + m + 1}).$$
+
+These are like "rational Taylor polynomials."
+
+Here, we will consider the *diagonal* $(n, n)$ approximants, denoted
 
 $$
 \begin{align*}
     P_n(x) &= \sum_{k = 0}^n a(n, n - k) x^k \\
-    Q_n(x) &= \sum_{k = 0}^n b(n, n - k) x^k,
+    Q_n(x) &= \sum_{k = 0}^n b(n, n - k) x^k.
 \end{align*}
 $$
 
-and
-
-$$f(x) - \frac{P_{n, m}(x)}{Q_{n, m}(x)} = O(x^{2n + 1}).$$
-
-These are like "rational Taylor polynomials." Here, we take $a(n, 0) = 1$.
+We will take $a(n, 0) = 1$.
 
 ***Highlights:***
 
-- The sequences $a(n, k)$ and $b(n, k)$ are uniquely determined. For
-    $f(x) = (1 - 4x)^{-1/2}$, we have the following identities.
+- For $f(x) = (1 - 4x)^{-1/2}$, the sequences $a(n, k)$ and $b(n, k)$ are
+  uniquely determined.
 
 - $a(n, k) = (-1)^k {n + k \choose 2k}$.
 
