@@ -16,7 +16,7 @@ $$
 $$
 
 where $O(x^k)$ stands for any generating function which is zero before the
-$k$th term (and possible later).
+$k$th term (and possibly later).
 
 Given $n$ and $m$, we write the polynomials $P_{n, m}(x)$ and $Q_{n, m}(x)$
 explicitly as
