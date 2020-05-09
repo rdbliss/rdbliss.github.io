@@ -25,7 +25,7 @@ $$\hat{f}(t) = \int_0^1 f(x) e^{-2\pi i t x}\ dx.$$
 
 These are the coefficients of the Fourier series
 
-$$\sum_k \hat{f}(t) e^{2\pi i t}.$$
+$$\sum_k \hat{f}(k) e^{2\pi i k}.$$
 
 There is a deep theory about what functions are suitably nice and what
 properties the Fourier transform satisfies, but for now we are only interested
