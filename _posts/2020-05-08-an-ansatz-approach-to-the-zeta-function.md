@@ -98,12 +98,9 @@ def zeta_ansatz(n):
     ft = ft.subs(k, 1).subs(I, 1).subs(pi, 1 / t)
 
     coeffs = ft.collect(t, evaluate=False)
-    print(coeffs)
     zero_eqns = [coeff for key, coeff in coeffs.items() if key != t**n]
     eqns = zero_eqns + [xs[-1] + 1, sum(x / (k + 1) for k, x in enumerate(xs))]
     soln = sp.solve(eqns, xs)
-    print(zero_eqns)
-    print(soln)
 
     f = sum(soln[xs[k]] * x**k for k in range(n + 1))
 
