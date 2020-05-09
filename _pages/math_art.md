@@ -24,6 +24,11 @@ mistake instead.
 
 Someday I would like to make an endless animation of this.
 
+Now in [cyberpunk](https://github.com/dhaitz/mplcyberpunk)!
+
+![Poisson city
+skylines](/images/skyline_cyber.png)
+
 # Stochastic predator-prey
 
 ![Stochastic predator-prey model](/images/comparison_phase.png)
