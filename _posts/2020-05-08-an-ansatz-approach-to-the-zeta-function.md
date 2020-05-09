@@ -1,5 +1,5 @@
 ---
-title: An Ansatz Approach to the Zeta Function
+title: An ansatz approach to the zeta function
 ---
 
 The evaluation of Riemann's zeta function
