@@ -11,6 +11,7 @@ redirect_from:
 
 Education
 =========
+
 * Rutgers University — New Brunswick
     * 2019–
     * PhD Graduate student, mathematics.
@@ -22,6 +23,8 @@ Education
 
 Research
 ========
+
+* *Automatic Conjecturing and Proving of Exact Values of Some Infinite Families of Infinite Continued Fractions* \[[arXiv](https://arxiv.org/abs/2004.00090)\]
 
 * Honors thesis, *Expressive Complexity of Computer Algebra Systems* \[[pdf](/files/oglethorpe_thesis.pdf)\]
     * Oglethorpe University.
@@ -45,7 +48,7 @@ Presentations
 2019
 ----
 
-* [The Ergonomics of Computer Algebra](https://vimeo.com/367240163) \[[Slides](//sites.math.rutgers.edu/~zeilberg/expmath/RobertDB19.pdf)\]
+* [The Ergonomics of Computer Algebra](https://vimeo.com/367240163) \[[slides](//sites.math.rutgers.edu/~zeilberg/expmath/RobertDB19.pdf)\]
     * Experimental Mathematics Seminar, Rutgers University
 
 * How to Rig Elections \[[Slides](/files/lass-2019-gerry.pdf)\]
@@ -122,6 +125,16 @@ Awards
 Organizations
 =============
 
+* Rutgers Experimental Mathematics Seminar
+    * Co-organizer (2020-)
+
+* Rutgers [American Mathematical Society](https://www.ams.org/) Chapter
+    * 2020-
+    * Vice President (2020-)
+
+* Rutgers Graduate Liaison Committee
+    * 2020-
+
 * [Omicron Delta Kappa](https://odk.org/)
     * 2017.
     * Oglethorpe University.
@@ -137,6 +150,12 @@ Organizations
 
 Teaching
 ========
+
+2020
+----
+
+* Rutgers University
+    * TA for Math-135 (Calculus I for the Life and Social Sciences)
 
 2018
 ----
