@@ -16,3 +16,7 @@ School](https://www.kcsdschools.net/Domain/17).
 
 This site contains some information about me and a blog where I post ideas.
 Most of the ideas are about math. Some are even good!
+
+Currently at Rutgers, I co-organize the *Graduate Pizza* and *Experimental
+Mathematics* seminars, am the Vice President of our AMS chapter, and serve on
+the graduate Liaison Committee.
