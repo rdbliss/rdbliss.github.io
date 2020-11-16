@@ -109,7 +109,7 @@ case) to show that
 
 $$\lim_n E[\exp(M_n z)] = \frac{e^z - 1}{z}.$$
 
-Well! This is intensely interesting. The function on the left is the moment
+Well! This is intensely interesting. The function on the right is the moment
 generating function for the *uniform distribution on $(0, 1)$!* Could this be
 true? Could the limit of a discrete process be a continuous one? Look at these
 graphs:
