@@ -50,6 +50,18 @@ Research
 Presentations
 =============
 
+2020
+----
+
+- A Compartmental Analysis Model of Persistent Environmental Toxins
+    - MAA Contributed Paper Session on Incorporating Realistic Applications of Mathematics Through Interdisciplinary Collaborations, I
+
+- Automatic Conjecturing and Proving of Exact Values of Some Infinite Families of Infinite Continued Fractions
+    - 2020 Fall AMS Eastern Sectional Meeting, Special Session on Combinatorics and Computing
+
+- [Automagic Inverse Continued Fraction Calculators(https://vimeo.com/463161063)]
+    - Experimental Mathematics Seminar, Rutgers University
+
 2019
 ----
 
