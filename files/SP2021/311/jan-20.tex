@@ -1,0 +1,300 @@
+\documentclass[12pt]{article}
+\usepackage[noanswer]{exercise}
+\usepackage[]{amsthm}
+\usepackage[]{amsmath}
+\usepackage[]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+% I don't like how the "exercise" package normally lays things out.
+% Feel free to copy this if you agree.
+\renewcommand{\ExerciseHeader}{\noindent\textbf{\ExerciseName\ \ExerciseHeaderNB}\ \ExerciseHeaderTitle\ \ExerciseHeaderOrigin\smallskip}
+\renewcommand{\ExerciseHeaderOrigin}{(\ExerciseOrigin)}
+\renewcommand{\AnswerHeader}{\bigskip\noindent\textbf{Solution \ExerciseHeaderNB}\newline}
+
+\title{Recitation Notes}
+\author{Robert Dougherty-Bliss}
+\date{20 January 2021}
+
+\begin{document}
+
+\maketitle
+
+Welcome to real analysis!
+
+Today marks the first step of your journey through one of the principle pillars
+of mathematics: \emph{analysis}. The field is so vast that I could not possibly
+summarize it in a few words. But if I had to, I would say that analysis is the
+rigorous study of \emph{change} and \emph{estimates}.
+
+% Adding the * gets rid of the section numbering.
+\section*{Logistics}%
+\label{sec:logistics}
+
+\begin{enumerate}
+    \item I am Robert Dougherty-Bliss, your TA for this semester. For Professor
+        Coley, I run \emph{workshops} every week. For now, this is 15-30
+        minutes of me going over material, and then an hour or so of answering
+        your questions.
+
+        For Professor Klatt, my rough plan is to record the weekly workshops I
+        do with the other section and post them online for you to watch. Maybe
+        this will change.
+
+    \item We have a Canvas page. The syllabus is on the Canvas page.
+
+    \item Office hour survey: \url{https://www.when2meet.com/?10713170-4UARI}
+
+    \item Join the Rutgers Math Discord! \url{https://discord.gg/rutgersmath}
+
+        I usually hang out there and answer questions.
+\end{enumerate}
+
+\section*{New stuff}%
+\label{sec:new_stuff}
+
+Like you should for any journey, we will begin today by preparing our
+equipment. In this case, our equipment consists of \emph{methods of proof}. I
+cannot say, ``in order to prove X, do Y,'' but I can lay out some rough logical
+tools. These tools are:
+
+\begin{enumerate}
+    \item Direct proof.
+    \item Proof by contrapositive.
+    \item Proof by contradiction.
+    \item Proof by induction.
+\end{enumerate}
+
+In theory you've seen these before, but I'm sure that you're rusty. Let's see
+some examples.
+
+\subsection*{Direct proof}
+
+The first and most ``obvious'' way to prove something is to do it directly. You
+take the assumptions given to you and move them around until the conclusion
+falls out.
+
+\begin{definition}
+    An integer $n$ is \emph{even} provided that $n = 2k$ for some integer $k$.
+    On the other hand, $n$ is \emph{odd} provided that $n = 2m + 1$ for some
+    integer $m$.
+\end{definition}
+
+\begin{proposition}
+    The sum of two even integers is even. (If $x$ and $y$ are even integers,
+    then $x + y$ is even.)
+\end{proposition}
+
+\begin{proof}
+    Let $x$ and $y$ be even integers. That is, $x = 2n$ and $y = 2m$ for some
+    integers $n$ and $m$. Then
+    \begin{equation*}
+        x + y = 2(n + m),
+    \end{equation*}
+    and since $n + m$ is an integer, it follows that $x + y$ is even.
+\end{proof}
+
+\begin{proposition}
+    The product of two odd integers is odd. (If $x$ and $y$ are odd integers,
+    then $xy$ is odd.)
+\end{proposition}
+
+\begin{proof}
+    Let $x = 2n + 1$ and $y = 2m + 1$ for integers $n$ and $m$. Then
+    \begin{equation*}
+        xy = (2n + 1)(2m + 1) = 2(2nm + n + m) + 1,
+    \end{equation*}
+    so $xy$ is odd.
+\end{proof}
+
+\begin{Exercise}
+    Prove that the sum of two odd integers is even.
+\end{Exercise}
+
+\subsection*{Contrapositive}%
+
+The statement ``if $P$, then $Q$'' is \emph{logically equivalent} to ``if not
+$Q$, then not $P$.'' The latter statement is called the \emph{contrapositive}
+of the former, and proving either proves the other. In some cases the
+contrapositive is much easier to prove than the original statement. Other times
+there isn't much of a difference.
+
+\begin{proposition}
+    If $n^2$ is even, then $n$ is even.
+\end{proposition}
+
+Writing $n^2 = 2k$ does not seem very helpful. Instead, we'll try the
+contrapositive.
+
+\begin{proof}
+    Suppose that $n$ is odd, so that $n = 2m + 1$ for some integer $m$. Then
+    $n^2 = 2(2m^2+ 2m) + 1$ is odd, so our original claim is true.
+\end{proof}
+
+Note that the contrapositive is \emph{not} the same as the \emph{converse}. The
+converse of ``if $P$, then $Q$'' is ``if $Q$, then $P$.'' In general these are
+completely different statements. If both happen to be true, then we say ``$P$
+if and only if $Q$,'' sometimes shortened ``$P$ iff $Q$.''
+
+\begin{Exercise}
+    Is the following true?
+    \begin{quote}
+        If $x$ and $y$ are integers, then $x + y$ is even iff $x$ and $y$ are
+        both even.
+    \end{quote}
+\end{Exercise}
+
+\begin{Exercise}
+    Show that $n^2$ is odd iff $n$ is odd. (Hint: Do one half directly, and one
+    half with the contrapositive.)
+\end{Exercise}
+
+\subsection*{Contradiction}%
+
+If a statement cannot be false, then it must be true. (This is controversial.)
+So, to prove that something is true, start by assuming that it is \emph{false},
+and try to show that this is impossible.
+
+Before I give you an example, I should say that not many things \emph{require}
+a proof by contradiction. In fact, most proofs by contradiction are actually
+proofs by contrapositive in disguise! I will yell at you if you make this
+mistake!
+
+Now for the most famous example where contradiction is really necessary.
+
+\begin{proposition}
+    $\sqrt{2}$ is irrational.
+\end{proposition}
+
+\begin{proof}
+    Suppose, to the contrary, that $\sqrt{2} = a / b$ for coprime integers $a$
+    and $b$, i.e., $a$ and $b$ do not share a common factor other than $1$.
+    Then
+    \begin{equation*}
+        2 = \frac{a^2}{b^2},
+    \end{equation*}
+    or $2 b^2 = a^2$. It follows that $a^2$ is even, and so $a$ is as well,
+    meaning that $a = 2a'$ for some integer $a'$. Our equation becomes
+    \begin{equation*}
+        2 b^2 = (2a')^2 = 4a'^2,
+    \end{equation*}
+    so $b^2 = 2a'^2$. From this we see that $b^2$ is even, and therefore $b$ is
+    as well. But now $2$ divides both $a$ and $b$, which contradicts that they
+    share no common divisors but $1$. Therefore $\sqrt{2}$ \emph{cannot} be
+    rational.
+\end{proof}
+
+\begin{Exercise}
+    Mimic the above proof to show that $2^{1/3}$ is irrational. (Hint: If $2$
+    divides $xy$, then it divides either $x$ or $y$.) Now show that $2^{1/n}$
+    is irrational for all $n \geq 2$.
+\end{Exercise}
+
+\subsection*{Induction}
+
+Induction is a tool for when you want to prove something about all positive
+integers, and somehow each integer with the property implies that the next
+integer has it too.
+
+The general setup is this: Suppose that $P(n)$ is some statement about the
+integer $n$, maybe $P(n) = n^2 \geq n$. If $P(1)$ is true, and $P(n)$ implies
+$P(n + 1)$ for every $n \geq 1$, then $P(n)$ is true for all $n \geq 1$. (You
+can replace $1$ with any integer.)
+
+\begin{proposition}
+    For all $n \geq 4$,
+    \begin{equation*}
+        n! \geq 2^n.
+    \end{equation*}
+\end{proposition}
+
+\begin{proof}
+    Suppose that $n! \geq 2^n$ for some $n \geq 4$. Then,
+    \begin{equation*}
+        \frac{(n + 1)!}{2^{n + 1}} = \frac{n + 1}{2} \frac{n!}{2^n} \geq \frac{n + 1}{2}.
+    \end{equation*}
+    Since $n \geq 4$ we get $(n + 1) / 2 \geq 1$, which implies
+    \begin{equation*}
+        \frac{(n + 1)!}{2^n} \geq 1.
+    \end{equation*}
+    At $n = 4$, we have
+    \begin{equation*}
+        4! = 24 \geq 16 = 2^4.
+    \end{equation*}
+    Thus, by induction, $n! \geq 2^n$ for all $n \geq 4$.
+\end{proof}
+
+\begin{Exercise}
+    The \emph{Fibonacci} numbers are defined recursively as follows:
+    \begin{align*}
+        F_0 &= 0 \\
+        F_1 &= 1 \\
+        F_{n + 2} &= F_{n + 1} + F_n.
+    \end{align*}
+    Prove via induction that
+    \begin{equation*}
+        \sum_{k = 0}^n F_k = F_{n + 2} - 1
+    \end{equation*}
+    for all integers $n \geq 0$.
+
+    (Hint: $\sum_{k = 0}^{n + 1} F_k = \sum_{k = 0}^n F_k + F_{n + 1}$.)
+\end{Exercise}
+
+\begin{Answer}
+    For $n = 0$, the identity reads
+    \begin{equation*}
+        0 = \sum_{k = 0}^n F_k = F_2 - 1 = 0,
+    \end{equation*}
+    which is true. Now, suppose that
+    \begin{equation*}
+        \sum_{k = 0}^n F_k = F_{n + 2} - 1
+    \end{equation*}
+    for some $n \geq 0$. Then,
+    \begin{align*}
+        \sum_{k = 0}^{n + 1} F_k &= \sum_{k = 0}^n F_k + F_{n + 1} \\
+                                 &= F_{n + 2} + F_{n + 1} - 1 \\
+                                 &= F_{n + 3} - 1 \\
+                                 &= F_{(n + 1) + 2} - 1.
+    \end{align*}
+    Therefore, by induction, the identity holds for all $n \geq 0$.
+
+    (Method two, which you are not allowed to use: Check it with a computer for
+    $n \leq 100$.)
+\end{Answer}
+
+\section*{A note on style}%
+
+Style and taste is important in all writing, even in mathematics. I'm not going
+to explain all of the finer points, but I will point you to this document,
+written in part by mathematical wiz and computer science guru Donald Knuth:
+
+\url{https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf}
+
+Read the first chapter when you have time! You'll be glad that you did.
+
+\section*{A note on \LaTeX}%
+
+LaTeX, styled \LaTeX, is a ``typesetting'' system widly used in mathematics.
+\LaTeX\ turns formatted plaintext documents (created using a text editor such
+as Notepad++) into nicely rendered PDF files. It has \emph{very} good support
+for mathematical symbols and a number of other niche topics. Virtually all
+mathematicians use \LaTeX\ to write papers, prepare lecture notes, and so on.
+In fact, I'm using it to write these notes right now.
+
+It is encouraged---but \emph{not} required---that you write up your homework,
+midterm projects, etc.~in \LaTeX. This makes it easier to read and will make
+you feel fancy.
+
+Some of you have seen \LaTeX\ and some of you have not. There are a number of
+resources online that will teach you how to prepare and ``compile'' a \LaTeX
+document. To give you examples of good \LaTeX\ documents, I will occasionally
+prepare my workshop notes in \LaTeX\ and post them online somewhere every week.
+(I can't promise I will do this all the time. It takes more time!)
+
+\end{document}

@@ -2,6 +2,9 @@ main:
     - title: "Welcome"
       url: /
 
+    - title: "Teaching"
+      url: /teaching/
+
     - title: "Blog"
       url: /blog/
 
