@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage[noanswer]{exercise}
+\usepackage[]{amsthm}
+\usepackage[]{amsmath}
+\usepackage[]{enumitem}
+\usepackage[]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\let\set\mathbf
+
+% I don't like how the "exercise" package normally lays things out.
+% Feel free to copy this if you agree.
+\renewcommand{\ExerciseHeader}{\noindent\textbf{\ExerciseName\ \ExerciseHeaderNB}\ \ExerciseHeaderTitle\ \ExerciseHeaderOrigin\smallskip}
+\renewcommand{\ExerciseHeaderOrigin}{(\ExerciseOrigin)}
+\renewcommand{\AnswerHeader}{\bigskip\noindent\textbf{Solution \ExerciseHeaderNB}\newline}
+
+\title{Workshop Notes}
+\author{Robert Dougherty-Bliss}
+\date{27 January 2021}
+
+\begin{document}
+
+\maketitle
+
+% Adding the * gets rid of the section numbering.
+\section*{Logistics}%
+\label{sec:logistics}
+
+Nothing to say here.
+
+\section*{New stuff}%
+\label{sec:new_stuff}
+
+This week you learned about about the real numbers. You already knew most of
+the algebraic structure of the reals (addition, multiplication, inequalities,
+etc.), but the real kicker is the \emph{completeness axiom}.
+
+% There's a "\ " after \sup because \sup(0, 1) looks weird.
+% Normally you would just do \sup S for a set S, with no "\ ".
+% The "\ " adds a little bit of space.
+Consider the set $(0, 1)$ of all reals between $0$ and $1$. Note that $x \leq
+2$ for every $x \in (0, 1)$. That is, $2$ is an \emph{upper bound} for $(0,
+1)$. There are many such upper bounds: $1 + 1/2$, and $1 + 1/3$, and $1
++ 1/999999999$, and so on. The completeness axiom tells us that there is a
+\emph{least} one, i.e., an upper bound which we cannot ``improve'' by making it
+smaller. We call this least upper bound the \emph{supremum} of $(0, 1)$, and
+denote it $\sup\ (0, 1)$. Here, $\sup\ (0, 1) = 1$.
+
+The axiom of completeness is silly for $(0, 1)$---obviously the least upper
+bound exists in this case---but it is \emph{crucial} in cases where the least
+upper bound is not obvious. I don't want to spoil Professor Coley's thunder, so
+I'll just say that the completeness axiom is the most important property of the
+reals.
+
+The axiom is also a good philosophical example of \emph{infinity}. If there
+were only finitely many upper bounds of $(0, 1)$, then we could go through the
+list and pick the smallest. Since there are infinitely many we can't do this
+``by hand,'' but the axiom says that we can do it abstractly. Trying to pick
+the smallest element of an infinite set is a recurring problem throughout
+analysis.
+
+Now I'm going to open the floor to questions and discussion from everyone. If
+discussion flows, perfect. Otherwise, I selected a few exercises.
+
+\begin{Exercise}
+    \begin{enumerate}[label=(\alph*)]
+        \item What is $\sup \set{R}$?
+
+        \item Can you construct a set $S$ with $\inf S \geq \sup S$? If yes,
+            what are \emph{all} such sets? If no, prove that it is impossible.
+
+        \item Can you construct a nonempty set, bounded from above, that does
+            not contain its supremum?
+
+        \item Can you construct a nonempty set of \emph{integers}, bounded from
+            above, that does not contain its supremum?
+
+        \item Can you construct a nonempty set bounded from above where the
+            supremum is not obvious?
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}
+    (Abbott, 1.4.8)
+
+    The nested interval theorem says that $\bigcap_{k \geq 1} I_k$ is nonempty
+    if $\{I_k\}$ is a sequence of nonempty, bounded, nested, closed intervals.
+    Do we need all of those conditions? That is, what happens if the intervals
+    are open? Or not nested? Or unbounded? The following questions explore some
+    of these ideas.
+
+    Give an example of each of the following, or argue that it is impossible.
+
+    \begin{enumerate}[label=(\alph*)]
+        \item \emph{Disjoint}, nonempty, bounded from above sets $A$ and $B$
+            such that $\sup A = \sup B$, $\sup A \notin A$, and $\sup B \notin
+            B$.
+
+        \item A sequence of nested, \emph{open} intervals $I_1 \supseteq I_2
+            \subseteq \cdots$ with $\bigcap_{k \geq 1} I_k$ having a nonzero
+            but \emph{finite} number of elements.
+
+        \item A sequence of nested, \emph{unbounded}, closed intervals $L_1
+            \supseteq L_2 \supseteq \cdots$ with $\bigcap_{k \geq 1} L_k$
+            empty.
+
+        \item A sequence of closed, bounded intervals $J_1, J_2, \dots$ such
+            that $\bigcap_{k = 1}^n J_k$ is nonempty for every positive integer
+            $n$, yet $\bigcap_{k \geq 1} J_k$ is empty.
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}
+    (Abbott, 1.3.4.) [I don't expect that we'll have time to get to this, so
+    I'm not going to bother typing it up.]
+\end{Exercise}
+
+% Hidden secrets.
+
+% I want everyone to have their own questions. If they don't, then I'm going to
+% walk us through a few exercises.
+
+% Describe a set without a supremum. The same for infimum.
+
+% 1.3.2.
+% 1.3.4. How does the supremum behave under unions?
+% 1.4.8.
+
+\end{document}
