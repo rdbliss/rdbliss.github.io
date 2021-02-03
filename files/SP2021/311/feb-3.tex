@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+\usepackage[noanswer]{exercise}
+\usepackage[]{amsthm}
+\usepackage[]{amsmath}
+\usepackage[]{enumitem}
+\usepackage[]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\let\set\mathbf
+
+% I don't like how the "exercise" package normally lays things out.
+% Feel free to copy this if you agree.
+\renewcommand{\ExerciseHeader}{\noindent\textbf{\ExerciseName\ \ExerciseHeaderNB}\ \ExerciseHeaderTitle\ \ExerciseHeaderOrigin\smallskip}
+\renewcommand{\ExerciseHeaderOrigin}{(\ExerciseOrigin)}
+\renewcommand{\AnswerHeader}{\bigskip\noindent\textbf{Solution \ExerciseHeaderNB}\newline}
+
+\title{Workshop Notes}
+\author{Robert Dougherty-Bliss}
+\date{3 February 2021}
+
+\begin{document}
+
+\maketitle
+
+% Adding the * gets rid of the section numbering.
+\section*{Logistics}%
+\label{sec:logistics}
+
+Nothing to say here.
+
+\section*{New stuff}%
+\label{sec:new_stuff}
+
+Since I last saw you, you learned about cardinality and sequences. Sequences
+will get properly confusing when we get to some theorems, but for now I imagine
+thatt cardinality is very weird for everyone. Let's remind ourselves of what's
+going on.
+
+One way to measure a set is to just count all the things in it;
+\begin{equation*}
+    |\{a, b, c\}| = 3.
+\end{equation*}
+Easy. Another way is to ``line up'' one set with another. For example:
+\begin{align*}
+    &\{a, b, c\} \\
+    &\{1, 2, 3\}
+\end{align*}
+These sets are the same size because we can line them up. If we agree that
+$\{1, 2, 3\}$ has size $3$, then $\{a, b, c\}$ has size $3$ as well.
+
+This second way seems like a really stupid way to measure sets. Until you learn
+about infinite sets. You can't ``count'' infinite sets. It doesn't make any
+sense. You could say that every infinite set has size $\infty$, but you're
+going to miss a \emph{weird} thing that happens: infinite sets can have
+different sizes if you measure using the second way.
+
+Formally, we say that two sets $A$ and $B$ have the same cardinality if there
+exists a bijection between them (a way to line them up). That is, there's a
+function $f \colon A \to B$ such that:
+\begin{enumerate}
+    \item For all $b \in B$, there is some $a \in A$ such that $f(a) = b$ (surjectivity); and
+    \item If $f(a_1) = f(a_2)$, then $a_1 = a_2$ (injectivity).
+\end{enumerate}
+
+For example, $\{1, 2, 3, \dots\}$ has the same size as $\{2, 3, 4, \dots\}$,
+because we can define
+\begin{equation*}
+    f(n) = n + 1,
+\end{equation*}
+which is a bijection. (Exercise!)
+
+More interestingly, $\{1, 2, 3, \dots \}$ has the same size as $\{2, 4, 6, 8,
+\dots\}$. (Define $f(n) = 2n$.) That is, the even natural numbers have the same
+size as all the natural numbers themselves! The odds \emph{also} have the same
+size as the natural numbers. (Define $f(n) = 2n + 1$.) If we say that
+$\aleph_0$ is the ``size'' of $\{1, 2, 3, \dots\}$ then we have an equation
+like
+\begin{equation*}
+    \aleph_0 + \aleph_0 = \aleph_0.
+\end{equation*}
+That's weird. It's not so weird if we think of $\aleph_0$ as $\infty$, but
+there are \emph{other} infinities! Famously, $\mathbf{R}$ is
+\emph{uncountable}, in the sense that there is no bijection from $\mathbf{N}$
+to $\mathbf{R}$. (See Abbott.) But clearly $\mathbf{R}$ is bigger than
+$\mathbf{N}$\dots\ this is all very weird.
+
+I won't say anything more---that's what Abbott is for---but I'm sure that you
+have lots of questions about cardinality and homework. Fire away!
+
+% Hidden secrets.
+
+% I want everyone to have their own questions. If they don't, then I'm going to
+% walk us through a few exercises.
+
+% Algebraic numbers are countable.
+
+% 1.5.5.
+% 1.5.6. Hard!
+% 1.5.8. Very hard!
+
+% If lim_n (a(n) + b(n)) = 0, does lim_n a(n) = - lim_n b(n)?
+
+\subsection*{Promises}%
+\label{sub:promises}
+
+I forgot to prove something for you that I promised I would. To make it up to
+you, I'll show you something fancier to whet your appetite for things to come.
+(I won't talk about this at all during the workshop. This is just a bonus read
+if you're interested.)
+
+\begin{theorem}
+    If $S$ is a nonempty, bounded set of integers, then $\sup S$ is contained
+    in $S$.
+\end{theorem}
+
+This is actually a special case of a more general result. First, I need to
+define a new object.
+
+\begin{definition}
+    A point $x$ is a \emph{limit point} of a set $S$ if every
+    $\epsilon$-neighborhood contains a point of $S$ not equal to $x$.
+\end{definition}
+
+For example, $0$ is a limit point of $\{1, 1 / 2, 1 / 3, 1 / 4, \dots\}$.
+
+A nice fact about sups and infs is that they're either in the underlying set or
+limit points of it.
+
+\begin{proposition}
+    If $\sup S \notin S$, then $\sup S$ is a limit point of $S$.
+\end{proposition}
+
+\begin{proof}
+    For every $\epsilon > 0$, we can find some $s \in S$ such that $\sup S -
+    \epsilon < s < \sup S$, the last inequality being strict since $\sup S
+    \notin S$. Thus every $\epsilon$-neighborhood of $\sup S$ contains a point
+    of $S$ not equal to $\sup S$, so $\sup S$ is a limit point of $S$.
+\end{proof}
+
+\begin{corollary}
+    Let $S$ be a nonempty set, bounded from above, without limit points. Then
+    $\sup S \in S$.
+\end{corollary}
+
+\begin{proof}
+    Since $S$ has no limit points, we must have $\sup S \in S$ by the previous
+    proposition.
+\end{proof}
+
+Now Theorem~1 is easy!
+
+\begin{proof}[Proof of Theorem 1]
+    If $S$ is a set of integers, then $S$ has no limit points. (Every element
+    is at least $1$ away from every other element.) Thus, if $\sup S$ exists,
+    $\sup S \in S$ by the previous corollary.
+\end{proof}
+
+All of this is the application of general \emph{metric space theory} to
+$\set{R}$. It turns out that a lot of arguments we make about sequences, sets,
+and so on, generalize to other situations without any modifications. If this
+sounds interesting, go look up ``metric spaces.''
+
+\end{document}
