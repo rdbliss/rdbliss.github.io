@@ -1,0 +1,178 @@
+\documentclass[12pt]{article}
+\usepackage[noanswer]{exercise}
+\usepackage[]{amsthm}
+\usepackage[]{amsmath}
+\usepackage[]{enumitem}
+\usepackage[]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\let\set\mathbf
+
+% I don't like how the "exercise" package normally lays things out.
+% Feel free to copy this if you agree.
+\renewcommand{\ExerciseHeader}{\noindent\textbf{\ExerciseName\ \ExerciseHeaderNB}\ \ExerciseHeaderTitle\ \ExerciseHeaderOrigin\smallskip}
+\renewcommand{\ExerciseHeaderOrigin}{(\ExerciseOrigin)}
+\renewcommand{\AnswerHeader}{\bigskip\noindent\textbf{Solution \ExerciseHeaderNB}\newline}
+
+\title{Workshop Notes}
+\author{Robert Dougherty-Bliss}
+\date{10 February 2021}
+
+\begin{document}
+
+\maketitle
+
+% Adding the * gets rid of the section numbering.
+\section*{Logistics}%
+\label{sec:logistics}
+
+Nothing to say here.
+
+\section*{New stuff}%
+\label{sec:new_stuff}
+
+Since I last saw you, you learned more about sequences and got some new
+homework. We're going to talk about some sequence topics and a problem from the
+new homework, as well as any other questions you might have.
+
+\subsection*{Ces\`aro means}%
+\label{sub:cesaro_means}
+
+If we have a sequence $x(n)$, then we can take \emph{averages} of it by
+defining
+\begin{equation*}
+    y(n) = \frac{1}{n} \sum_{k = 1}^n x(k).
+\end{equation*}
+
+\textbf{Plausible statement:} If $x(n)$ converges, then the averages also
+converge to the same thing.
+
+This is true. It's called Ces\`aro summation. The proof illustrates one of the
+main techniques of analysis: Splitting a problem into two managable parts.
+
+\begin{theorem}
+    If $x(n) \to x$, then
+    \begin{equation*}
+        y(n) = \frac{1}{n} \sum_{k = 1}^n x(k) \to x.
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    We want to show that, given any $\epsilon > 0$, there exists some integer
+    $N$ such that
+    \begin{equation*}
+        |y(n) - x| < \epsilon
+    \end{equation*}
+    for $n > N$.
+
+    The trick about averaging is that we can break up a single $x$ into many
+    terms:
+    \begin{equation*}
+        y(n) - x = \frac{1}{n} \sum_{k = 1}^n x(k) - x = \frac{1}{n} \sum_{k = 1}^n (x(k) - x).
+    \end{equation*}
+    Therefore, by the triangle inequality,
+    \begin{equation*}
+        |y(n) - x| \leq \frac{1}{n} \sum_{k = 1}^n |x(k) - x|.
+    \end{equation*}
+    For ``large'' $k$, we have the ``sharp'' bound $|x(k) - k| < \epsilon$. For
+    ``small'' $k$, we only have the ``coarse'' fact that $|x(k) - k|$ is
+    bounded, since $x(k) - k \to 0$.
+
+    To make this idea rigorous, pick $M$ such that $|x(k) - x| \leq M$ for all
+    $k$ (by boundedness), and $N$ such that $|x(k) - x| < \epsilon$ for $k > N$
+    (by convergence). Then, for $n > N$,
+    \begin{align*}
+        |y(n) - x|
+            &\leq \frac{1}{n} \sum_{k = 1}^N |x(k) - x| + \frac{1}{n} \sum_{N < k \leq n} |x(k) - x| \\
+            &\leq \frac{NM}{n} + \frac{\epsilon (n - N)}{n} \\
+            &\leq \frac{NM}{n} + \epsilon.
+    \end{align*}
+    To get the right bound here, we need to turn that $NM / n$ into something
+    involving $\epsilon$. But $N$ and $M$ are both fixed relative to
+    $\epsilon$, so we can just require $n$ to be really big in comparison. That
+    is, let $N'$ be such that $N' > N$ and $NM / n < \epsilon$ for $n > N'$.
+    Then, for $n > N'$, the bound becomes
+    \begin{equation*}
+        |y(n) - x| \leq \epsilon + \epsilon = 2\epsilon.
+    \end{equation*}
+    Since $\epsilon$ was arbitrary, this is equivalent and shows that $y(n) \to
+    x$.
+\end{proof}
+
+\textbf{Interesting question:} If the averages converge, does $x(n)$ converge?
+
+\subsection*{Limits superior and inferior}%
+\label{sub:limits_superior_and_inferior}
+
+Not every sequence has a limit, but sometimes we want to talk about ``limits''
+even when they don't exist. For example, $a(n) = (-1)^n$ does not ``converge,''
+but it kind of has two ``pseudo-limits,'' $1$ and $-1$. These ``peusdo-limits''
+are made precise by the \emph{limits superior and inferior}.
+
+Given any sequence $a(n)$, there exists a number $\beta$ (possibly $\infty$)
+such that:
+\begin{enumerate}
+    \item For every $\epsilon > 0$, we have $a(n) < \beta + \epsilon$ eventually.
+
+    \item For every $\epsilon > 0$, there are infinitely many $n$ such that
+        $a(n)$ is in $(\beta - \epsilon, \beta]$.
+\end{enumerate}
+The number $\beta$ is called the \emph{limit superior} of $a(n)$, and we denote
+it by $\beta = \limsup_n a(n)$.
+
+The above properties actually uniquely define the limit superior, but they
+don't prove that it exists. Let's go through how Abbott does it. For now,
+suppose that $a(n)$ is a bounded sequence.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Prove that $y(n) = \sup \{a(k) \mid k \geq n\}$ converges. Let
+        $\limsup_n a(n) = \lim_n y(n)$.
+
+        % The sets are decreasing.
+
+    \item Give the analogous definition for $\liminf_n a(n)$.
+
+        % Switch to infs. Now the sets are increasing.
+
+    \item Show that $\liminf_n a(n) \leq \limsup_n a(n)$. [Hint: If $x(n)$ and
+        $y(n)$ converge and $x(n) \leq y(n)$, then $\lim_n x(n) \leq \lim_n
+        y(n)$. (You should prove this!)]
+
+        % The hint gives it away.
+
+    \item Show that $\lim_n a(n) = x$ iff $\liminf_n a(n) = x = \limsup_n
+        a(n)$. (You can't use the above properties I mentioned unless you prove
+        them!)
+
+        % Say that a(n) -> x. For every eps > 0, we have a(n) in (x - eps, x + eps)
+        % for large n. Thus sup {a(k) | k >= n} <= x + eps for large n, which gives
+        % limsup a(n) <= x + eps for every eps > 0. Thus limsup a(n) <= x.
+        % Same argument with flipped signs works for liminf.
+
+        % Conversely, say that limsup = liminf = x. For every eps > 0, we have
+        % sup {a(k) | k >= n} < x + eps eventually, so a(k) <= x + eps eventually.
+        % By an analogous argument, a(k) >= x - eps eventually, so a(k) is in
+        % [x - epsilon, x + epsilon] eventually.
+\end{enumerate}
+
+\begin{Exercise}
+    If $a(n) \leq b(n)$, we can't always say that $\lim_n a(n) \leq \lim_n
+    b(n)$, because the limits might not even exist. Show that
+    \begin{equation*}
+        \limsup_n a(n) \leq \limsup_n b(n)
+    \end{equation*}
+    and
+    \begin{equation*}
+        \liminf_n a(n) \leq \liminf_n b(n)
+    \end{equation*}
+    whenever $a(n) \leq b(n)$ for all $n$.
+\end{Exercise}
+
+\end{document}
