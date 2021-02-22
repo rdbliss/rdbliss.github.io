@@ -24,42 +24,43 @@ Education
 Research
 ========
 
+* *Tweaking the Beukers Integrals In Search of More Miraculous Irrationality Proofs A La Apery* \[[arXiv](https://arxiv.org/pdf/2101.08308)\]
+    * Robert Dougherty-Bliss, Christoph Koutschan, Doron Zeilberger
+
 * *Enumerating Restricted Dyck Paths with Context-Free Grammars* \[[arXiv](https://arxiv.org/pdf/2009.09061.pdf)\]
+    * AJ Bu, Robert Dougherty-Bliss
 
-* *Automatic Conjecturing and Proving of Exact Values of Some Infinite Families
-  of Infinite Continued Fractions*
-  \[[arXiv](https://arxiv.org/abs/2004.00090)\] (to appear in *The Ramanujan
-  Journal*)
+* *Automatic Conjecturing and Proving of Exact Values of Some Infinite Families of Infinite Continued Fractions* \[[arXiv](https://arxiv.org/abs/2004.00090)\]
+    * Robert Dougherty-Bliss, Doron Zeilberger
+    * To appear in *The Ramanujan Journal*
 
-* Honors thesis, *Expressive Complexity of Computer Algebra Systems* \[[pdf](/files/oglethorpe_thesis.pdf)\]
-    * Oglethorpe University.
-    * Quantifies the complexity of popular computer algebra systems.
+* *Expressive Complexity of Computer Algebra Systems* \[[pdf](/files/oglethorpe_thesis.pdf)\]
 
-* Summer fellow, Voting Rights Data Institute
-    * 2018–2019.
-    * MIT and Tufts University.
-    * Program on the mathematics of gerrymandering; produced
-      [GerryChain](https://github.com/mggg/GerryChain).
+* [GerryChain](https://github.com/mggg/GerryChain).
+    * Many contributors
+    * Created while a 2018 Summer fellow at the [Voting Rights Data Institute](https://sites.tufts.edu/vrdi/)
 
-* Student researcher, REU: Bridging Applied and Theoretical Mathematics
-    * 2016.
-    * Student researcher.
-    * Winthrop University.
-    * Program on cancer treatment models; produced paper for publication.
+* *Global dynamics of a cancer stem cell treatment model*
+    * Kristen Abernathy, Zachary Abernathy, Robert Dougherty-Bliss, Caleb Mayer, Heidi Whiteside
+    * Appeared in *International Journal of Dynamical Systems and Differential
+      Equations*
 
 Presentations
 =============
 
-2020
+2021
 ----
 
 - A Compartmental Analysis Model of Persistent Environmental Toxins
     - MAA Contributed Paper Session on Incorporating Realistic Applications of Mathematics Through Interdisciplinary Collaborations, I
 
+2020
+----
+
 - Automatic Conjecturing and Proving of Exact Values of Some Infinite Families of Infinite Continued Fractions
     - 2020 Fall AMS Eastern Sectional Meeting, Special Session on Combinatorics and Computing
 
-- [Automagic Inverse Continued Fraction Calculators(https://vimeo.com/463161063)]
+- [Automagic Inverse Continued Fraction Calculators](https://vimeo.com/463161063)
     - Experimental Mathematics Seminar, Rutgers University
 
 2019
