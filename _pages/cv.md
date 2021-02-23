@@ -24,6 +24,9 @@ Education
 Research
 ========
 
+* *Integral Recurrences from A to Z* \[[arXiv](https://arxiv.org/pdf/2102.10170.pdf)\]
+    * Robert Dougherty-Bliss
+
 * *Tweaking the Beukers Integrals In Search of More Miraculous Irrationality Proofs A La Apery* \[[arXiv](https://arxiv.org/pdf/2101.08308)\]
     * Robert Dougherty-Bliss, Christoph Koutschan, Doron Zeilberger
 
