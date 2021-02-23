@@ -25,26 +25,25 @@ Research
 ========
 
 * *Integral Recurrences from A to Z* \[[arXiv](https://arxiv.org/pdf/2102.10170.pdf)\]
-    * Robert Dougherty-Bliss
 
 * *Tweaking the Beukers Integrals In Search of More Miraculous Irrationality Proofs A La Apery* \[[arXiv](https://arxiv.org/pdf/2101.08308)\]
-    * Robert Dougherty-Bliss, Christoph Koutschan, Doron Zeilberger
+    * with Christoph Koutschan and Doron Zeilberger
 
 * *Enumerating Restricted Dyck Paths with Context-Free Grammars* \[[arXiv](https://arxiv.org/pdf/2009.09061.pdf)\]
-    * AJ Bu, Robert Dougherty-Bliss
+    * with AJ Bu
 
 * *Automatic Conjecturing and Proving of Exact Values of Some Infinite Families of Infinite Continued Fractions* \[[arXiv](https://arxiv.org/abs/2004.00090)\]
-    * Robert Dougherty-Bliss, Doron Zeilberger
-    * To appear in *The Ramanujan Journal*
+    * with Doron Zeilberger
 
 * *Expressive Complexity of Computer Algebra Systems* \[[pdf](/files/oglethorpe_thesis.pdf)\]
 
 * [GerryChain](https://github.com/mggg/GerryChain).
     * Many contributors
-    * Created while a 2018 Summer fellow at the [Voting Rights Data Institute](https://sites.tufts.edu/vrdi/)
+    * Created as a 2018 Summer fellow at the [Voting Rights Data
+      Institute](https://sites.tufts.edu/vrdi/)
 
 * *Global dynamics of a cancer stem cell treatment model*
-    * Kristen Abernathy, Zachary Abernathy, Robert Dougherty-Bliss, Caleb Mayer, Heidi Whiteside
+    * with Kristen Abernathy, Zachary Abernathy, Caleb Mayer, and Heidi Whiteside
     * Appeared in *International Journal of Dynamical Systems and Differential
       Equations*
 
