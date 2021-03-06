@@ -2,6 +2,8 @@
 title: Birthday Dominoes
 ---
 
+(*This post is dedicated to the most important Pisces birthday I know: EK.*)
+
 [*Dominos*](https://en.wikipedia.org/wiki/Dominoes) is a well-known game that
 no one actually knows how to play. A much more accessible game is *tiling
 dominoes*: I give you a grid, and you tell me if you can cover the whole thing
@@ -70,10 +72,8 @@ of which are kind of cheating. Board layout plays a big role.
 
 ## The heart board
 
-This blog post is in honor of the most important Pisces birthday I know: EK. To
-make this fitting, I propose that we think about tiling *the heart board*,
-something I invented for just this occasion. Here are the first four heart
-boards:
+I propose that we think about tiling *the heart board*, something I invented
+for just this occasion. Here are the first four heart boards:
 
 ![the heart boards](/images/filled.png)
 
