@@ -4,7 +4,7 @@ title: Birthday Dominoes
 
 (*This post is dedicated to the most important Pisces birthday I know: EK.*)
 
-[*Dominos*](https://en.wikipedia.org/wiki/Dominoes) is a well-known game that
+[*Dominoes*](https://en.wikipedia.org/wiki/Dominoes) is a well-known game that
 no one actually knows how to play. A much more accessible game is *tiling
 dominoes*: I give you a grid, and you tell me if you can cover the whole thing
 with dominoes.
@@ -22,11 +22,11 @@ Also easy! What about a 3x3 grid?
 ![3x3](/images/3x3-dom.jpg)
 
 It can't be done! Any grid you can cover with dominoes has to have an even
-number of squares, but a 3x3 grid has 25. We lose, through no fault of our own.
+number of squares, but a 3x3 grid has 9. We lose, through no fault of our own.
 
 This pretty much solves grids. You can tile them with dominoes if and only if
-they have an even number of squares. Nothing interesting happens here. But this
-gives us two natural questions to ask:
+they have an even number of squares. But this gives us two natural questions to
+ask:
 
 1. What if we used something other than dominoes?
 
@@ -34,10 +34,9 @@ gives us two natural questions to ask:
 
 ## Something other than dominoes
 
-Dominoes are pieces with two blocks
-"snapped" together. What if we used more than two blocks? This these exist, of
-course, and we call them *tri*-ominoes, *quad*-ominoes, *pent*-ominoes, and so
-on.
+Dominoes are pieces with two blocks "snapped" together. What if we used more
+than two blocks? This these exist, of course, and we call them *triominoes*,
+*quadominoes*, *pentominoes*, and in general, *polyominoes*.
 
 There is only "one" domino---two blocks stuck at their ends---but there are
 *three* triominoes!
@@ -49,7 +48,7 @@ triominoes:
 
 ![3x3-filled](/images/3x3-filled.jpg)
 
-The most famous kind of $k$-omino is the
+The most famous polyomino is the
 [*pentomino*](https://en.wikipedia.org/wiki/Pentomino), which has five blocks
 stuck together. These are commonly used for fun in brain teasers, if you're
 into that sort of thing.
@@ -83,13 +82,8 @@ two drawn by hand (kinda):
 ![first two hearts](/images/hand-hearts.jpg)
 
 The number of blocks in the first four hearts is 10, 43, 96, and 169,
-respectively. The hearts follow a pattern that generalizes to arbitrary sizes:
-The $n$th heart board has exactly
-
-$$10 n^2 + 3n - 3$$
-
-spaces in it. The full definition of the $n$th heart board is all $(x, y)$ such
-that
+respectively. The hearts follow a pattern that generalizes to arbitrary sizes.
+The $n$th heart board is the set of all $(x, y)$ such that
 
 - $0 \leq x < 2n$
 - $0 \leq y < 4n$
@@ -99,8 +93,14 @@ that
 
 and also the reflection of these points about the $y$-axis.
 
-There are lots of questions to ask here, but let's settle for just one: When
-can the heart board be tiled by dominoes?
+The $n$th heart board has exactly
+
+$$10 n^2 + 3n - 3$$
+
+spaces in it.
+
+There are lots of questions to ask about this board, but let's settle for just
+one: When can the heart board be tiled by dominoes?
 
 The first heart board cannot be tiled with dominoes. That's easy enough to see
 by hand because it only has 10 blocks:
@@ -141,17 +141,34 @@ first heart board:
 
 ![filled first heart](/images/hand-color.jpg)
 
-And here's the plot of the first four hearts again, this time colored in this
-alternating way:
+Every domino you put down must cover exactly one of each color. In the above
+picture, every domino covers one red and one blue tile. Once you place four
+dominoes, there are no blue tiles left, but two red tiles. We can't cover those
+pieces with dominoes! (This is what happened in our attempted tiling above.)
+
+This pattern persists for every odd heart board. Here is a plot of the first
+four hearts again, now colored in this alternating way:
 
 ![filled, alternating colored hearts](/images/filled-alt.png)
 
-So, why does this matter? Because every domino you put down must cover exactly
-one of each color. At some point you'll run out of one color but there will
-still be others left, and dominoes can't go in those spots. Thus it's
-impossible to tile these heart board with dominoes.
+The first and third heart boards above (left column) have exactly two more red
+squares than blue squares. The second and fourth (right column) actually have
+a *bigger* difference in the number of squares, but we already knew that they
+couldn't be colored with dominoes.
 
-I hope that this delivery on my promise of math art taught everyone something
-new. Here's to much more in the future!
+This pattern is somewhat tricky to prove, but once you know the idea it's just
+calculations. See [my math.SE
+question](https://math.stackexchange.com/questions/4051519/can-you-tile-a-heart-with-dominoes)
+for details.
+
+We've left lots of questions on the table that would be easy to answer. For
+example, what's the proportion of squares that are red versus blue in the even
+heart boards? A harder project: Let $L_n$ be a set of lines which intersect the
+square $[-n, n] \times [0, n]$ and each other. When is the region "inside"
+$L_n$ tileable with dominoes?
+
+I don't know the answer to any of these offhand, but they sound fun. I hope
+that this delivery on my promise of math art taught everyone something new.
+Here's to much more in the future!
 
 ![big hearts](/images/filled-alt-big.png)
