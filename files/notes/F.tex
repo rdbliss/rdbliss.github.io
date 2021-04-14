@@ -1,4 +1,5 @@
 \documentclass{rudin}
+\usepackage[]{hyperref}
 
 \title{Computing $F$}
 \author{Robert Dougherty-Bliss}
@@ -66,22 +67,5 @@ If we take $a = 4$ with $m = 2$, then $b = 6$, and we get
             &= \frac{840}{e} - 308.
 \end{align*}
 
-The below Maple programs are very useful for doing this:
-\begin{verbatim}
-# computeF - Compute the function F(a, b) when b / a = m - 1/2, where F is
-# defined on page 11 of https://arxiv.org/pdf/2004.00090.pdf
-
-# Falling factorial derivative: compute zD (zD - 1) ... (zD - (m - 1)) f
-ffD := (f, z, m) -> ifelse(m = 0, f, ffD(z * diff(f, z) - (m - 1) * f, z, m - 1)):
-
-S := (m, z) -> ffD(cosh(sqrt(z)) - add(z^k / (2 * k)!, k=0..m+1), z, m) / z^(m + 2):
-F := (a, b) -> 2 * (4 + 2 * (b / a + 1/2))! / (b / a + 1 / 2 + 2)! * subs(z = 4/a, S(b / a + 1/2, z)):
-
-# The original definition for comparison.
-# Try:
-#       Digits := 300:
-#       evalf(Forig(4, 6) - F(4, 6));
-Forig := (a, b) -> hypergeom([1], [3, 3 + b / a], 1 / a):
-
-\end{verbatim}
+Maple programs to do this exist here: \url{https://rwdb.xyz/files/programs/computeF}
 \end{document}
