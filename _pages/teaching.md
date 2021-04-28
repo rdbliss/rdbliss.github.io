@@ -16,3 +16,4 @@ author_profile: false
 - [Workshop notes 3 February](/files/SP2021/311/feb-3.pdf) ([LaTeX](/files/SP2021/311/feb-3.tex))
 - [Workshop notes 10 February](/files/SP2021/311/feb-10.pdf) ([LaTeX](/files/SP2021/311/feb-10.tex))
 - [Workshop notes 31 March](/files/SP2021/311/march-31.pdf)
+- [Workshop notes 28 April](/files/SP2021/311/apr-28.pdf)
