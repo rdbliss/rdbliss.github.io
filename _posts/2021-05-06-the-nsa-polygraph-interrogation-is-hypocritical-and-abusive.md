@@ -1,17 +1,18 @@
 ---
 title: The NSA polygraph interrogation is hypocritical and abusive
 ---
+
 > "You have deep-seated survival anxieties. And you don't like bigots, bullies,
-> snobs or hypocrites. Subconsciously there are many people you hate."
+> snobs, or hypocrites. Subconsciously there are many people you hate."
 >
-> "Consciously, sir, consciously," Yossarian corrected in an effort to help.
+> "Consciously, sir, consciously," Yossarian corrected in an effort to help. 
 
 I recently had the "good fortune" of being selected to participate in the
 National Security Agency's *Graduate Mathematics Program*, a supposedly
 prestigious program to attract young mathematicians. I have, in disgust,
 withdrawn my application.
 
-I am embarassed that I waited so long to make this decision. To repent for my
+I am embarrassed that I waited so long to make this decision. To repent for my
 cowardice, I have resolved to never apply to any position in the intelligence
 community, and hereby encourage students and colleagues to do the same.
 
@@ -87,7 +88,11 @@ manipulating you? How do you trust *anything* from their mouth, or anything
 that anyone tells you at any point in the security clearance process?
 
 The polygraph interrogation is a *charade* designed around trickery and
-intimidation. It is *unconscionable* to routinely place anyone in such a
-catch-22. Therefore I have adopted a policy that I encourage everyone to
-follow, no matter your opinion on the intelligence community: **Refuse
-polygraph interrogations.**
+intimidation. It seems that the only people that would pass are those *too
+stupid* to recognize that they are being toyed with, or those skilled enough to
+play the game convincingly. I suspect that it keeps smart, talented folk *out*
+more than good, honest folk *in*.
+
+It is *unconscionable* to routinely place anyone in such a catch-22. Therefore
+I have adopted a policy that I encourage everyone to follow, no matter your
+opinion on the intelligence community: **Refuse polygraph interrogations.**
