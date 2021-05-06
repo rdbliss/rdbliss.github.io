@@ -88,10 +88,11 @@ manipulating you? How do you trust *anything* from their mouth, or anything
 that anyone tells you at any point in the security clearance process?
 
 The polygraph interrogation is a *charade* designed around trickery and
-intimidation. It seems that the only people that would pass are those *too
-stupid* to recognize that they are being toyed with, or those skilled enough to
-play the game convincingly. I suspect that it keeps smart, talented folk *out*
-more than good, honest folk *in*.
+intimidation. It is based on pseudo-science, bluffing, and deception. It does
+not detect lies; it elicits confessions. It seems that the only people that
+would pass are those *too stupid* to recognize that they are being toyed with,
+or those skilled enough to play the game convincingly. I suspect that it keeps
+more smart, talented folk *out* than good, honest folk *in*.
 
 It is *unconscionable* to routinely place anyone in such a catch-22. Therefore
 I have adopted a policy that I encourage everyone to follow, no matter your
