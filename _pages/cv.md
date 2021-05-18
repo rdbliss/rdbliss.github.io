@@ -123,38 +123,6 @@ Presentations
     * Talk exploring possible Jewish themes in *Don Quixote* and in the life of
       Cervantes.
 
-Teaching
-========
-
-2021
-----
-
-- Introduction to Real Analysis I, Math 311 (Rutgers TA)
-
-2020
-----
-
-- Calculus I for the Life and Social Sciences, Math 135 (Rutgers TA)
-    - [Evaluation](/files/fall2020-135-eval.pdf)
-    - [Midcourse survey](/files/fall2020-135-midcourse.pdf)
-
-2018
-----
-
-* Oglethorpe University
-    * Supplemental instructor for MAT-120 (Introduction to Functions) and MAT-234
-      (Calculus III).
-    * University tutor in mathematics and computer science.
-
-2017
-----
-
-* Oglethorpe University
-    * Supplemental instructor for MAT-120 (Introduction to Functions) and
-      MAT-241 (Proof and Logic).
-    * University tutor in mathematics and computer science.
-    * Summer supplemental instructor for MAT-120 and MAT-130.
-
 Programming languages and computers
 ===================================
 
