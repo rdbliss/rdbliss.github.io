@@ -2,10 +2,12 @@
 title: The NSA polygraph interrogation is hypocritical and abusive
 ---
 
-> "You have deep-seated survival anxieties. And you don't like bigots, bullies,
-> snobs, or hypocrites. Subconsciously there are many people you hate."
+> Resolve to be honest at all events; and if, in your own judgement, you cannot
+> be an honest lawyer, resolve to be honest without being a lawyer. Choose some
+> other occupation, rather than one in the choosing of which you do, in
+> advance, consent to be a knave.
 >
-> "Consciously, sir, consciously," Yossarian corrected in an effort to help. 
+> — *Abraham Lincoln*, "Notes on the Practice of Law"
 
 I recently had the "good fortune" of being selected to participate in the
 National Security Agency's *Graduate Mathematics Program*, a supposedly
@@ -27,11 +29,12 @@ NSA. See:
 - the *Just Mathematics Collective*'s recent ["Mathematics Beyond Secrecy and
   Surveillance"](https://www.justmathematicscollective.net/nsa_statement.html).
 
-I am not anti-NSA. In fact, I felt quite patriotic about devoting time to the
-agency. I acknowledge the ethical concerns surrounding the NSA, but also its
-strategic necessity.
+However, my gripe is different. I am not anti-NSA. In fact, I felt quite
+patriotic about devoting time to the agency. I acknowledge the ethical concerns
+surrounding the NSA, but also its strategic necessity. I would have proudly
+worked there.
 
-My gripe is different: The NSA *lies* to their employees and applicants, then
+My gripe is that the NSA *lies* to their employees and applicants, then
 requires them to practice *doublethink* sufficiently well to ignore the lies.
 
 During your security clearance process, should you be so "lucky" to reach this
@@ -87,12 +90,20 @@ how do you ignore that you are now playing a game? That the interrogator is
 manipulating you? How do you trust *anything* from their mouth, or anything
 that anyone tells you at any point in the security clearance process?
 
-The polygraph interrogation is a *charade* designed around trickery and
-intimidation. It is based on pseudo-science, bluffing, and deception. It does
-not detect lies; it elicits confessions. It seems that the only people that
-would pass are those *too stupid* to recognize that they are being toyed with,
-or those skilled enough to play the game convincingly. I suspect that it keeps
-more smart, talented folk *out* than good, honest folk *in*.
+This is but a single moment from my polygraph experience. I sat for a total of
+five exams, which totals around twenty hours of interrogation. Each of my five
+interrogators proved that every hour, every minute, and every second is an
+opportunity for trickery and intimidation. You will be uncomfortable, you will
+be tired, and you will probably have strong emotions at some point during the
+process. The interrogator does not care. They know that you feel the pressure,
+and wouldn't you feel better if you just told them what was on your mind?
+
+The polygraph is a *charade*. It is based on pseudo-science, bluffing, and
+deception. It does not detect lies; it elicits confessions. It seems that the
+only people that would pass are those *too stupid* to recognize that they are
+being toyed with, or those skilled enough to play the game convincingly. I
+suspect that it keeps more smart, talented folk *out* than good, honest folk
+*in*.
 
 It is *unconscionable* to routinely place anyone in such a catch-22. Therefore
 I have adopted a policy that I encourage everyone to follow, no matter your
