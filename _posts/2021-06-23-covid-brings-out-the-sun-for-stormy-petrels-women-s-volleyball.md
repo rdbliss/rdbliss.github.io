@@ -9,17 +9,36 @@ everyone, from the NBA to your local rec league, just *barely* made their
 seasons work. All this disruption produced some amazingly unlikely outcomes,
 one of which I'd like to explore here.
 
-The Oglethorpe Stormy Petrels, my alma mater, have a *terrible* women's
-volleyball team. I mean *atrocious*. They have not had a winning season in the
-past ten years. In that time, they have won only 16 out of 127 possible
-in-conference games, and never more than 3 in a single season. This produces
-a *12.6%* in-conference win percentage. New coaches, new players, new staff,
-it's always the same. They are the absolute bottom of the barrel of the
+I went to my first Oglethorpe women's volleyball game on September 2, 2017. It
+was the second game of the 2017 Stormy Petrel Challenge against Illinois Tech.
+The Petrels fell to an early 0-2 deficit, and the third set seemed lost when
+they found themselves down 17-22. Jacoby Sims scored three quick kills to force
+an Illinois timeout at 20-22, and the Petrels rallied to a 26-24 victory of
+a kill by Ashlee Tolbert. They went on to win the next two sets by 5 and
+3 points, respectively, completing the 3-2 comeback. The game was fast,
+explosive, and tense. I was hooked immediately.
+
+The Petrels would go on to a 13 game losing streak. They would only win two
+more games that year, ending the season at 4-21 overall, and an even worse 2-12
+in conference play.
+
+You see, the Stormy Petrels set my expectations too high with that first game.
+They are a *terrible* women's volleyball team. I mean *atrocious*. They have
+not had a winning season in the past ten years. In those ten years, they have
+won only 16 out of 127 possible in-conference games, and never more than 3 in
+a single season. Whether we bring in new coaches, new players, or new staff,
+it's always the same. The Petrels are the absolute bottom of the barrel of the
 Southern Athletic Association (SAA), and they have been for a long time.
+
+And yet, I just can't quit them. Even though they're awful, even though no one
+goes to the games, even though I graduated a few years ago, I still hold out
+hope that maybe, just maybe, *this* year is the year they turn it around. Well,
+finally, *this* year came to pass, and the Stormy Petrels were not a *complete*
+joke.
 
 | Season     | Oglethorpe Conference record |
 | ------------------------------ |
-| 2020-2021 | 6-5 |
+| **2020-2021** | **6-5** |
 | 2019-2020 | 0-16 |
  | 2018-2019 | 2-12 |
  | 2017-2018 | 2-12 |
@@ -31,28 +50,20 @@ Southern Athletic Association (SAA), and they have been for a long time.
  | 2011-2012 | 3-11 |
  | 2010-2011 | 1-14 |
 
-And yet, I just can't quit them. I've been hooked since my first volleyball
-game. Even though they're awful, even though no one goes to the games, even
-though I've been gone for a few years, I still hold out hope that maybe, just
-maybe, *this* year is the year they turn it around. Well, finally, *this* year
-came to pass, and the Stormy Petrels were not a *complete* joke.
+In a shortened, conference-only season, with head-coach Anna Braun only in her
+second year, the Stormy Petrels went **6-5**. You may look at that and say,
+"Robert, that's only 55%. It took a shortened season, a COVID-depleted
+conference, and over ten years years to *barely* win half of their games?" And
+yes, you would be correct! But this is their best percentage, first winning
+season, and best conference ranking since joining the SAA. For Oglethorpe, 6-5
+is as good as winning the SAA title.
 
-In a shortened, conference-only season, the Stormy Petrels went 6-5. This is
-their best percentage, first winning season, and best conference ranking in the
-past ten years. You may look at 6-5 and say, "Robert, that's only a 55% season.
-It took a shortened season, a COVID-depleted conference, and ten years to
-*barely* win half of their games." And while, yes, you would be correct, to to
-really explain *how exciting* it is that the women went 6-5, we need some
-serious context.
+To really explain how *amazing* this is, I want to provide some context. To do
+that, we need to take a detour into the world of analytics.
 
 # Introducing: *Elo*
 
-For some context as to how awful the Stormy Petrels are, we need to look at the
-*other* teams in the SAA. While we could look at their records, national
-rankings, or postseason success, there is another, better way to proceed:
-*Elo*.
-
-[Elo](https://en.wikipedia.org/wiki/Elo_rating_system) is a numerical system
+[*Elo*](https://en.wikipedia.org/wiki/Elo_rating_system) is a numerical system
 used to rate the strength of teams. Arpad Elo first introduced it to rank the
 strength of chess players, but it is easily adaptable to any head-to-head
 competition. Here's how it works.
@@ -62,8 +73,7 @@ and weaker teams have lower scores. Your score increases if you win a game, and
 decreases if you lose a game. Two teams with equal scores have even odds of
 winning, having a score of 70 points higher gives you about a 60% chance of
 winning, and having a score of 150 points higher gives you about a 70% chance
-of winning. The scale isn't linear, but you can get a good sense for how it
-works after some examples.
+of winning.
 
 | Elo difference | Win probability for stronger team |
 |----------------|-----------------------------------|
@@ -72,14 +82,6 @@ works after some examples.
 |150|70%|
 |300|85%|
 |600|97%|
-
-If an average team (Elo 1500) met an above average team (Elo 1600), we'd
-predict that the above average team has about a 64% chance to win. If an
-average team (Elo 1500) met a *below* average team (Elo 1400), we'd predict
-that the average team *also* has a 64% chance to win. **Elo only cares about
-*relative* strength, not *absolute* strength.** Now, if a below average team
-(Elo 1400) met an above average team (Elo 1600), we'd give the stronger team
-a nearly 76% chance to win.
 
 Like I said, you get a higher Elo score by winning games, and a lower score by
 losing games. How much your score changes depends on the following ideas:
@@ -93,9 +95,26 @@ losing games. How much your score changes depends on the following ideas:
 3. A weak team beating a strong team gets a *big* score bump. (This is the most
    surprising situation.)
 
-The exact score chance depends on the implementation of Elo. What never changes
-is that Elo is a zero-sum game: The loser's score goes down the exact amount
-the winner's goes up.
+The "base change" is 40 Elo points. That's the most you could increase or
+decrease after a game. You get a proportion of that that depends on your odds
+of winning or losing the game. If you win, then you get 40 times the
+probability that you would lose. If you lose, then you lose 40 times the
+probability that you would win. For the other side, Elo is a zero-sum game: The
+loser's score goes down the exact amount the winner's goes up.
+
+Let's see some examples.
+
+If an average team (Elo 1500) met another average team (Elo 1500), we'd predict
+that both teams have a 50% chance to win. The winner had a 50% of losing, so
+they would get 20 points (Elo 1520) and the loser would fall 20 points (Elo
+1480).
+
+If an average team (Elo 1500) met an above average team (Elo 1600), we'd
+predict that the above average team has about a 64% chance to win. If the
+stronger team won, then they would only get 36% of 40, or 14 points (Elo 1614),
+while the average team would only fall 14 points (Elo 1496). If, on the other
+hand, the *average* team won, then they would get 64% of 40, or 26 points (Elo
+1526), while the stronger team would fall 26 points (Elo 1574).
 
 With this description of Elo out of the way, let's see the main highlight.
 
@@ -109,11 +128,11 @@ them are plotted above. The graph shows a very clear divide into three groups:
    have always been at least average, and have been moderately to very strong
    in recent years.
 
-2. **The declining fighters,** Centre and Millsaps. These teams were good
-   a while ago, but have been in a sharp decline recently. They are firmly below average.
+2. **The declining giants,** Centre and Millsaps. These teams were good a while
+   ago, but have been in a sharp decline recently. They are firmly below
+   average.
 
-3. **The Stormy Petrels.** Oglethope has been very weak for the *entire* period
-   in question. They are, without a doubt, the dregs of the SAA.
+3. **The Stormy Petrels** are, without a doubt, the dregs of the SAA.
 
 Now that we have some context for how bad the Stormy Petrels are, 6-5 doesn't
 sound so bad, does it? Why, after looking at that graph, 6-5 is like winning
@@ -132,24 +151,24 @@ produced a lot more.
 # A postseason shocker: simulating with Elo
 
 The *real* shocker is that 6-4 was enough to put the Stormy Petrels into the
-SAA playoffs as the fourth best team. (The playoffs this year were different,
-since only the best four teams played.) However, this scenario was fairly
-predictable, and we can quantify that by *simulating* the 2020-2021 season.
+SAA playoffs with their first top-4 finish *ever*. (Only the top-4 teams played
+this year.) We can quantify how surprising this was by *simulating* the
+2020-2021 season.
 
 Once we know the Elo score of two teams, we can simulate a matchup between them
 by flipping a biased coin. If Elo says the stronger team has a 75% chance to
 win, then we flip a coin that comes up heads 75% of the time, and tails 25% of
 the time. If we see heads, then the stronger team "won," and otherwise they
-lost. Proceeding in this way, we can simulate an entire season of games as long
-as we know the Elo scores of the teams involved to a sufficiently high
+"lost." Proceeding in this way, we can simulate an entire season of games as
+long as we know the Elo scores of the teams involved to a sufficiently high
 accuracy.
 
 So, I did that. I simulated the 2020-2021 season 10,000 times and figured out
-how likely it was that each team made the playoffs. Oglethorpe always had
-around a 20% chance, which is probably their best chance at finishing top-4 in
-a *long* time. The three top-dogs (Berry, Birmingham-Southern, Hendrix) also
-made the playoffs, so Oglethorpe had to leap over the middle-of-the-pack teams
-(Centre, Rhodes, Millsaps) to get fourth place.
+how likely it was that each team made the playoffs. Oglethorpe had around a 20%
+chance, which is probably their best chance at finishing top-4 in a *long*
+time. The three top-dogs (Berry, Birmingham-Southern, Hendrix) all made the
+playoffs, so Oglethorpe had to leap over the middle-of-the-pack teams (Centre,
+Rhodes, Millsaps) to get fourth place.
 
 | Team | Probability of top-4 SAA finish |
 |----------------------------------------|
@@ -178,10 +197,10 @@ probability that Oglethorpe would win the SAA title was exceedingly small.
 
 # What's next for the Stormy Petrels?
 
-Hot off their highest finish in a decade, where do the Stormy Petrels go? While
-we don't know for sure, all the machinery I've laid out here will enable us to
+Hot off their highest finish in a decade, where do the Stormy Petrels go? We
+don't know for sure, but all the machinery I've laid out here will enable us to
 make predictions about the next season. As soon as the full schedule is
-released I'll be churning out these predictions.
+released I'll be churning those out.
 
 My mind tells me that the likeliest outcome is for Oglethorpe to have
 a terrible year, like we always do. My heart tells me that we're going to win
