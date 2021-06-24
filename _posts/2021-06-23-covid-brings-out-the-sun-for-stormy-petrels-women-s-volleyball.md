@@ -14,11 +14,12 @@ volleyball team. I mean *atrocious*. They have not had a winning season in the
 past ten years. In that time, they have won only 16 out of 127 possible
 in-conference games, and never more than 3 in a single season. This produces
 a *12.6%* in-conference win percentage. New coaches, new players, new staff,
-it's always the same: They are the absolute bottom of the barrel of the
+it's always the same. They are the absolute bottom of the barrel of the
 Southern Athletic Association (SAA), and they have been for a long time.
 
-| Season     | Conference record |
+| Season     | Oglethorpe Conference record |
 | ------------------------------ |
+| 2020-2021 | 6-5 |
 | 2019-2020 | 0-16 |
  | 2018-2019 | 2-12 |
  | 2017-2018 | 2-12 |
