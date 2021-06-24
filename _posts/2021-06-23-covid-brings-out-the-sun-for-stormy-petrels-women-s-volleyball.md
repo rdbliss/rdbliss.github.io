@@ -5,8 +5,8 @@ hide: true
 
 The 2020-2021 season was strange for sports at all levels. Shortened seasons,
 cancelled games, and a surplus of "Out (COVID)" on injury reports. It felt like
-everyone, from the amazing NBA bubble to your local rec league grappling with
-mask restrictions, just *barely* made their seasons work.
+everyone, from the NBA to your local rec league, just *barely* made their
+seasons work.
 
 All this disruption produced some amazingly unlikely outcomes, one of which I'd
 like to explore here.
