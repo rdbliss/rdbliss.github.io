@@ -123,7 +123,7 @@ winning season?
 ![Elo redux](/images/elo2.png)
 
 Wow! Oglethorpe's Elo *skyrocketed* after this barely-winning year. The wins
-came from Centre (x2), Rhodes, and Millsaps. The losses came from
+came from Centre (x2), Hendrix, Rhodes, and Millsaps (x2). The losses came from
 Birmingham-Southern (x3), Rhodes, and Hendrix. Except for Rhodes, which nearly
 cancels out, the losses were to teams so overpowered it barely lowered
 Oglethorpe's rating. The wins, since Oglethorpe had such a meagre rating,
