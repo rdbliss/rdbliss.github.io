@@ -117,8 +117,8 @@ them are plotted above. The graph shows a very clear divide into three groups:
 
 Now that we have some context for how bad the Stormy Petrels are, 6-5 doesn't
 sound so bad, does it? Why, after looking at that graph, 6-5 is like winning
-the SAA championship! How does Oglethorpe's Elo look this miraculous winning
-season?
+the SAA championship! How does Oglethorpe's Elo look after this miraculous
+winning season?
 
 ![Elo redux](/images/elo2.png)
 
