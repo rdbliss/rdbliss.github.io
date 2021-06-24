@@ -10,25 +10,26 @@ seasons work. All this disruption produced some amazingly unlikely outcomes,
 one of which I'd like to explore here.
 
 I went to my first Oglethorpe women's volleyball game on September 2, 2017. It
-was the second game of the 2017 Stormy Petrel Challenge against Illinois Tech.
-The Petrels fell to an early 0-2 deficit, and the third set seemed lost when
-they found themselves down 17-22. Jacoby Sims scored three quick kills to force
-an Illinois timeout at 20-22, and the Petrels rallied to a 26-24 victory of
-a kill by Ashlee Tolbert. They went on to win the next two sets by 5 and
-3 points, respectively, completing the 3-2 comeback. The game was fast,
-explosive, and tense. I was hooked immediately.
+was the second game of the 2017 Stormy Petrel Challenge, and the Petrel's took
+on Illinois Tech. The Petrels fell to an early 0-2 deficit, and the third set
+seemed lost when they found themselves down 17-22. Jacoby Sims scored three
+quick kills to force an Illinois timeout at 20-22, and the Petrels rallied to
+a 26-24 victory off a kill by Ashlee Tolbert. They won the next two sets by
+5 and 3 points, respectively, completing the 3-2 comeback. The game was fast,
+explosive, and tense. I was hooked, and couldn't wait to see what the rest of
+the season would bring.
 
-The Petrels would go on to a 13 game losing streak. They would only win two
-more games that year, ending the season at 4-21 overall, and an even worse 2-12
-in conference play.
+That first game set my expectations too high. The Petrels would go on to a 13
+game losing streak. They ended the season 4-21 overall, and 2-12 in conference
+play.
 
-You see, the Stormy Petrels set my expectations too high with that first game.
-They are a *terrible* women's volleyball team. I mean *atrocious*. They have
-not had a winning season in the past ten years. In those ten years, they have
-won only 16 out of 127 possible in-conference games, and never more than 3 in
-a single season. Whether we bring in new coaches, new players, or new staff,
-it's always the same. The Petrels are the absolute bottom of the barrel of the
-Southern Athletic Association (SAA), and they have been for a long time.
+You see, the Stormy Petrels are a *terrible* women's volleyball team. I mean
+*atrocious*. They have not had a winning season in the past ten years. In those
+ten years, they have won only 16 out of 127 possible in-conference games, and
+never more than 3 in a single season. Whether we bring in new coaches, new
+players, or new staff, it's always the same. The Petrels are the absolute
+bottom of the barrel of the Southern Athletic Association (SAA), and they have
+been for a long time.
 
 And yet, I just can't quit them. Even though they're awful, even though no one
 goes to the games, even though I graduated a few years ago, I still hold out
@@ -170,25 +171,25 @@ time. The three top-dogs (Berry, Birmingham-Southern, Hendrix) all made the
 playoffs, so Oglethorpe had to leap over the middle-of-the-pack teams (Centre,
 Rhodes, Millsaps) to get fourth place.
 
-| Team | Probability of top-4 SAA finish |
+| Team | Probability of top-4 SAA finish (bold = actual) |
 |----------------------------------------|
-|Berry|                  97.92% |
-|Birmingham-Southern|    96.78% |
-|Hendrix|                85.73% |
+|**Berry**|                  **97.92%** |
+|**Birmingham-Southern**|    **96.78%** |
+|**Hendrix**|                **85.73%** |
 |Millsaps|               53.29% |
 |Centre|                 26.08% |
 |Rhodes|                 21.09% |
-|Oglethorpe|             19.11% |
+|**Oglethorpe**|             **19.11%** |
 
 A 20% event happens, on average, once every five times, so it isn't so crazy
 that Oglethorpe would make the top-4. Of course, going any further than the
 first round would probably require beating a big-dog team, and accordingly the
 probability that Oglethorpe would win the SAA title was exceedingly small.
 
-| Team | Probability of winning SAA title |
+| Team | Probability of winning SAA title (bold = actual) |
 |------------------------------------------|
 |Berry|                  38.73%|
-|Birmingham-Southern|    34.09%|
+|**Birmingham-Southern**|    **34.09%**|
 |Hendrix|                18.22%|
 |Millsaps|               4.17%|
 |Centre|                 2.72%|
@@ -197,10 +198,11 @@ probability that Oglethorpe would win the SAA title was exceedingly small.
 
 # What's next for the Stormy Petrels?
 
-Hot off their highest finish in a decade, where do the Stormy Petrels go? We
-don't know for sure, but all the machinery I've laid out here will enable us to
-make predictions about the next season. As soon as the full schedule is
-released I'll be churning those out.
+Hot off their highest finish in a decade, where do the Stormy Petrels go? Will
+the new coach lead us to glory? Will she crash and burn how all the rest have?
+We don't know for sure, but all the machinery I've laid out here will enable us
+to make predictions about the next season. As soon as the schedule is released
+I'll be churning those out.
 
 My mind tells me that the likeliest outcome is for Oglethorpe to have
 a terrible year, like we always do. My heart tells me that we're going to win
