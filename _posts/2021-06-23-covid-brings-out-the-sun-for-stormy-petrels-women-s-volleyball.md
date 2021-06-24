@@ -6,18 +6,16 @@ hide: true
 The 2020-2021 season was strange for sports at all levels. Shortened seasons,
 cancelled games, and a surplus of "Out (COVID)" on injury reports. It felt like
 everyone, from the NBA to your local rec league, just *barely* made their
-seasons work.
-
-All this disruption produced some amazingly unlikely outcomes, one of which I'd
-like to explore here.
+seasons work. All this disruption produced some amazingly unlikely outcomes,
+one of which I'd like to explore here.
 
 The Oglethorpe Stormy Petrels, my alma mater, have a *terrible* women's
-volleyball team. They have not had a winning season in the past ten years. In
-that time, they have won only 16 out of 127 possible in-conference games, and
-never more than 3 in a single season. This produces a *12.6%* in-conference win
-percentage. New coaches, new players, new staff, it's always the same: They are
-the absolute bottom of the barrel of the Southern Athletic Association (SAA),
-and they have been for a long time.
+volleyball team. I mean *atrocious*. They have not had a winning season in the
+past ten years. In that time, they have won only 16 out of 127 possible
+in-conference games, and never more than 3 in a single season. This produces
+a *12.6%* in-conference win percentage. New coaches, new players, new staff,
+it's always the same: They are the absolute bottom of the barrel of the
+Southern Athletic Association (SAA), and they have been for a long time.
 
 | Season     | Conference record |
 | ------------------------------ |
