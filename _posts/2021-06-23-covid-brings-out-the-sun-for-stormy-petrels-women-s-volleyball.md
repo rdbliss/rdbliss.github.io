@@ -5,37 +5,35 @@ hide: true
 
 The 2020-2021 season was strange for sports at all levels. Shortened seasons,
 cancelled games, and a surplus of "Out (COVID)" on injury reports. It felt like
-everyone, from the NBA to your local rec league, just *barely* made their
-seasons work. All this disruption produced some amazingly unlikely outcomes,
-one of which I'd like to explore here.
+everyone, from the NBA to your local rec league, just *barely* got through
+their seasons. This disruption produced some unlikely outcomes, one of which
+I'd like to explore here.
 
-I went to my first Oglethorpe women's volleyball game on September 2, 2017. It
-was the second game of the 2017 Stormy Petrel Challenge, and the Petrel's took
-on Illinois Tech. The Petrels fell to an early 0-2 deficit, and the third set
-seemed lost when they found themselves down 17-22. Jacoby Sims scored three
-quick kills to force an Illinois timeout at 20-22, and the Petrels rallied to
-a 26-24 victory off a kill by Ashlee Tolbert. They won the next two sets by
-5 and 3 points, respectively, completing the 3-2 comeback. The game was fast,
-explosive, and tense. I was hooked, and couldn't wait to see what the rest of
-the season would bring.
+I went to my first Oglethorpe women's volleyball game on September 2, 2017. The
+Petrel's were taking on Illinois Team in the second game of the 2017 Stormy
+Petrel Challenge. They fell to an early 0-2 deficit, and the third set seemed
+lost when they found themselves down 17-22. Jacoby Sims scored three quick
+kills to force an Illinois timeout at 20-22, and the Petrels rallied to a 26-24
+victory. They won the next two sets by 5 and 3 points, respectively, completing
+the 3-2 comeback. The game was fast, explosive, and tense. I was hooked.
+I couldn't wait to see the rest of the season.
 
-That first game set my expectations too high. The Petrels would go on to a 13
-game losing streak. They ended the season 4-21 overall, and 2-12 in conference
-play.
+That first game set my expectations too high. After the Illinois Tech game, the
+Petrels went on a 13 game losing streak. They ended the season 4-21 overall,
+and 2-12 in conference play.
 
 You see, the Stormy Petrels are a *terrible* women's volleyball team. I mean
 *atrocious*. They have not had a winning season in the past ten years. In those
-ten years, they have won only 16 out of 127 possible in-conference games, and
-never more than 3 in a single season. Whether we bring in new coaches, new
-players, or new staff, it's always the same. The Petrels are the absolute
-bottom of the barrel of the Southern Athletic Association (SAA), and they have
-been for a long time.
+ten years, they went 16-127 in conference play, and never won more than 3 games
+in a single season. Whether we bring in new coaches, new players, or new staff,
+it's always the same. The Petrels are the bottom of the barrel of the Southern
+Athletic Association, and they have been for a long time.
 
 And yet, I just can't quit them. Even though they're awful, even though no one
-goes to the games, even though I graduated a few years ago, I still hold out
-hope that maybe, just maybe, *this* year is the year they turn it around. Well,
-finally, *this* year came to pass, and the Stormy Petrels were not a *complete*
-joke.
+goes to the games, and even though I don't even live in Georgia anymore,
+I still hold out hope that maybe, just maybe, *this* is the year they turn it
+around. Well, finally, *this* year came to pass, and the Stormy Petrels were
+not a *complete* joke.
 
 | Season     | Oglethorpe Conference record |
 | ------------------------------ |
@@ -51,16 +49,16 @@ joke.
  | 2011-2012 | 3-11 |
  | 2010-2011 | 1-14 |
 
-In a shortened, conference-only season, with head-coach Anna Braun only in her
-second year, the Stormy Petrels went **6-5**. You may look at that and say,
-"Robert, that's only 55%. It took a shortened season, a COVID-depleted
-conference, and over ten years years to *barely* win half of their games?" And
-yes, you would be correct! But this is their best percentage, first winning
-season, and best conference ranking since joining the SAA. For Oglethorpe, 6-5
-is as good as winning the SAA title.
+In a shortened, conference-only season, second-year coach Anna Braun led the
+Stormy Petrels to a **6-5** finish. You may look at that and say, "Robert,
+that's only 55%. It took a shortened season, a COVID-depleted conference, and
+over ten years years to *barely* win half of their games?" And while, yes, you
+would be correct, this is the Petrel's best percentage, first winning season,
+and best conference ranking since joining the SAA. For Oglethorpe, 6-5 is as
+good as winning the title.
 
-To really explain how *amazing* this is, I want to provide some context. To do
-that, we need to take a detour into the world of analytics.
+To explain how amazing this is, I want to provide some context. First we need
+to take a detour into the world of analytics.
 
 # Introducing: *Elo*
 
@@ -117,27 +115,28 @@ while the average team would only fall 14 points (Elo 1496). If, on the other
 hand, the *average* team won, then they would get 64% of 40, or 26 points (Elo
 1526), while the stronger team would fall 26 points (Elo 1574).
 
-With this description of Elo out of the way, let's see the main highlight.
+With this description of Elo out of the way, let's see the history of the SAA
+in a graph.
 
 ![Elo scores](/images/elo.png)
 
 Using data compiled from the 2012-2013 season to the 2019-2020 season, I have
-computed the Elo scores of every women's volleyball team in the SAA. Six of
-them are plotted above. The graph shows a very clear divide into three groups:
+computed the Elo scores of every women's volleyball team in the SAA and plotted
+them above. (I left out Sewanee because they didn't play in the 2020-2021
+season.) The graph shows a clear divide into three groups:
 
 1. **The pack leaders,** Berry, Birmingham-Southern, and Hendrix. These teams
    have always been at least average, and have been moderately to very strong
    in recent years.
 
-2. **The declining giants,** Centre and Millsaps. These teams were good a while
-   ago, but have been in a sharp decline recently. They are firmly below
-   average.
+2. **The middling runts,** Rhodes, Centre, and Millsaps. These teams were
+   decent a while ago, but have been in a sharp decline recently. They are
+   firmly below average.
 
-3. **The Stormy Petrels** are, without a doubt, the dregs of the SAA.
+3. **The Stormy Petrels,** the dregs of the SAA.
 
 Now that we have some context for how bad the Stormy Petrels are, 6-5 doesn't
-sound so bad, does it? Why, after looking at that graph, 6-5 is like winning
-the SAA championship! How does Oglethorpe's Elo look after this miraculous
+sound so bad, does it? How does Oglethorpe's Elo look after this miraculous
 winning season?
 
 ![Elo redux](/images/elo2.png)
@@ -145,9 +144,9 @@ winning season?
 Wow! Oglethorpe's Elo *skyrocketed* after this barely-winning year. The wins
 came from Centre (x2), Hendrix, Rhodes, and Millsaps (x2). The losses came from
 Birmingham-Southern (x3), Rhodes, and Hendrix. Except for Rhodes, which nearly
-cancels out, the losses were to teams so overpowered it barely lowered
+cancels out, the losses were to teams so overpowered they barely lowered
 Oglethorpe's rating. The wins, since Oglethorpe had such a meagre rating,
-produced a lot more.
+produced much more.
 
 # A postseason shocker: simulating with Elo
 
