@@ -1,6 +1,5 @@
 ---
 title: COVID Brings Out the Sun for Stormy Petrels Women's Volleyball
-hide: true
 ---
 
 The 2020-2021 season was strange for sports at all levels. Shortened seasons,
