@@ -17,16 +17,17 @@ victory. They won the next two sets by 5 and 3 points, respectively, completing
 the 3-2 comeback. The game was fast, explosive, and tense. I was hooked.
 I couldn't wait to see the rest of the season.
 
-That first game set my expectations too high. After the Illinois Tech game, the
-Petrels went on a 13 game losing streak. They ended the season 4-21 overall,
-and 2-12 in conference play.
+After the Illinois Tech game, the Petrels went on a 13 game losing streak. They
+ended the season 4-21 overall, and 2-12 in conference play. Needless to say,
+that first game set my expectations a little too high.
 
 You see, the Stormy Petrels are a *terrible* women's volleyball team. I mean
 *atrocious*. They have not had a winning season in the past ten years. In those
-ten years, they went 16-127 in conference play, and never won more than 3 games
-in a single season. Whether we bring in new coaches, new players, or new staff,
-it's always the same. The Petrels are the bottom of the barrel of the Southern
-Athletic Association, and they have been for a long time.
+ten years, they went 16-127 in conference play, and never won more than
+3 conference games in a single season. Whether we bring in new coaches, new
+players, or new staff, it's always the same. The Petrels are the bottom of the
+barrel of the Southern Athletic Association, and they have been for a long
+time.
 
 And yet, I just can't quit them. Even though they're awful, even though no one
 goes to the games, and even though I don't even live in Georgia anymore,
