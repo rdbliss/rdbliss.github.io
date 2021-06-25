@@ -2,14 +2,14 @@
 title: COVID Brings Out the Sun for Stormy Petrels Women's Volleyball
 ---
 
-The 2020-2021 season was strange for sports at all levels. Shortened seasons,
+The past year has been strange for sports at all levels. Shortened seasons,
 cancelled games, and a surplus of "Out (COVID)" on injury reports. It felt like
 everyone, from the NBA to your local rec league, just *barely* got through
 their seasons. This disruption produced some unlikely outcomes, one of which
 I'd like to explore here.
 
 I went to my first Oglethorpe women's volleyball game on September 2, 2017. The
-Petrel's were taking on Illinois Team in the second game of the 2017 Stormy
+Petrel's were taking on Illinois Tech in the second game of the 2017 Stormy
 Petrel Challenge. They fell to an early 0-2 deficit, and the third set seemed
 lost when they found themselves down 17-22. Jacoby Sims scored three quick
 kills to force an Illinois timeout at 20-22, and the Petrels rallied to a 26-24
