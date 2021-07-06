@@ -1,6 +1,5 @@
 ---
 title: Admission to Candidacy
-hide: true
 ---
 
 On Monday, 2021 May 17, I passed my oral qualifying exam at Rutgers University.
@@ -9,16 +8,12 @@ the necessary hurdles to be a "real" PhD student, and am "ready" to be a
 researcher.
 
 Of course, this implicitly means that I was *incapable* of doing research
-before passing my exams. [The paper I published with my
-advisor](/publications/gcf) didn't count. [The paper I co-authored with my
-post-qual friend](/publications/dyck) was phoney. [The collaboration my advisor
-and I had with a computer algebra wizard ](/publications/beukers) was
-fraudulent. Even the [expository article](/publications/az-recurrences) I wrote
-can only be described as *pre-candidacy material*[^quality].
+before passing my exams. [None](/publications/gcf) of
+[my](publications/az-recurrences) previous [publications](/publications/dyck)
+were ["real"](/publications/beukers)[^quality].
 
 [^quality]: I don't think that my outlined contributions are particularly
-              *good*. I didn't prove $P = NP$ or the Riemann hypothesis. But I
-              did do *research* in some small form.
+              *good*, but they *are* real.
 
 Thankfully, now that I am a "PhD candidate" as opposed to a mere "graduate
 student," the tides will turn. Indeed, with some luck, both the *quality* and
@@ -67,8 +62,8 @@ I see two possibilities:
 
 Which do you think it is?
 
-**Oral Qualifying Exam.** This is an 80-120 minute long meeting with a
-committee of four faculty members. You will be questioned on a syllabus that
+**Oral Qualifying Exam.** This is an 80-120 minute long meeting with
+a committee of four faculty members. You will be questioned on a syllabus that
 you wrote in consultation with your committee. In theory you have two attempts,
 but it is exceedingly rare to fail. Supposedly this exam ensures that you have
 not "overspecialized" before beginning research.
@@ -87,13 +82,15 @@ Earth are you taking the exam? In both cases, the exam merely makes you
 demonstrate what the committee *already knows* in a high-pressure situation.
 
 The only situation where the exam has *true* merit is when the committee does
-not know if you are ready. I posit that this situation is *nearly nonexistant*.
-If it were a common occurrence, then there would be a significant number of
-failed oral qualifying exams. There are not.
+not know if you are ready, and they are honestly willing to fail you. I posit
+that this situation is *nearly nonexistent*. If it were a common occurrence,
+then there would be a significant number of failed oral qualifying exams. There
+are not (I think).
 
 The benefit of the oral exam process is having four faculty members sign off on
-your skills. This has nothing to do with the *exam*, and everything to do with
-how well the committee knows you.
+your skills. This has nothing to do with the *exam* itself, but rather what
+your committee thinks about you personally. Passing demonstrates that you can
+convince four people to say that they like you.
 
 **The Problem.** Qualifying exams *take time that you could be doing research*.
 If you demonstrate mastery of your first-semester courses, then you should
@@ -118,7 +115,10 @@ Here is a proposal:
   that you know your syllabus sufficiently well. It is up to them to decide if
   a formal exam is necessary.
 
-Nothing I've said seems specific to Rutgers. I assume that this silly exam
-process happens at most mathematics departments. Perhaps the situation is
+I hasten to say that I am not griping about Rutgers *in particular*. I am very
+fond of Rutgers, its math department, and all of the people in it.
+
+In fact, nothing I've said seems specific to Rutgers. I assume that this silly
+exam process happens at most mathematics departments. Perhaps the situation is
 similar in other STEM areas, and perhaps even in the humanities. All the more
 reason to evaluate the evaluators.

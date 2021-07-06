@@ -78,9 +78,9 @@ point of his pen over it.
 >
 > **R:** No, I have not.
 
-The polygraph interrogator (Mike, or Mark, or Adam, or whatever) asked me a
-question to which *he already knew the answer.* Everyone has lied to cover up a
-mistake. When I answered truthfully, he responded with anger, suggesting
+The polygraph interrogator (Mike, or Mark, or Adam, or whatever) asked me
+a question to which *he already knew the answer.* Everyone has lied to cover up
+a mistake. When I answered truthfully, he responded with anger, suggesting
 strongly that I should answer negatively. In other words, the interrogator
 *wanted me to lie*.
 
@@ -94,9 +94,7 @@ This is but a single moment from my polygraph experience. I sat for a total of
 five exams, which totals around twenty hours of interrogation. Each of my five
 interrogators proved that every hour, every minute, and every second is an
 opportunity for trickery and intimidation. You will be uncomfortable, you will
-be tired, and you will probably have strong emotions at some point during the
-process. The interrogator does not care. They know that you feel the pressure,
-and wouldn't you feel better if you just told them what was on your mind?
+be tired, and you will be fed up. The interrogator does not care.
 
 The polygraph is a *charade*. It is based on pseudo-science, bluffing, and
 deception. It does not detect lies; it elicits confessions. It seems that the
@@ -108,3 +106,9 @@ suspect that it keeps more smart, talented folk *out* than good, honest folk
 It is *unconscionable* to routinely place anyone in such a catch-22. Therefore
 I have adopted a policy that I encourage everyone to follow, no matter your
 opinion on the intelligence community: **Refuse polygraph interrogations.**
+
+---
+
+**Added July 6, 2021**: I have now been completely reimbursed by the NSA for my
+travel (and troubles). It is amusing that the NSA *paid me* \$1400 to learn
+that I would hate working for them.
