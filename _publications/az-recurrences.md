@@ -3,7 +3,7 @@ title: "Integral Recurrences from A to Z"
 collection: publications
 date: 2021-05-19
 authors: Robert Dougherty-Bliss
-venue:
+venue: The American Mathematical Monthly (circa 2022)
 paperurl: https://arxiv.org/abs/2102.10170
 ---
 
