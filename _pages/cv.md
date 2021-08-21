@@ -27,6 +27,9 @@ Presentations
 2021
 ----
 
+- Mathematical biology for fun and profit
+    - Central Washington University Math Club
+
 - A Compartmental Analysis Model of Persistent Environmental Toxins
     - MAA Contributed Paper Session on Incorporating Realistic Applications of Mathematics Through Interdisciplinary Collaborations, I
 
@@ -94,8 +97,6 @@ Presentations
 
 * Cervantes: How to be Jewish
     * Liberal Arts and Sciences Symposium, Oglethorpe University.
-    * Talk exploring possible Jewish themes in *Don Quixote* and in the life of
-      Cervantes.
 
 Programming languages and computers
 ===================================
@@ -123,8 +124,11 @@ Awards
     * Oglethorpe University, Division IX (Mathematics and Computer Science).
     * Given to outstanding Senior in mathematics and computer science.
 
-Organizations
+Organizations / Service
 =============
+
+* [Combinatorics and Algebras From A to Z](https://u.math.biu.ac.il/~beck/regev-zeilberger/)
+    * Organizing committee (2021)
 
 * Rutgers Experimental Mathematics Seminar
     * Co-organizer (2020-)
