@@ -1,0 +1,320 @@
+\documentclass[12pt]{rudin}
+\usepackage[]{amsmath}
+\usepackage[]{exercise}
+\usepackage[]{enumitem}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+
+\renewcommand{\ExerciseHeader}{\noindent\textbf{\ExerciseName\ \ExerciseHeaderNB}\ \ExerciseHeaderTitle\ \ExerciseHeaderOrigin\smallskip}
+\renewcommand{\ExerciseHeaderOrigin}{(\ExerciseOrigin)}
+\renewcommand{\AnswerHeader}{\bigskip\noindent\textbf{Solution \ExerciseHeaderNB}\newline}
+\let\set\mathbf
+
+\title{Number Theory Homework I}
+\author{RDB}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+This homework is meant to be a warmup for things covered in 300 along with a
+peek at some number theory. Direct proofs, inequalities, induction, the
+contrapositive, and perhaps most importantly, \emph{style}.
+
+Homework exists to give you practice. Try to solve the questions on your own
+before anything else; you will get the most out of it this way. (Plus, you
+won't have any outside resources on quizzes and exams!) Once you've given it a
+good try, feel free to collaborate with your classmates or ask me about it.
+
+\paragraph{EXPECTATIONS} Write your proofs with \emph{good style}. What is good
+style? Concise yet enlightening. Simple yet pretty. Practical yet fun. 
+Basically, go read the first chapter of
+\href{https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf}{Knuth's masterpiece}
+and buy yourself a copy of Strunk and White's \emph{The Elements of Style}.
+Your efforts will be repayed tenfold.
+
+For example, suppose you were proving ``the sum of even integers is even.''
+\begin{proof}[Terrible proof]
+\begin{align*}
+    &\exists n, k \ [2n + 2k] \\
+    &\implies 2n + 2k = 2(n + k) \\
+    &\exists m \ [n + k = m] \\
+    &\therefore 2n + 2k = 2m
+\end{align*}
+\end{proof}
+\begin{proof}[Excellent proof]
+    If $x$ and $y$ are even integers, then there exist integers $n$ and $k$
+    such that
+    \begin{equation*}
+        x + y = 2n + 2k = 2(n + k).
+    \end{equation*}
+    Since $n + k$ is an integer, $x + y$ is even.
+\end{proof}
+Both proofs are (essentially) logically correct, yet one makes me dizzy. Bring
+your readers the joy of discovery, not the pain of parsing notation.
+
+\section*{Exercises}%
+\label{sec:exercises}
+
+In general, assume that variables like $n$, $m$, and $k$ are integers.
+
+\begin{Exercise}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item Prove that $n^2$ is even if and only if $n$ is even.
+
+        \item If $\sqrt{2} = a / b$ for coprime integers $a$ and $b$, then $2
+            b^2 = a^2$. Use the previous part to derive a contradiction about
+            $a$ and $b$, and conclude that $\sqrt{2}$ is irrational.
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+	    \item (3 points) If $n = 2k$, then $n^2 = 4k^2 = 2(2k^2)$. On the other hand,
+		    if $n = 2k + 1$, then $n^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) +
+		    1$.
+
+	    \item (3 points) Since $2b^2 = a^2$, we see that $a^2$ is even. The previous part
+		implies that $a$ is even, say $a = 2k$. Then $2b^2 = 4k^2$, and
+		    dividing by $2$ yields $b^2 = 2k^2$. But then $b$ is even,
+		    and that contradicts that $a$ and $b$ are coprime.
+    \end{enumerate}
+\end{Answer}
+
+\begin{Exercise}
+    Three natural numbers $x < y < z$ are a \emph{Pythagorean triple} provided that
+    \begin{equation*}
+        x^2 + y^2 = z^2.
+    \end{equation*}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+	    \item Determine \emph{all} Pythagorean triples where $x$, $y$, and $z$
+            are consecutive natural numbers.
+
+        \item Given a natural number $a$, let's say that $n$ is an
+            \emph{$a$-Pythagorean integer} if
+            \begin{equation*}
+                n^2 + (n + a)^2 = (n + 2a)^2.
+            \end{equation*}
+
+            For a fixed $a$, how many $a$-Pythagorean integers are there?
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+	    \item (3 points) This amounts to solving the equation
+            \begin{equation*}
+                n^2 + (n + 1)^2 = (n + 2)^2,
+            \end{equation*}
+		    which, after you expand it, is just a quadratic. The only
+		    positive solution is $n = 3$, which gives the triple $(3,
+		    4, 5)$.
+
+	    \item (3 points) The equation
+            \begin{equation*}
+                n^2 + (n + a)^2 = (n + 2a)^2
+            \end{equation*}
+	    is a quadratic in $n$ and has a single positive solution for $a >
+		    0$, namely $n = 3a$. So there is only \emph{one}
+		    $a$-Pythagorean integer for every $a$.
+    \end{enumerate}
+\end{Answer}
+
+\begin{Exercise}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item Prove that
+            \begin{equation*}
+                \sum_{k = 0}^n a(k) = b(n)
+            \end{equation*}
+            is equivalent to
+            \begin{equation*}
+                b(n + 1) - b(n) = a(n + 1); \quad b(0) = a(0).
+            \end{equation*}
+
+            [Hint: Use induction to get from the difference to the sum.]
+
+        \item Use the above technique to show that the sum of the first $n$
+            positive integers is $n(n + 1) / 2$.
+
+        \item Use the above technique to show that
+            \begin{equation*}
+                \sum_{k = 1}^n k^3 = \left( \sum_{k = 1}^n k \right)^2.
+            \end{equation*}
+            [Hint: You know what the right-hand side is from the previous
+            part.]
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+	    \item (4 points) If
+            \begin{equation*}
+                \sum_{k = 0}^n a(k) = b(n),
+            \end{equation*}
+	    then obviously $b(n + 1) - b(n) = a(n + 1)$ and $b(0) = a(0)$.
+
+	    On the other hand, suppose that
+            \begin{equation*}
+                b(n + 1) - b(n) = a(n + 1); \quad b(0) = a(0).
+            \end{equation*}
+	    We will prove the summation identity via induction. The
+	    base case, $n = 0$, is assumed: $b(0) = a(0) = \sum_{k = 0}^0
+	    a(k)$. For the inductive step, suppose that
+            \begin{equation*}
+                \sum_{k = 0}^n a(k) = b(n)
+            \end{equation*}
+	    for some $n \geq 0$. Then,
+            \begin{align*}
+		    \sum_{k = 0}^{n + 1} a(k) &= b(n) + a(n + 1) \\
+		    			      &= b(n + 1).
+            \end{align*}
+	    Therefore the equation $b(n) = \sum_{k = 0}^n a(k)$ holds
+	    for \emph{all} integers $n \geq 0$.
+
+    \item (2 points) Just check that $\frac{(n + 1)(n + 2)}{2} - \frac{n(n + 1)}{2} = n + 1$ and that $\frac{0(0 + 1)}{2} = 0$.
+
+    \item (2 points) Check that $\left( \frac{n(n + 1)}{2} \right)^2$ satisfies the right
+	    equations.
+    \end{enumerate}
+\end{Answer}
+
+\begin{Exercise}
+    The \emph{Fibonacci numbers} $F_n$ are defined by the following recurrence:
+    \begin{align*}
+        F_0 &= 0 \\
+        F_1 &= 1 \\
+        F_{n + 2} &= F_{n + 1} + F_n.
+    \end{align*}
+
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item Compute the first ten Fibonacci numbers.
+
+        \item Prove that
+            \begin{equation*}
+                \sum_{k = 0}^n F_k = F_{n + 2} - 1.
+            \end{equation*}
+            [Hint: Use the earlier exercise about sums. Or induction.]
+
+        \item The \emph{square} Fibonacci numbers $S_n = F_n^2$ \emph{also}
+            satisfy a nice recurrence:
+            \begin{equation*}
+                S_{n + 3} = 2 S_{n + 2} + 2 S_{n + 1} - S_n.
+            \end{equation*}
+
+            Check that this is true up to $n = 6$.
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+	    \item (2 points) 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+
+	    \item (2 points) Note that $F_{0 + 2} - 1 = 0 = \sum_{k = 0}^0 F_k$, and that
+            \begin{equation*}
+		    (F_{n + 3} - 1) - (F_{n + 2} - 1) = F_{n + 1}.
+            \end{equation*}
+
+    \item (2 points) The first ten squares are: 0, 1, 1, 4, 9, 25, 64, 169, 441, 1156.
+		Using the recurrence
+            \begin{equation*}
+                S_{n + 3} = 2 S_{n + 2} + 2 S_{n + 1} - S_n
+            \end{equation*}
+	    along with the initial values $S_0 = 0$, $S_1 = 1$, $S_2 = 1$, we
+	    get the same list:
+	    \begin{align*}
+		    2 (1) + 2 (1) - 0 &= 4 \\
+		    2 (4) + 2 (1) - 1 &= 9 \\
+		    2 (9) + 2 (4) - 1 &= 25 \\
+		    2 (25) + 2(9) - 4 &= 64,
+	    \end{align*}
+	    and so on.
+    \end{enumerate}
+\end{Answer}
+
+\begin{Exercise}
+    Prove that $n! > 2^n$ for sufficiently large $n$. [Hint: This means that
+    there exists some $N$ such that $n! > 2^n$ for $n \geq N$. You have to find
+    that $N$ and then prove it. Induction is the way to go here.]
+\end{Exercise}
+
+\begin{Answer}
+	(4 points)
+
+	Suppose that $n! > 2^n$ for some $n \geq N$. [We haven't yet determined
+	$N$, but that's OK! We'll come back to it.] Then, $$(n + 1)! = (n + 1)
+	\cdot n! > (n + 1) 2^n.$$ So, if $n + 1 > 2$, or $n > 1$, then $(n +
+	1)! > 2^{n + 1}$. In other words, the inductive argument will work as
+	long as we start at $N = 2$.
+
+	But we need a good base case, and $N = 2$ doesn't work. Note that $4!
+	= 24 > 16 = 2^4$, so $N = 4$ will do the job.
+\end{Answer}
+
+\begin{Exercise}
+    This exercise involves programming. When you write a program, save it as a
+    ``.py'' file and submit it with your homework. (I'll explain how to do this
+    in class on Thursday if this doesn't make sense to you.)
+
+    Let $a(n) = 2^n + 1$.
+
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item Write a Python program to compute $[a(1), a(2), a(3), \dots,
+            a(n)]$ for arbitrary $n$. [Hint: Lookup ``python list
+            comprehension.'']
+
+        \item Using your program, determine which values of $a(n)$ are prime
+            for $1 \leq n \leq 16$. Guess a pattern.
+
+        \item Prove that $a(n)$ is \emph{not} prime if $n$ is odd. [Hint: Prove
+            that $3$ divides $a(n)$ if $n$ is odd, probably by induction.] Does
+            this prove your pattern? Explain.
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item (2 points) Simple python program: \texttt{[2**k + 1 for k in
+            range(1, 17)]}. There are infinitely many ways you could have
+            structured this.
+
+	    \item (2 points) In the given range, the $n$ for which $a(n)$ is prime are $1$,
+            $2$, $4$, $8$, and $16$. It \emph{seems} like $a(n)$ might be prime
+            when $n$ is a power of $2$.
+
+    \item (3 points) One way is induction. Our statement is ``$3$ divides $2^{2n + 1} + 1$
+	    for all nonnegative integers $n$.'' The base case, $n = 0$, is
+	    obvious, since $2^{2 \cdot 0 + 1} + 1 = 3$. Suppose that $2^{2n +
+	    1} + 1 = 3k$ for some integer $k$. Then, we have $$2^{2(n +
+	    1) + 1} + 1 = 4 \cdot 2^{2n + 1} + 1.$$ Our assumption then gives
+	    \begin{align*}
+		    4 \cdot 2^{2n + 1} + 1 &= 4(3k - 1) + 1 \\
+		    		     &= 12k - 4 + 1 \\
+				     &= 3(3k - 1),
+	    \end{align*}
+	    so $3$ divides $2^{2(n + 1) + 1} + 1$ as well.
+    \end{enumerate}
+\end{Answer}
+
+\begin{Exercise}
+    What is your favorite integer? Enter it into
+    \url{http://www.numbergossip.com/} and give some of your favorite
+    properties.
+\end{Exercise}
+
+\begin{Answer}
+	(3 points)
+	My favorite integer is $6$. My favorite property listed on the site is
+	something I don't know how to prove.
+
+	In binary, $6 = (110)_2$. There are an even number of 1's in the
+	expansion.
+
+	Also, the proper divisors of 6 are $1$, $2$, and $3$. If you add these
+	up, you get $6$: $$1 + 2 + 3 = 6.$$
+
+	Supposedly, \emph{$6$ is the only even number that does both of these
+	things at once.} This seems surprising, but maybe it's actually easy to
+	prove.  I don't know!
+\end{Answer}
+
+\end{document}

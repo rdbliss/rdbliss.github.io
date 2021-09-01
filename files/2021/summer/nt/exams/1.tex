@@ -1,0 +1,234 @@
+\documentclass[12pt]{rudin}
+\usepackage[]{amsmath}
+\usepackage[]{exercise}
+\usepackage[]{enumitem}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+\renewcommand{\ExerciseName}{Problem}
+\renewcommand{\ExerciseHeader}{\noindent\textbf{\ExerciseName\ \ExerciseHeaderNB}\ \ExerciseHeaderTitle\ \ExerciseHeaderOrigin\smallskip}
+\renewcommand{\ExerciseHeaderOrigin}{(\ExerciseOrigin)}
+\renewcommand{\AnswerHeader}{\bigskip\noindent\textbf{Solution \ExerciseHeaderNB}\newline}
+
+\DeclareMathOperator{\lcm}{lcm}
+\let\set\mathbf
+
+\title{Number Theory Midterm I}
+\author{RDB}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{centering}
+    \emph{I feel fine today modulo a slight headache. \\ \hfill --- The
+    Hacker's Dictionary}
+\end{centering}
+
+\paragraph{INSTRUCTIONS} No outside materials (notes, textbook, internet) or
+resources (calculators). Leave your webcam on until you submit and I confirm
+that I have your exam.
+
+Good luck!
+
+% 1.
+\begin{Exercise}
+    Use the Euclidean algorithm to compute the greatest common divisor of 153
+    and 64. (5 points)
+\end{Exercise}
+
+% 2
+\begin{Exercise}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item State Euclid's lemma. (3 points)
+        \item Show that, if a prime $p$ divides $a^2$ for some integer $a$,
+            then $p$ divides $a$. (5 points)
+    \end{enumerate}
+\end{Exercise}
+
+\begin{Answer}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item If $p | ab$ for a prime $p$ and integers $a$ and $b$, then $p |
+            ab$.
+        \item If $p | a^2 = a \cdot a$, then $p | a$ or $p | a$. So $p | a$,
+            clearly.
+    \end{enumerate}
+\end{Answer}
+
+% 3.
+\begin{Exercise}
+    Find the general solution to
+    \[
+        42x + 35y = 2,
+    \]
+    if any solutions exist. (10 points)
+\end{Exercise}
+
+\begin{Answer}
+    The gcd of 42 and 35 is 7, which does not divide 2, so there are no
+    solutions.
+\end{Answer}
+
+% 4
+\begin{Exercise}
+    List three solutions to the congruence $2x \equiv 4 \pmod{101}$. Your
+    solutions may be congruent mod 101. (10 points)
+\end{Exercise}
+
+\begin{Answer}
+    An obvious solution is $x = 2$, but there are no others in $\{0, 1, 2,
+    \dots, 100\}$, because $\gcd(2, 101) = 1$. We can still get other solutions
+    by adding multiples of 101. In particular, $2 + 101 = 103$ and $2 + 202 =
+    204$ are also solutions.
+\end{Answer}
+
+% 5.
+\begin{Exercise}
+    Find the general solution to
+    \[
+        38x + 15y = 1,
+    \]
+    if any solutions exist. (10 points)
+\end{Exercise}
+
+\begin{Answer}
+    The gcd of 38 and 15 is 1, so solutions \emph{do} exist. The Euclidean
+    algorithm will give $x_0 = 2$ and $y_0 = -5$, so the general solution is
+    \[
+        x = 2 + 15t; \qquad y = -5 - 38t
+    \]
+    for an integer $t$.
+\end{Answer}
+
+% 6
+\begin{Exercise}
+    Does the congruence $25 x \equiv 1 \pmod{1000}$ have solutions? If so, how
+    many solutions in $\{0, 1, 2, 3, \dots, 999\}$ are there? (10 points)
+\end{Exercise}
+
+\begin{Answer}
+    No, because $\gcd(25, 1000) = 25$, which does not divide $1$.
+\end{Answer}
+
+% 7
+\begin{Exercise}
+    Show that $\gcd(a, b) = \gcd(a - b, b)$ for any integers $a$ and $b$. (10 points)
+\end{Exercise}
+
+\begin{Answer}
+    If $d$ is a common divisor of $a$ and $b$, say $a = dk$ and $b = dj$, then
+    $a - b = d(k - j)$, so $d$ is a common divisor of $a - b$ and $b$.
+    Conversely, if $d$ is a common divisor of $a - b$ and $b$, then it also
+    divides $a = (a - b) + b$ by the same argument. Therefore the common
+    divisors of $(a, b)$ are the same as the common divisors of $(a - b, b)$,
+    and in particular the \emph{greatest} one of them is the same.
+\end{Answer}
+
+% 8
+\begin{Exercise}
+    Show that $2^n \equiv -1 \pmod{3}$ for $n$ odd. (10 points)
+\end{Exercise}
+
+\begin{Answer}
+    Note that $2 \equiv -1 \pmod{3}$, so $2^n \equiv (-1)^n | \pmod{3}$. If $n$
+    is odd $(-1)^n = -1$, so $2^n \equiv -1 \pmod{3}$ for odd $n$.
+
+    Nearly everyone used induction, which was fine, but gross. Here's the best
+    induction you could do, I think: If $2^n \equiv -1 \pmod{3}$, then
+    \[
+        3^{n + 2} \equiv -4 \pmod{3} \equiv -1 \pmod{3}.
+    \]
+\end{Answer}
+
+% 9
+\begin{Exercise}
+    Fix integers $a$ and $b$. Suppose that $ax + by = p$ for some integers $x$
+    and $y$ and a prime $p$. Prove that $\gcd(a, b)$ is either $1$ or $p$. (10 points)
+\end{Exercise}
+
+\begin{Answer}
+    By a theorem in class (or writing $a = \gcd(a, b)k$ and $b = \gcd(a, b)j$),
+    we see that $\gcd(a, b)$ divides $p$, so it is either $1$ or $p$ since $p$
+    is prime.
+\end{Answer}
+
+% 10
+\begin{Exercise}
+    Write $76$ in base $3$. (5 points)
+\end{Exercise}
+
+\begin{Answer}
+    The largest power to begin with is $3^3 = 27$, and we can fit $2$ of them in:
+    \[
+        76 - 2 \cdot 3^3 = 22.
+    \]
+    Repeating:
+    \[
+        22 - 2 \cdot 3^2 = 4
+    \]
+    Again:
+    \[
+        4 - 1 \cdot 3 = 1
+    \]
+    Finally:
+    \[
+        1 = 1 \cdot 3^0.
+    \]
+    So
+    \begin{align*}
+        76 &= 2 \cdot 3^3 + 2 \cdot 3^2 + 1 \cdot 3^1 + 1 \cdot 3^0 \\
+           &= (2211)_3.
+    \end{align*}
+\end{Answer}
+
+% 11
+\begin{Exercise}
+    Translate the following numbers from binary into base $10$:
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item $(1)_2$ (1 point)
+        \item $(11)_2$ (1 point)
+        \item $(111)_2$ (1 point)
+        \item $(1111)_2$ (1 point)
+        \item Prove, by induction, that
+        \[
+            (\underbrace{11\cdots 1}_{n})_2 = 2^n - 1
+        \]
+        for all positive integers $n$. (5 points)
+    \end{enumerate}
+\end{Exercise}
+
+% 12
+\begin{Exercise}
+    Write $(1024)_5$ in base 10. (5 points)
+\end{Exercise}
+
+\begin{Answer}
+    \begin{align*}
+        (1024)_5 &= 1 \cdot 5^3 + 0 \cdot 5^2 + 2 \cdot 5^1 + 4 \cdot 5^0 \\
+                 &= 125 + 10 + 4 \\
+                 &= 139.
+    \end{align*}
+\end{Answer}
+
+\paragraph{BONUS PROBLEM} The exam is graded out of 102 points, all accounted
+for in the previous problems. The following problem is worth an additional 10
+points.
+
+\begin{Exercise}
+    \begin{enumerate}[label=(\textbf{\alph*})]
+        \item Find the general solution to the diophantine equation
+            \begin{equation*}
+                10x + 11y = 200.
+            \end{equation*}
+            (2 points)
+
+        \item Show that there exists only a single solution with $x$ and $y$
+            both positive. (5 points)
+
+        \item Find that positive solution. (3 points)
+    \end{enumerate}
+\end{Exercise}
+
+\end{document}
