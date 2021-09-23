@@ -210,7 +210,7 @@ for it. Or at least, I thought I did.
 
 I knew that the NSA inflicted a kind of Orwellian nightmare on the rest of the
 world—we all know that thanks to Snowden—but I assumed that I would be shielded
-from that. Even as an applicant, I felt that I was only ticking formalities.
+from it. Even as an applicant, I felt that I was only ticking formalities.
 I was in the club! I should have been above the fray and beyond the reach of
 bureaucratic paranoia.
 
