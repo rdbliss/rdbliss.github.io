@@ -144,18 +144,18 @@ realize that changing demographics is very slow. So, if you're really driven to
 bring in more women and secure their place in academia, you have to find
 something else to do.
 
-In this case, Yap decides that the thing to do is drag people into public and
+In this case, Yap decided that the thing to do is drag people into public and
 "hold them accountable" for their speech.
 
 This tactic is remarkably effective. In the days leading up to Yap's talk, my
 friends discussed how bad it would be for me. Would I be ridiculed? Would Yap
 ask me to apologize in front of everyone? Some encouraged me to not go, warning
-that the discussion could get out of hand. "You'll say something bad and it the
-administration will hear about it." On the way to the talk, I heard an
-officemate ask if everyone were ready for "Robert's roast."
+that the discussion could get out of hand and have consequences for me. On the
+way to the talk, I heard an officemate ask if everyone were ready for "Robert's
+roast."
 
-Yap used her goodwill and social standing in the department to bully me from a
-pulpit. While a respected speaker with the ear of authority encouraged a crowd
-to "hold me accountable," I wondered: Did we truly need to have this
+Yap used her goodwill and social standing in the department to bully me from
+a pulpit. While a respected speaker with the ear of authority encouraged
+a crowd to "hold me accountable," I wondered: Did we truly need to have this
 conversation, or is Yap just lashing out because the community isn't exactly
-how she would like it?
+how she likes it?
