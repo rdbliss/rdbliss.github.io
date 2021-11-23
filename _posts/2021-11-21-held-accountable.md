@@ -1,6 +1,5 @@
 ---
 title: Held Accountable
-hide: true
 ---
 
 A few weeks ago, I asked my fellow graduate students to give their list of the
