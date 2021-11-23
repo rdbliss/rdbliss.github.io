@@ -1,5 +1,6 @@
 ---
 title: Held Accountable
+date: 2021-11-23
 ---
 
 A few weeks ago, I asked my fellow graduate students to give their list of the
@@ -60,9 +61,8 @@ want glory, to be champions, to be one of the greats. [Michael Jordan takes
 everything personal?](youtube.com/watch?v=Ss5Ndz0tn9o) Inject it into my veins.
 [Tom Brady counting off all six quarterbacks picked before
 him?](https://www.youtube.com/watch?v=o5fdhfVrg1I) Captivating. After winning
-two gold medals at the 2016 Rio Olympics, Elaine Thompson-Herah was asked what
-her plans for Tokyo 2020 were: ["Recapture my titles and probably get three
-gold
+two gold medals at the 2016 Rio Olympics, what was Elaine Thompson-Herah's goal
+for Tokyo 2020? ["Get three gold
 medals."](https://olympics.com/en/featured-news/exclusive-elaine-thompson-herah-disappointment-makes-you-better-and-stronger)
 
 We love athletes because they are *not* special. They are like "funhouse
