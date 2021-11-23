@@ -138,15 +138,17 @@ too vague to answer. How could you possibly prove that you are *not* being
 exclusionary? It's a rhetorical flourish to combat a deeper problem: There are
 not enough women in mathematics Ph.D programs.
 
-Roughly 40% of mathematics undergraduates are women, but that drops to 25% in
-Ph.D programs. That's a big gap. Yap, like many of us, thinks that there are
-"bad things" dissuading women from joining Ph.D programs, and she would like to
-fix them. But Yap, like most of us, doesn't have much control over the
-situation. You can only attend so many conferences for women, run so many
-woman-focused organizations, and lobby so hard for your graduate director to
-accept more women before you realize that changing demographics is very slow.
-So, if you're really driven to bring in more women and secure their place in
-academia, you have to find something else to do.
+[Roughly 40% of mathematics and statistics undergraduates are women, but that
+drops to around 25% in Ph.D
+programs](https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/mathematics-and-statistics.cfm).
+That's a big gap. Yap, like many of us, thinks that there are "bad things"
+dissuading women from joining Ph.D programs, and she would like to fix them.
+But Yap, like most of us, doesn't have much control over the situation. You can
+only attend so many conferences for women, run so many woman-focused
+organizations, and lobby so hard for your graduate director to accept more
+women before you realize that changing demographics is very slow. So, if you're
+really driven to bring in more women and secure their place in academia, you
+have to find something else to do.
 
 In this case, Yap decided that the thing to do was use her goodwill and social
 standing in the department to bully me from a pulpit. This tactic is remarkably
