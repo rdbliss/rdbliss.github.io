@@ -4,10 +4,13 @@ date: 2021-11-23
 ---
 
 A few weeks ago, I asked my fellow graduate students to give their list of the
-"Top N Mathematicians of All Time." In return, I was [publicly shamed by
-Corrine Yap](https://twitter.com/corrine_yap/status/1461473396726796289).
+"Top N Mathematicians of All Time." In return, I was [publicly shamed by by my
+good frenemy](https://twitter.com/corrine_yap/status/1461473396726796289),
+K[^K].
 
-My list of top mathematicians contained only White men. From this, Yap claims
+[^K]: Name changed to protect the guilty.
+
+My list of top mathematicians contained only White men. From this, K claims
 that my question created an unsafe and exclusionary space in the department for
 women, and intended to "hold me accountable for my actions." She delivered
 a talk to the graduate students entitled "A Clapback Talk: what a recent Slack
@@ -15,7 +18,7 @@ thread reveals about inclusivity in math."
 
 Well, consider me held accountable.
 
-Yap's arguments fall in two main directions.
+K's arguments fall in two main directions.
 
 1. Mathematics is not a competition, and we shouldn't rank people.
 
@@ -24,7 +27,7 @@ we perpetuate that exclusion.
 
 ## MATHEMATICS IS A COMPETITION
 
-Yap's favorite phrase is "mathematics does not exist in a vacuum." I agree, it
+K's favorite phrase is "mathematics does not exist in a vacuum." I agree, it
 does not. It exists in societies with finite resources. We can't hand over
 infinite amounts of time and money so that very privileged people can sit in
 lecture halls all day thinking about "mathematical truth." It is lovely that
@@ -107,7 +110,7 @@ of 5'9" Whites from South Carolina. I don't see a lot of Asians, or Hispanics,
 or anything else. Just Black men. And that's...fine? I don't see how this takes
 anything away from me. Of course, I'm White, so maybe I'm just "letting them
 have one." Then why is the NBA the biggest sports league in China, despite
-having only *one* good Chinese player ever? What would Yap's objection in this
+having only *one* good Chinese player ever? What would K's objection in this
 context even look like? I walk into a pickup game and ask everyone to stop
 yelling "Kobe" when they take a shot?
 
@@ -141,28 +144,26 @@ not enough women in mathematics Ph.D programs.
 [Roughly 40% of mathematics and statistics undergraduates are women, but that
 drops to around 25% in Ph.D
 programs](https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/mathematics-and-statistics.cfm).
-That's a big gap. Yap, like many of us, thinks that there are "bad things"
+That's a big gap. K, like many of us, thinks that there are "bad things"
 dissuading women from joining Ph.D programs, and she would like to fix them.
-But Yap, like most of us, doesn't have much control over the situation. You can
+But K, like most of us, doesn't have much control over the situation. You can
 only attend so many conferences for women, run so many woman-focused
 organizations, and lobby so hard for your graduate director to accept more
 women before you realize that changing demographics is very slow. So, if you're
 really driven to bring in more women and secure their place in academia, you
 have to find something else to do.
 
-In this case, Yap decided that the thing to do was use her goodwill and social
-standing in the department to bully me from a pulpit. This tactic is remarkably
-effective. In the days leading up to Yap's talk, my friends gossiped about how
-bad it would be for me. Some encouraged me to not go, warning that the
-discussion could get out of hand. On the way to the talk, an officemate asked
-if everyone was ready for "Robert's roast."
-
-While Yap pointed at me and encouraged a crowd to "hold me accountable,"
-I wondered: Did we truly need to have this conversation, or is Yap just lashing
-out at the only target she can hit? Just last month we found [a math department
-nazi](/i-hate-new-jersey-nazis) who was in charge of both Yap and myself for
-a while. She can't do anything about that now, but maybe it's getting hard to
+While K encouraged a crowd to "hold me accountable," I wondered: Did we truly
+need to have this conversation, or is K just lashing out at the only target
+they can hit? Just last month we found [a math department
+nazi](/i-hate-new-jersey-nazis) who was in charge of both K and myself for
+a while. We can't do anything about that now, but maybe it's getting hard to
 distinguish "nazi" from "people who disagree with me."
 
 In any event, I'm glad we all had a nice, relaxing reeducation session
 together. Happy Thanksgiving.
+
+\[*Note*: In an earlier version of this post, I used K's name and insinuated
+that they were a "bully" in a deleted paragraph. After reflection, the former
+felt like airing dirty laundry, and the latter was just mean-spirited. Both are
+gone now. Thanks for the feedback!\]
