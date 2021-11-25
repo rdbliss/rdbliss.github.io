@@ -167,4 +167,4 @@ together. Happy Thanksgiving.
 \[*Note*: In an earlier version of this post, I used K's name and insinuated
 that they were a "bully" in a deleted paragraph. After reflection, the former
 felt like airing dirty laundry, and the latter was just mean-spirited. Both are
-gone now. Thanks for the feedback!\]
+gone now.\]
