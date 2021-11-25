@@ -4,7 +4,7 @@ date: 2021-11-23
 ---
 
 A few weeks ago, I asked my fellow graduate students to give their list of the
-"Top N Mathematicians of All Time." In return, I was [publicly shamed by by my
+"Top N Mathematicians of All Time." In return, I was [publicly shamed by my
 good frenemy](https://twitter.com/corrine_yap/status/1461473396726796289),
 K[^K].
 
