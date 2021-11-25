@@ -12,9 +12,9 @@ K[^K].
 
 My list of top mathematicians contained only White men. From this, K claims
 that my question created an unsafe and exclusionary space in the department for
-women, and intended to "hold me accountable for my actions." She delivered
-a talk to the graduate students entitled "A Clapback Talk: what a recent Slack
-thread reveals about inclusivity in math."
+women, and intended to "hold me accountable for my actions." K delivered a talk
+to the graduate students entitled "A Clapback Talk: what a recent Slack thread
+reveals about inclusivity in math."
 
 Well, consider me held accountable.
 
@@ -145,13 +145,13 @@ not enough women in mathematics Ph.D programs.
 drops to around 25% in Ph.D
 programs](https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/mathematics-and-statistics.cfm).
 That's a big gap. K, like many of us, thinks that there are "bad things"
-dissuading women from joining Ph.D programs, and she would like to fix them.
-But K, like most of us, doesn't have much control over the situation. You can
-only attend so many conferences for women, run so many woman-focused
-organizations, and lobby so hard for your graduate director to accept more
-women before you realize that changing demographics is very slow. So, if you're
-really driven to bring in more women and secure their place in academia, you
-have to find something else to do.
+dissuading women from joining Ph.D programs, and K would like to fix them. But
+K, like most of us, doesn't have much control over the situation. You can only
+attend so many conferences for women, run so many woman-focused organizations,
+and lobby so hard for your graduate director to accept more women before you
+realize that changing demographics is very slow. So, if you're really driven to
+bring in more women and secure their place in academia, you have to find
+something else to do.
 
 In this case, K decided that the thing to do was encourage a crowd to "hold me
 accountable." While I listened, I wondered: Did we truly need to have this
