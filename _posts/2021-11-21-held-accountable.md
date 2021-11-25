@@ -153,12 +153,13 @@ women before you realize that changing demographics is very slow. So, if you're
 really driven to bring in more women and secure their place in academia, you
 have to find something else to do.
 
-While K encouraged a crowd to "hold me accountable," I wondered: Did we truly
-need to have this conversation, or is K just lashing out at the only target
-they can hit? Just last month we found [a math department
-nazi](/i-hate-new-jersey-nazis) who was in charge of both K and myself for
-a while. We can't do anything about that now, but maybe it's getting hard to
-distinguish "nazi" from "people who disagree with me."
+In this case, K decided that the thing to do was encourage a crowd to "hold me
+accountable." While I listened, I wondered: Did we truly need to have this
+conversation, or is K just lashing out at the only target they can hit? Just
+last month we found [a math department nazi](/i-hate-new-jersey-nazis) who was
+in charge of both K and myself for a while. We can't do anything about that
+now, but maybe it's getting hard to distinguish "nazi" from "people who
+disagree with me."
 
 In any event, I'm glad we all had a nice, relaxing reeducation session
 together. Happy Thanksgiving.
