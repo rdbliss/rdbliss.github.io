@@ -151,20 +151,12 @@ attend so many conferences for women, run so many woman-focused organizations,
 and lobby so hard for your graduate director to accept more women before you
 realize that changing demographics is very slow. So, if you're really driven to
 bring in more women and secure their place in academia, you have to find
-something else to do.
+something else to do. In this case, the "something else" was treating us all to
+an all-expenses-paid reeducation session together.
 
-In this case, K decided that the thing to do was encourage a crowd to "hold me
-accountable." While I listened, I wondered: Did we truly need to have this
-conversation, or is K just lashing out at the only target they can hit? Just
-last month we found [a math department nazi](/i-hate-new-jersey-nazis) who was
-in charge of both K and myself for a while. We can't do anything about that
-now, but maybe it's getting hard to distinguish "nazi" from "people who
-disagree with me."
-
-In any event, I'm glad we all had a nice, relaxing reeducation session
-together. Happy Thanksgiving.
+Happy Thanksgiving!
 
 \[*Note*: In an earlier version of this post, I used K's name and insinuated
-that they were a "bully" in a deleted paragraph. After reflection, the former
+that they were a "bully" in deleted paragraphs. After reflection, the former
 felt like airing dirty laundry, and the latter was just mean-spirited. Both are
 gone now.\]
