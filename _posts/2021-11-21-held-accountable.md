@@ -10,11 +10,12 @@ K[^K].
 
 [^K]: Name changed to protect the guilty.
 
-My list of top mathematicians contained only White men. From this, K claims
-that my question created an unsafe and exclusionary space in the department for
-women, and intended to "hold me accountable for my actions." K delivered a talk
-to the graduate students entitled "A Clapback Talk: what a recent Slack thread
-reveals about inclusivity in math."
+K believes that asking "who is the best mathematician" of all time is
+exclusionary. No matter how you cut it, you will leave out women who were
+barred or discouraged from math, historical figures whose discoveries we gloss
+over, and so on. K was incensed enough to give a talk to the graduate students
+entitled "A Clapback Talk: what a recent Slack thread reveals about inclusivity
+in math," where K intended to "hold me accountable for my actions."
 
 Well, consider me held accountable.
 
@@ -23,7 +24,7 @@ K's arguments fall in two main directions.
 1. Mathematics is not a competition, and we shouldn't rank people.
 
 2. Mathematics has historically excluded women, and by not acknowledging this
-we perpetuate that exclusion.
+   we perpetuate that exclusion.
 
 ## MATHEMATICS IS A COMPETITION
 
@@ -144,19 +145,28 @@ not enough women in mathematics Ph.D programs.
 [Roughly 40% of mathematics and statistics undergraduates are women, but that
 drops to around 25% in Ph.D
 programs](https://www.nsf.gov/statistics/2017/nsf17310/digest/fod-women/mathematics-and-statistics.cfm).
-That's a big gap. K, like many of us, thinks that there are "bad things"
-dissuading women from joining Ph.D programs, and K would like to fix them. But
-K, like most of us, doesn't have much control over the situation. You can only
-attend so many conferences for women, run so many woman-focused organizations,
-and lobby so hard for your graduate director to accept more women before you
-realize that changing demographics is very slow. So, if you're really driven to
-bring in more women and secure their place in academia, you have to find
-something else to do. In this case, the "something else" was treating us all to
-an all-expenses-paid reeducation session together.
+That's a big gap, and it's not clear why it's there. This gap is not present in
+many other fields. In fact, women make up a *majority* almost everywhere but in
+STEM fields.
 
-Happy Thanksgiving!
+K, like many of us, thinks that there are "bad things" dissuading women from
+joining Ph.D programs, and would like to fix them. But K, like most of us,
+doesn't have much control over the situation. You can only attend so many
+conferences for women, run so many woman-focused organizations, and lobby so
+hard for your graduate director to accept more women before you realize that
+changing demographics is very slow. So, if you're really driven to bring in
+more women and secure their place in academia, you have to find something else
+to do.
+
+In this case, the "something else" was dragging us all into a reeducation
+session. Was this the appropriate response? Well, academics should say what's
+on their mind. That's the whole point of being one. On the other hand, since
+there is clearly stiff debate surrounding inclusivity, giving a talk "holding
+people accountable" for their views seems like an overreach.
+
+Either way, it was a fun few weeks. Happy Thanksgiving!
 
 \[*Note*: In an earlier version of this post, I used K's name and insinuated
-that they were a "bully" in deleted paragraphs. After reflection, the former
-felt like airing dirty laundry, and the latter was just mean-spirited. Both are
-gone now.\]
+that they were a "bully" in some deleted paragraphs. After reflection, the
+former felt like airing dirty laundry, and the latter was just mean-spirited.
+Both are gone now.\]
