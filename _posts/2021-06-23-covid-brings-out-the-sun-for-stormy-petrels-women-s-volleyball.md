@@ -59,9 +59,9 @@ joke.
 In a shortened, conference-only season, second-year coach Anna Braun led the
 Stormy Petrels to a **6-5** finish. You may look at that and say, "Robert,
 that's only 55%. It took a shortened season, a COVID-depleted conference, and
-over ten years years to *barely* win half of their games?" And while, yes, you
-would be correct, this is the Petrel's best percentage, first winning season,
-and best conference ranking since joining the SAA over a decade ago. For
+over ten years to *barely* win half of their games?" And while, yes, you would
+be correct, this is the Petrel's best percentage, first winning season, and
+best conference ranking since joining the SAA over a decade ago. For
 Oglethorpe, 6-5 is as good as winning the title.
 
 To explain how amazing this is, I want to provide some context. First we need
