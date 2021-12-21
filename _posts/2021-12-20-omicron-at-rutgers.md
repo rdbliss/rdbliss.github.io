@@ -109,7 +109,7 @@ Rutgers functioned exceedingly well this Fall. There was an indoor mask
 mandate, a vaccine requirement, and some restrictions on large, indoor
 gatherings. They all *worked*. As far as I can tell there has not been
 a significant number of seriously ill students, faculty, or staff. That
-includes the Delta surge. It has more-or-less been business as usual.
+includes the Delta surge.
 
 We had the tools to fight Delta, and we have the tools to fight Omicron.
 Rutgers has COVID tests, plenty of booster shots, and contact tracers. If we
