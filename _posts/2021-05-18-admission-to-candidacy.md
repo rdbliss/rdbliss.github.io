@@ -8,9 +8,10 @@ the necessary hurdles to be a "real" PhD student, and am "ready" to be a
 researcher.
 
 Of course, this implicitly means that I was *incapable* of doing research
-before passing my exams. [None](/publications/gcf) of
-[my](publications/az-recurrences) previous [publications](/publications/dyck)
-were ["real"](/publications/beukers)[^quality].
+before passing my exams. [None](https://arxiv.org/pdf/2004.00090.pdf) of
+[my](https://arxiv.org/pdf/2102.10170.pdf) previous
+[publications](https://arxiv.org/pdf/2009.09061.pdf) were
+["real"](https://arxiv.org/pdf/2101.08308.pdf)[^quality].
 
 [^quality]: I don't think that my outlined contributions are particularly
               *good*, but they *are* real.
