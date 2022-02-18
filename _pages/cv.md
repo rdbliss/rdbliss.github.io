@@ -9,12 +9,15 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+Education and Past Positions
 =========
 
 * Rutgers University — New Brunswick
     * 2019–
     * PhD Graduate student, mathematics.
+
+* Statistical Consultant, [League of Women Voters Fair Districts NJ](https://www.fairdistrictsnj.org/)
+    * 2022
 
 * Oglethorpe University
     * 2014–2019.
@@ -126,6 +129,9 @@ Awards
 
 Organizations / Service
 =============
+
+* 2022 *MoMath Masters* Tournament
+    * Problem writer (2021)
 
 * [Combinatorics and Algebras From A to Z](https://u.math.biu.ac.il/~beck/regev-zeilberger/)
     * Organizing committee (2021)
