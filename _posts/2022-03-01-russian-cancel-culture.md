@@ -47,12 +47,43 @@ ignorance about the actions of Putin's regime.
 
 If we apply this argument to everything Russia has any involvement in, no
 matter how insignificant (and the ICM is insignificant!), then we should
-boycott essentially everything and everyone from Russia.
+boycott essentially everything and everyone from Russia. Lots of very
+politically ineffective things have been done recently inspired by this
+argument.
 
-Here is the former US ambassador to Russia, Michael McFaul, saying something
-pretty close to this:
+Here is the Glasgow Film Festival announcing the removal of two Russian films
+seemingly because they are Russian:
 
-![There are no more “innocent” “neutral” Russians anymore. Everyone has to make a choice— support or oppose this war. The only way to end this war is if 100,000s, not thousands, protest against this senseless war. Putin can’t arrest you all!](../images/mcfaul.png)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A statement from
+Glasgow Film Festival. <a
+href="https://t.co/HjyYXhYPCJ">pic.twitter.com/HjyYXhYPCJ</a></p>&mdash;
+Glasgow Film Festival (@glasgowfilmfest) <a
+href="https://twitter.com/glasgowfilmfest/status/1498315807176073219?ref_src=twsrc%5Etfw">February
+28, 2022</a></blockquote> <script async
+src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Here is, for some reason, EA Sports announcing that the Russian national teams
+would be removed from FIFA 22:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A statement from EA
+SPORTS FIFA: <a
+href="https://t.co/v3pZvpblgS">pic.twitter.com/v3pZvpblgS</a></p>&mdash; EA
+SPORTS FIFA (@EASPORTSFIFA) <a
+href="https://twitter.com/EASPORTSFIFA/status/1499057030857777154?ref_src=twsrc%5Etfw">March
+2, 2022</a></blockquote> <script async
+src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+These are both silly. They will not pressure the Putin regime nor help anyone
+in Ukraine. However, they will also not seriously harm anyone innocent. Some
+reactions to the invasion are not so kind.
+
+Here is the former US ambassador to Russia, Michael McFaul, claiming that there
+are no "innocent" Russians anymore:
+
+![There are no more “innocent” “neutral” Russians anymore. Everyone has to make
+a choice— support or oppose this war. The only way to end this war is if
+100,000s, not thousands, protest against this senseless war. Putin can’t arrest
+you all!](../images/mcfaul.png)
 
 Here is Russian social scientist, Ilya Matveev, complaining about retributions
 in academia:
@@ -66,28 +97,18 @@ href="https://twitter.com/IlyaMatveev_/status/1498404492009689091?ref_src=twsrc%
 28, 2022</a></blockquote> <script async
 src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Here is the Glasgow Film Festival announcing the removal of two Russian films
-seemingly because they are Russian:
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A statement from
-Glasgow Film Festival. <a
-href="https://t.co/HjyYXhYPCJ">pic.twitter.com/HjyYXhYPCJ</a></p>&mdash;
-Glasgow Film Festival (@glasgowfilmfest) <a
-href="https://twitter.com/glasgowfilmfest/status/1498315807176073219?ref_src=twsrc%5Etfw">February
-28, 2022</a></blockquote> <script async
-src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-The Putin regime is doing something bad and we should discourage its behavior
-with a broad range of actions. But everything we try---from something silly
-like moving the ICM, to something serious like imposing new sanctions---might
-escalate the current conflict. And as Matthew Yglesias [recently
+The Putin regime is doing something bad and we should discourage its behavior.
+But everything we try---from something silly like moving the ICM, to something
+serious like imposing new sanctions---might escalate the current conflict. And
+as Matthew Yglesias [recently
 wrote](https://www.slowboring.com/p/23-thoughts-on-the-war-in-ukraine?s=r), "We
 can't just escalate and escalate. There has to be some goal in mind that counts
 as a win and lets people back down." Shunning everything related to the Russian
 government is not a sufficiently targeted goal.
 
-Fortunately, the ICM is inconsequential and there were good reasons to move it
-anyway. But I hope that our [newfound moral clarity about
+Fortunately we don't seem to be moving towards Russian internment camps or
+anything like that in the West. If all we do is remove Russian national teams
+from some sports games and disinvite a few filmmakers, then I am not so
+worried. But I hope that our [newfound moral clarity about
 Russia](https://noahpinion.substack.com/p/a-moment-of-clarity?s=r) does not go
-too far. As much as possible, we want to stop the war in Ukraine *without*
-hurting innocent people.
+too far. We have run into trouble with this in the past.
