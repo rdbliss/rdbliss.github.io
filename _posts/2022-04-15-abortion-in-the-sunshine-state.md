@@ -32,7 +32,7 @@ abortion by
 state](https://www.pewresearch.org/religion/religious-landscape-study/compare/views-about-abortion/by/state/).
 It's difficult to visualize the entire dataset, but here is a snapshot:
 
-![Pew abortion table](../images/pew-abortion.png)
+![Pew abortion table](/images/pew-abortion.png)
 
 Barring a national abortion ban (which we should not rule out!), Washington DC,
 Vermont, and Massachusetts—all with 70% or higher pro-choice support—are not
@@ -65,7 +65,7 @@ Most importantly, the Florida bill is in line with what Americans broadly want
 on abortion. Look at this table from
 [Gallup](https://news.gallup.com/poll/1576/abortion.aspx):
 
-![Gallup opinion poll on abortion](../images/gallup-abortion.png)
+![Gallup opinion poll on abortion](/images/gallup-abortion.png)
 
 Around 60% of Americans support legal abortion in the first trimester. That's
 a good majority, but support *plummets* after that. Almost 65% of Americans
