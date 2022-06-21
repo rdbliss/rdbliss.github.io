@@ -11,6 +11,10 @@ Below is a list of my publications. You can find a more functional list on
 [Google Scholar](https://scholar.google.com/citations?user=9FN7rdsAAAAJ&hl=en),
 but here I can add little notes and thoughts to everything.
 
+# 2022
+
+- [*The Meta-C-Finite Ansatz*](/publications/meta) by Robert Dougherty-Bliss.
+
 # 2021
 
 - [*Experimenting with Apery Limits and WZ pairs*](/publications/apery-limits),
