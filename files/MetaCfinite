@@ -1,0 +1,1919 @@
+print(`Created:  April 2022`):
+print(` This is MetaCfinite`):
+print(` It makes use of Doron Zeilberger's Cfinite package`):
+print(`Please report bugs to robert.w.bliss@gmail.com`):
+print():
+print(`For general help, run the command 'sofer();'.`):
+print(`For specific help, run the command 'sofer(procedureName)'`):
+
+sofer:=proc()
+
+if args=NULL then
+    print(`The main procedures are: MetaMSect, KefelM, polysum, and RationalStory`):
+    print(`The secondary procedures are: applyPoly, KefelMPoly, and charpoly`):
+elif args = MetaMSect then
+    print(`MetaMSect(C1)`):
+    print(`Given a C-finite sequence C1(n) of order r, finds the C-finite description of`):
+    print(`a1(m), a2(m), ..., ar(m), where`):
+    print(`C1(m * n) = a1(m) * C1(m * (n - 1)) + ... + ar(m) C1(m*(n - r))`):
+    print():
+    print(`Try:`):
+    print(`MetaMSect([[0, 1], [1, 1]]);`):
+    print(`MetaMSect([[0, 0, 1], [1, 1, 1]]);`):
+    print(`MetaMSect([[0, 0, 1], [1, 3/2, -1]]);`):
+    print(`Optionally, takes an argument which boosts the number of terms used.`):
+elif args = KefelM then
+    print(`KefelM(C1, C2)`):
+    print(`Computes the recurrence satisfied by a(n) = C1(m1 * n) * C2(m2 * n)`):
+    print(`for C-finite sequences C1 and C2.`):
+elif args = polysum then
+    print(`polysum(a, n, p, x)`):
+    print(`Returns a closed-form expression for sum(a(k), k=0..n-1), where`):
+    print(`p(x) is the characteristic polynomial of a(n).`):
+    print(`Try:`):
+    print(`polysum(F, n, x^2 - x - 1, x);`):
+    print(`polysum(T, n, x^3 - x^2 - x - 1, x);`):
+elif args = RationalStory then
+    print(`RationalStory(C1, C)`):
+    print(`Prints a verbose description of the generating function for C1(m * n)`):
+    print(`with respect to n for a C-finite sequence C1, using the name C`):
+    print(`Try:`):
+    print(`RationalStory([[0, 1], [1, 1]], F)`):
+elif args = applyPoly then
+    print(`applyPoly(p, x, terms)`):
+    print(`Apply the polynomial p(x) to the values in terms with`):
+    print(`x acting as the shift operator.`):
+    print(`Try:`):
+    print(`applyPoly(x^2 - x - 1, [0, 1, 1, 2, 3, 5, 8, 13])`):
+elif args = KefelMPoly then
+    print(`KefelMPoly(C1, C2, m1, m2, x)`):
+    print(`Return the characteristic polynomial of C1(m1 * n) C2(m2 * n) with`):
+    print(`respect to n where C1 and C2 are C-finite sequences.`):
+elif args = charpoly then
+    print(`charpoly(C1, x)`):
+    print(`Return the characteristic polynomial of the C-finite sequence C1 in x.`):
+fi:
+end:
+
+# Given a C-finite sequence C1(n) of order r, finds the C-finite description of
+# a1(m), a2(m), ..., ar(m), where
+#       C1(m * n) = a1(m) * C1(m * (n - 1)) + ... + ar(m) C1(m*(n - r)).
+MetaMSect:=proc(C1, boost:=1)
+    # The sequence ai(m) is the ith elementary symmetric function of the roots
+    # of the characteristic polynomial, and so it is C-finite of order <=
+    # binomial(r, i). We need at least 2 * ORDER + 4 terms to guess a
+    # recurrence, so the worst case is 2 * binomial(r, r / 2) + 4 terms.
+    local terms, m, r, rec, j, t:
+    r := nops(C1[2]):
+    terms := [[] $ r]:
+
+    for m from 1 to 2 * binomial(r, floor(r / 2)) + 4 * boost do
+        rec := mSect(C1, m, 0)[2]:
+        for j from 1 to nops(rec) do
+            terms[j] := [op(terms[j]), rec[j]]:
+        od:
+    od:
+
+    [seq(GuessRec(t), t in terms)]:
+end:
+
+# Given a recurrence of the C-finite sequence C(n), return the characteristic
+# polynomial of C(n).
+charpoly := proc(rec, x)
+    local d, p, roots, ans, i:
+    d := nops(rec):
+    p := x^d - add(x^(d - i) * rec[i], i=1..d):
+end:
+
+# Compute the recurrence satisfied by a(n) = C1(m1 * n) * C2(m2 * n) for
+# C-finite sequences C1 and C2.
+KefelM:=proc(C1, C2, m1, m2)
+    local C1m, C2m:
+    C1m := mSect(C1, m1, 0):
+    C2m := mSect(C2, m2, 0):
+
+    Kefel(C1m, C2m):
+end:
+
+# Compute the characteristic polynomial of a(n) = C1(m1 * n) * C2(m2 * n) for
+# C-finite sequences C1 and C2.
+KefelMPoly:=proc(C1, C2, m1, m2, x)
+    local C1m, C2m:
+    C1m := mSect(C1, m1, 0):
+    C2m := mSect(C2, m2, 0):
+
+    charpoly(Kefel(C1m, C2m)[2], x):
+end:
+
+polysum := proc(a, n, p, x)
+    local q, r, expr, k:
+    q := quo(p, x - 1, x):
+    r := simplify(subs(x=1, p)):
+    q := collect(q, x):
+
+    expr := add((a(n + k) - a(k)) * coeff(q, x, k), k=0..degree(q, x)):
+
+    -expr / r:
+end:
+
+RationalStory := proc(C1, C)
+    local a, d, res, i, init, rec, k, numerator, denominator, gf, j:
+    d := nops(C1[1]):
+    print(`THEOREM. If C(n) is the C-finite sequence`, C1, `then`):
+    print(C(m*n) = add(a[i](m) * C(m * (n - i)), i=1..d)):
+    print(`where the sequences a[i](m) satisfy`):
+    res := MetaMSect(C1):
+    for i from 1 to d do
+        init := res[i][1]:
+        rec := res[i][2]:
+        for k from 1 to nops(init) do
+            printf("\t\t\t\ta[%d](%d) = %a\n", i, k, init[k]):
+        od:
+        print(a[i](m) = add(rec[k] * a[i](m - k), k=1..nops(rec))):
+        print()
+    od:
+    print(`This implies that the generating function of`, C(m * n), `with respect to n is`):
+    numerator := add(a[k](m) * x^k * add(x^j * C(m * j), j=0..d-k-1), k=1..d):
+    numerator := add(x^j * C(m * j), j=0..d-1) + numerator:
+    numerator := collect(numerator, x):
+    denominator := 1 - add(a[k](m) * x^k, k=1..d):
+
+    gf := subs(C(0) = C1[1][1], numerator / denominator):
+    print(gf):
+    print(`(Assuming that C(n) starts at n = 0.)`):
+    gf:
+end:
+
+applyPoly := proc(p, x, terms)
+    local vals, k, val, i, P:
+    P := collect(expand(p), x):
+    vals := []:
+
+    for k from 1 to nops(terms) - degree(P, x) do
+        val := add(terms[k + i] * coeff(P, x, i), i=0..degree(P, x)):
+        vals := [op(vals), val]:
+    od:
+
+    vals:
+end:
+
+#################################
+# Start of Zeilberger's Cfinite #
+#################################
+
+with(combinat):
+with(numtheory):
+
+TDB:=proc(t):
+[-(1+t)/(-5*t^2-t+1-t^3+t^4)*(t-1), -(t^6-8*t^4+2*t^3+8*t^2-1)/(1+t)/(t-1)/(t^6+t^5-19*t^4+11*t^3+19*t^2+t-1), -(-1-1033*t^8+110*t^9+26*t^3+43*t^2-360*t^4-26*t^11+t
+^14+1033*t^6-43*t^12-110*t^5+360*t^10)/(t^16-t^15-76*t^14-69*t^13+921*t^12+584*t^11-4019*t^10-829*t^9+7012*t^8-829*t^7-4019*t^6+584*t^5+921*t^4-69*t^3-76*t^2-t+1),
+-(-1+t^30-2064705*t^8+156848*t^9+10324398*t^13+214*t^3+197*t^2-54699758*t^16-15137114*t^15-9741*t^4-2972710*t^11+54699758*t^14+202037*t^6+56736*t^7-32425754*t^12-\
+7262*t^5+11058754*t^10-197*t^28+214*t^27+9741*t^26-202037*t^24-7262*t^25+10324398*t^17-2972710*t^19+32425754*t^18-11058754*t^20+2064705*t^22+156848*t^21+56736*t^23)
+/(1-t+t^32+411*t^29-285*t^30+t^31+6149853*t^8+471319*t^9-58545372*t^13-411*t^3-285*t^2+429447820*t^16+123321948*t^15+18027*t^4+10402780*t^11-335484428*t^14-472275*t
+^6-271027*t^7+157353820*t^12+20689*t^5-42303393*t^10+18027*t^28-20689*t^27-472275*t^26+6149853*t^24+271027*t^25-123321948*t^17+58545372*t^19-335484428*t^18+
+157353820*t^20-42303393*t^22-10402780*t^21-471319*t^23)]:
+end:
+
+#SeqFromRec(S,N): Inputs S=[INI,ope]
+#where INI is the list of initial conditions, a ope a list of
+#size L, say, and a recurrence operator ope, codes a list of
+#size L, finds the first N0 terms of the sequence satisfying
+#the recurrence f(n)=ope[1]*f(n-1)+...ope[L]*f(n-L).
+#For example, for the first 20 Fibonacci numbers,
+#try: SeqFromRec([[1,1],[1,1]],20);
+SeqFromRec:=proc(S,N) local gu,L,n,i,INI,ope:
+INI:=S[1]:ope:=S[2]:
+if not type(INI,list) or not type(ope,list) then
+ print(`The first two arguments must be lists `):
+ RETURN(FAIL):
+fi:
+L:=nops(INI):
+if nops(ope)<>L then
+ print(`The first two arguments must be lists of the same size`):
+RETURN(FAIL):
+fi:
+
+if not type(N,integer) then
+ print(`The third argument must be an integer`, L):
+ RETURN(FAIL):
+fi:
+
+if N<L then
+ RETURN([op(1..N,INI)]):
+fi:
+
+gu:=INI:
+
+for n from 1 to N-L do
+ gu:=[op(gu),expand(add(gu[nops(gu)-i+1]*ope[i],i=1..L))]:
+od:
+
+gu:
+end:
+
+
+
+
+#GuessRec1(L,d): inputs a sequence L and tries to guess
+#a recurrence operator with constant cofficients of order d
+#satisfying it. It returns the initial d values and the operator
+# as a list. For example try:
+#GuessRec1([1,1,1,1,1,1],1);
+GuessRec1:=proc(L,d) local eq,var,a,i,n:
+
+if nops(L)<=2*d+2 then
+ print(`The list must be of size >=`, 2*d+3 ):
+ RETURN(FAIL):
+fi:
+
+var:={seq(a[i],i=1..d)}:
+
+eq:={seq(L[n]-add(a[i]*L[n-i],i=1..d),n=d+1..nops(L))}:
+
+var:=solve(eq,var):
+
+if var=NULL then
+ RETURN(FAIL):
+else
+ RETURN([[op(1..d,L)],[seq(subs(var,a[i]),i=1..d)]]):
+fi:
+
+end:
+
+
+
+
+#GuessRec(L): inputs a sequence L and tries to guess
+#a recurrence operator with constant cofficients 
+#satisfying it. It returns the initial  values and the operator
+# as a list. For example try:
+#GuessRec([1,1,1,1,1,1]);
+GuessRec:=proc(L) local gu,d:
+
+for d from 1 to trunc(nops(L)/2)-2 do
+ gu:=GuessRec1(L,d):
+ if gu<>FAIL then
+   RETURN(gu):
+ fi:
+od:
+FAIL:
+
+end:
+
+
+#Khibur(S1,S2): inputs two C-finite sequences S1,S2, and  outputs
+#their sum, For example, try:
+#Khibur([[1,2],[3,4]],[[2,5],[-1,6]]);
+Khibur:=proc(S1,S2) local d1,d2,L1,L2,L,i,K:
+
+if nops(S1[1])<>nops(S1[2]) or nops(S2[1])<>nops(S2[2]) then
+print(`Bad input`):
+RETURN(FAIL):
+fi:
+
+d1:=nops(S1[1]): d2:=nops(S2[1]):
+K:=2*(d1+d2)+4:
+
+L1:=SeqFromRec(S1,K):
+L2:=SeqFromRec(S2,K):
+
+L:=[seq(L1[i]+L2[i],i=1..K)]:
+
+GuessRec(L):
+
+end:
+
+
+
+#Kefel(S1,S2): inputs two C-finite sequences S1,S2, and  outputs
+#their product, For example, try:
+#Kefel([[1,2],[3,4]],[[2,5],[-1,6]]);
+Kefel:=proc(S1,S2) local d1,d2,L1,L2,L,i,K:
+
+if nops(S1[1])<>nops(S1[2]) or nops(S2[1])<>nops(S2[2]) then
+print(`Bad input`):
+RETURN(FAIL):
+fi:
+
+d1:=nops(S1[1]): d2:=nops(S2[1]):
+K:=2*(d1*d2)+4:
+
+L1:=SeqFromRec(S1,K):
+L2:=SeqFromRec(S2,K):
+
+L:=[seq(L1[i]*L2[i],i=1..K)]:
+
+GuessRec(L):
+
+end:
+
+
+
+#KhiburSslow(a,b,d1,d2): The recurrence operator
+#satisfied by the sum of any solution of
+#the recurrence f[n]=a[1]*f[n-1]+...+a[d1]*f[n-d1]
+#and g[n]=b[1]*g[n-1]+...+b[d1]*g[n-d1]
+#For example, try:
+#KhiburSslow(a,b,2,2);
+KhiburSslow:=proc(a,b,d1,d2) local S1,S2,i:
+
+S1:=[[seq(ithprime(5+i),i=1..d1)],[seq(a[i],i=1..d1)]]:
+
+S2:=[[seq(ithprime(9+d1+i),i=1..d2)],[seq(b[i],i=1..d2)]]:
+
+Khibur(S1,S2)[2]:
+
+end:
+
+
+
+#KefelSslow(a,b,d1,d2): The recurrence operator
+#satisfied by the product of any solution of
+#the recurrence f[n]=a[1]*f[n-1]+...+a[d1]*f[n-d1]
+#and g[n]=b[1]*g[n-1]+...+b[d1]*g[n-d1]
+#For example, try:
+#KefelSslow(a,b,2,2);
+KefelSslow:=proc(a,b,d1,d2) local S1,S2,i:
+
+S1:=[[seq(ithprime(5+i),i=1..d1)],[seq(a[i],i=1..d1)]]:
+
+S2:=[[seq(ithprime(9+d1+i),i=1..d2)],[seq(b[i],i=1..d2)]]:
+
+Kefel(S1,S2)[2]:
+
+end:
+
+
+#KhiburS(a,b,d1,d2): The recurrence operator
+#satisfied by the sum of any solution of
+#the recurrence f[n]=a[1]*f[n-1]+...+a[d1]*f[n-d1]
+#and g[n]=b[1]*g[n-1]+...+b[d1]*g[n-d1]
+#For example, try:
+#KhiburS(a,b,2,2);
+KhiburS:=proc(a,b,d1,d2) local S1,S2,i,x,y,L,C,var,eq,L1,L2,gu:
+
+S1:=[[seq(x[-d1+i],i=0..d1-1)],[seq(a[i],i=1..d1)]]:
+
+S2:=[[seq(y[-d2+i],i=0..d2-1)],[seq(b[i],i=1..d2)]]:
+
+L1:=SeqFromRec(S1,d1+d2+1):
+L2:=SeqFromRec(S2,d1+d2+1):
+
+L:=expand([seq(L1[i]+L2[i],i=1..d1+d2+1)]):
+
+gu:=expand(L[d1+d2+1]-add(C[i]*L[d1+d2+1-i],i=1..d1+d2)):
+
+var:={seq(C[i],i=1..d1+d2)}:
+eq:={seq(coeff(gu,x[-i],1),i=1..d1),seq(coeff(gu,y[-i],1),i=1..d2)}:
+var:=solve(eq,var):
+
+[seq(subs(var,C[i]),i=1..d1+d2)]:
+
+
+end:
+
+
+
+
+#KefelS(a,b,d1,d2): The recurrence operator
+#satisfied by the product of any solution of
+#the recurrence f[n]=a[1]*f[n-1]+...+a[d1]*f[n-d1]
+#and g[n]=b[1]*g[n-1]+...+b[d1]*g[n-d1]
+#For example, try:
+#KefelS(a,b,2,2);
+KefelS:=proc(a,b,d1,d2) local S1,S2,i,x,y,L,C,var,eq,L1,L2,gu,j:
+
+S1:=[[seq(x[-d1+i],i=0..d1-1)],[seq(a[i],i=1..d1)]]:
+
+S2:=[[seq(y[-d2+i],i=0..d2-1)],[seq(b[i],i=1..d2)]]:
+
+L1:=SeqFromRec(S1,d1*d2+1):
+L2:=SeqFromRec(S2,d1*d2+1):
+
+L:=expand([seq(L1[i]*L2[i],i=1..d1*d2+1)]):
+
+gu:=expand(L[d1*d2+1]-add(C[i]*L[d1*d2+1-i],i=1..d1*d2)):
+
+var:={seq(C[i],i=1..d1*d2)}:
+eq:={seq(seq(coeff(coeff(gu,x[-i],1),y[-j],1),j=1..d2),i=1..d1)}:
+var:=solve(eq,var):
+
+[seq(subs(var,C[i]),i=1..d1*d2)]:
+
+
+end:
+
+
+#ProdIndicatorN(m,n): The profile of multiplicity of
+#the (m*n)^2 ratios of a list of m*n numbers to
+#be the Cartesian product of a set of m numbers with
+#a set of n numbers. For example, try:
+#ProdIndicatorN(2,2);
+ProdIndicatorN:=proc(m,n) local a,b,i,j,gu,x,lu,mu:
+option remember:
+gu:=[seq(seq(a[i]*b[j],j=1..n),i=1..m)]:
+ProdProfileE(gu):
+end:
+
+#ProdIndicator(m,n): The profile of multiplicity of
+#the (m*n)^2 ratios of a list of m*n numbers to
+#be the Cartesian product of a set of m numbers with
+#a set of n numbers. For example, try:
+#ProdIndicator(2,2);
+ProdIndicator:=proc(m,n) local a,b,i,j,gu,x,lu,mu:
+option remember:
+gu:=[seq(seq(a[i]*b[j],j=1..n),i=1..m)]:
+lu:=[seq(seq(gu[i]/gu[j],j=1..m*n),i=1..m*n)]:
+lu:=add(x[lu[i]],i=1..nops(lu)):
+
+mu:=[]:
+
+for i from 1 to nops(lu) do
+ if type(op(1,op(i,lu)),integer) then
+   mu:=[op(mu),op(1,op(i,lu))]:
+ else:
+   mu:=[op(mu),1]:
+ fi:
+od:
+
+sort(mu):
+
+end:
+
+
+#ProdProfile(L,eps): Given a list of complex numbers finds its
+#(approximate profile). For example, try:
+#ProdProfile([1,2,3,6],10^(-4));
+ProdProfile:=proc(L,eps) local i,j,lu,mu,S,gu:
+
+gu:=[seq(seq(L[i]/L[j],j=1..nops(L)),i=1..nops(L))]:
+mu:=[]:
+S:={seq(i,i=1..nops(gu))}:
+
+while S<>{} do
+ lu:=Krovim(gu,S[1],eps):
+ mu:=[op(mu),nops(lu)]:
+ S:=S minus lu:
+od:
+sort(mu):
+end:
+
+#IsProd(f,t,m,n,eps): Given a rational function f of t
+#decides whether the C-finite sequence of its coeeficients
+#is a product of a C-finite sequences of order m and n.
+#For example, try:
+#IsProd(1/((1-t)*(1-2*t)*(1-3*t)*(1-6*t)),t,2,2);
+IsProd:=proc(f,t,m,n,eps) local lu,gu:
+lu:=denom(f):
+
+if degree(lu,t)<>m*n then
+ print(`The degree of the denominator of`, f, `should be`, m*n):
+ RETURN(FAIL):
+fi:
+
+gu:=evalf([solve(lu,t)]):
+
+
+if ProdProfile(gu,eps)=ProdIndicator(m,n) then
+ RETURN(true):
+else
+
+ RETURN(false,gu):
+fi:
+
+end:
+
+
+ 
+
+#CtoR(S,t), the rational function, in t, whose coefficients
+#are the members of the C-finite sequence S. For example, try:
+#CtoR([[1,1],[1,1]],t);
+
+CtoR:=proc(S,t) local D1,i,N1,L1,f,f1,L:
+if not (type(S,list) and  nops(S)=2 and type(S[1],list) and type(S[2],list)
+        and nops(S[1])=nops(S[2]) and type(t, symbol) ) then
+   print(`Bad input`):
+   RETURN(FAIL):
+fi:
+
+D1:=1-add(S[2][i]*t^i,i=1..nops(S[2])):
+N1:=add(S[1][i]*t^(i-1),i=1..nops(S[1])):
+L1:=expand(D1*N1):
+L1:=add(coeff(L1,t,i)*t^i,i=0..nops(S[1])-1):
+f:=L1/D1:
+L:=degree(D1,t)+10:
+f1:=taylor(f,t=0,L+1):
+if expand([seq(coeff(f1,t,i),i=0..L)])<>expand(SeqFromRec(S,L+1)) then
+print([seq(coeff(f1,t,i),i=0..L)],SeqFromRec(S,L+1)):
+ RETURN(FAIL):
+else
+ RETURN(f):
+fi:
+end:
+
+
+#RtoC(R,t): Given a rational function R(t) finds the
+#C-finite description of its sequence of coefficients
+#For example, try:
+#RtoC(1/(1-t-t^2),t);
+RtoC:=proc(R,t) local S1,S2,D1,R1,d,f1,i,a:
+R1:=normal(R):
+D1:=denom(R1):
+d:=degree(D1,t):
+if degree(numer(R1),t)>=d then
+print(`The degree of the top must be less than the degree of the bottom`):
+ RETURN(FAIL):
+fi:
+
+a:=coeff(D1,t,0):
+S2:=[seq(-coeff(D1,t,i)/a,i=1..degree(D1,t))]:
+f1:=taylor(R,t=0,d+1):
+S1:=[seq(coeff(f1,t,i),i=0..d-1)]:
+[S1,S2]:
+end:
+
+
+
+#KefelR(R1,R2,t): inputs rational functions of t,
+#R1 and R2,
+#and outputs the rational function 
+#whose coeffs. is their Hadamard product, for example try:
+#KefelR(1/(1-t-t^2),1/(1-t-t^3),t);
+KefelR:=proc(R1,R2,t) local S1,S2,S:
+S1:=RtoC(R1,t):
+S2:=RtoC(R2,t):
+S:=Kefel(S1,S2):
+normal(CtoR(S,t)):
+end:
+
+
+
+
+
+#Krovim(L,i,eps): Given a list L and an index between
+#1 and nops(L), finds the set of indices (including i)
+#such that abs(L[j]-L[i])<eps. For example, try:
+#Krovim([1.0001,1.01,1.00011],1,1/1000);
+Krovim:=proc(L,i,eps) local gu,j,a:
+gu:={}:
+a:=L[i]:
+
+for j from 1 to nops(L) do
+ if abs(L[j]-a)<eps then
+  gu:=gu union {j}:
+ fi:
+od:
+gu:
+end:
+
+#KrovimE(L,i): Given a list L and an index between
+#1 and nops(L), finds the set of indices (including i)
+#such that L[i]=L[j] For example, try:
+#KrovimE([1,2,1,3],1);
+KrovimE:=proc(L,i) local gu,j,a:
+gu:={}:
+a:=L[i]:
+
+for j from 1 to nops(L) do
+ if L[j]=a then
+  gu:=gu union {j}:
+ fi:
+od:
+gu:
+end:
+
+
+#ProdProfileE(L): Given a list of numbers (or symbols) finds its
+#exact profile. For example, try:
+#ProdProfileE([1,2,3,6]);
+ProdProfileE:=proc(L) local i,j,lu,mu,S,gu:
+
+gu:=[seq(seq(normal(L[i]/L[j]),j=1..nops(L)),i=1..nops(L))]:
+mu:=[]:
+S:={seq(i,i=1..nops(gu))}:
+
+while S<>{} do
+ lu:=KrovimE(gu,S[1]):
+ mu:=[op(mu),nops(lu)]:
+ S:=S minus lu:
+od:
+sort(mu):
+end:
+
+
+#etop(e): If e is a list of numbers (or expressions)
+#representing the elementary symmetric functions
+#outputs the power-symmetric functions
+#For example, try
+#etop([1,3,6]);
+etop:=proc(e) local k,p,i:
+
+for k from 1 to nops(e) do
+ p[k]:=expand(add((-1)^(i-1)*e[i]*p[k-i],i=1..k-1)+(-1)^(k-1)*k*e[k]):
+od:
+
+[seq(p[k],k=1..nops(e))]:
+
+end:
+
+
+#ptoe(p): If p is a list of numbers (or expressions)
+#representing the power-sum symmetric functions
+#outputs the elementary symmetric functions
+#For example, try
+#ptoe([1,3,6]);
+ptoe:=proc(p) local k,e,i:
+
+for k from 1 to nops(p) do
+ e[k]:=expand(add((-1)^(i-1)*p[i]*e[k-i]/k,i=1..k-1)+(-1)^(k-1)*p[k]/k):
+od:
+
+[seq(e[k],k=1..nops(p))]:
+
+end:
+
+
+
+
+#IsProdN(f,t,m,n): Given a rational function f of t
+#decides whether the C-finite sequence of its coeeficients
+#is a product of a C-finite sequences of order m and n.
+#For example, try:
+#IsProd(1/((1-t)*(1-2*t)*(1-3*t)*(1-6*t)),t,2,2);
+IsProdN:=proc(f,t,m,n) local lu,k,e,p,i:
+lu:=denom(f):
+k:=degree(lu,t):
+if k<>m*n then
+print(`The denominator of `, f, `should have been of degree`, m*n ):
+print(`but it is in fact of degree`, k):
+RETURN(FAIL):
+fi:
+
+lu:=expand(lu/coeff(lu,t,k)):
+e:=[seq((-1)^i*coeff(lu,t,k-i),i=1..k)]:
+
+p:=etop(e):
+RETURN(p):
+ProdProfileE(p), ProdIndicator(m,n):
+end:
+
+
+
+#CartProd2(L1,L2): The Cartesian product of lists L1 and L2,
+#for example, try:
+#CartProd2([2,5],[4,9]);
+CartProd2:=proc(L1,L2) local i,j:
+[seq(seq(L1[i]*L2[j],i=1..nops(L1)),j=1..nops(L2))]:
+end:
+
+
+#CartProd(L): The Cartesian product of the lists in the list
+#of lists L
+#for example, try:
+#CartProd([[2,5],[4,9],[4,7]]);
+CartProd:=proc(L) local L1,L2,i:
+if not type(L,list) then
+ print(`Bad input`):
+ RETURN(FAIL):
+fi:
+
+if {seq(type(L[i],list),i=1..nops(L))}<>{true} then
+ print(`Bad input`):
+ RETURN(FAIL):
+fi:
+
+if nops(L)=1 then
+RETURN(L[1]):
+fi:
+
+
+L1:=CartProd([op(1..nops(L)-1,L)]):
+L2:=L[nops(L)]:
+CartProd2(L1,L2):
+
+end:
+
+
+
+#ProdIndicatorG(L): The profile of multiplicity of
+#the convert(L,`*`)^2 ratios of a list of 
+#be the Cartesian product of lists of size given by L
+#For example, try:
+#ProdIndicatorG([2,2]);
+ProdIndicatorG:=proc(L) local a,i,j,gu,x,lu,mu,M:
+option remember:
+M:=[seq([seq(a[i][j],j=1..L[i])],i=1..nops(L))]:
+gu:=CartProd(M):
+
+lu:=[seq(seq(gu[i]/gu[j],j=1..nops(gu)),i=1..nops(gu))]:
+lu:=add(x[lu[i]],i=1..nops(lu)):
+
+mu:=[]:
+
+for i from 1 to nops(lu) do
+ if type(op(1,op(i,lu)),integer) then
+   mu:=[op(mu),op(1,op(i,lu))]:
+ else:
+   mu:=[op(mu),1]:
+ fi:
+od:
+
+sort(mu):
+
+end:
+
+
+
+#IsProdG(f,t,L,eps): Given a rational function f of t
+#decides whether the C-finite sequence of its coeeficients
+#is a product of a C-finite sequences of the orders given
+#by the list of positive integers L
+#For example, try:
+#IsProdG(1/((1-t)*(1-2*t)*(1-3*t)*(1-6*t)),t,[2,2],10^(-10));
+IsProdG:=proc(f,t,L,eps) local lu,gu,ku1,ku2:
+lu:=denom(f):
+
+if degree(lu,t)<>convert(L,`*`) then
+ print(`The degree of the denominator of`, f, `should be`, convert(L,`*`)):
+ RETURN(FAIL):
+fi:
+
+gu:=evalf([solve(lu,t)]):
+
+
+ku1:=ProdProfile(gu,eps):
+ku2:=ProdIndicatorG(L):
+
+if ku1=ku2 then
+ RETURN(true):
+else
+
+ RETURN(false,[ku1,ku2]):
+fi:
+
+end:
+
+
+
+
+#KefelSm(a,L): The recurrence operator
+#satisfied by the product of nops(L) recurrences
+#the recurrence f[i][n]=a[i,1]*f[n-1]+...+a[i,L[i]]*f[n-L[i]]
+#It also returns the set of generic coefficients
+#For example, try:
+#KefelSm(a,[2,2,2]);
+KefelSm:=proc(a,L) local gu,L1,mu,A,B,i,i1,j:
+
+if not (type(a,symbol) and type(L,list) ) then
+print(`Bad input`):
+ RETURN(FAIL):
+fi:
+
+if not {seq(type(L[i],integer),i=1..nops(L))}={true} then
+print(`Bad input`):
+ RETURN(FAIL):
+fi:
+
+if not {seq(evalb(L[i]>=2),i=1..nops(L))}={true} then
+print(`Bad input`):
+ RETURN(FAIL):
+fi:
+
+if nops(L)=1 then
+ RETURN([seq(a[1,j],j=1..L[1])]):
+fi:
+
+L1:=[op(1..nops(L)-1,L)]:
+gu:=expand(KefelSm(a,L1)):
+
+
+mu:=KefelS(A,B,convert(L1,`*`),L[nops(L)]):
+mu:=subs({seq(A[i1]=gu[i1],i1=1..nops(gu)),
+seq(B[i1]=a[nops(L),i1],i1=1..L[nops(L)])},mu):
+mu:=expand(mu):
+mu,{seq(seq(a[i,j],j=1..L[i]),i=1..nops(L))}:
+
+end:
+
+#Factorize(C,L): Given a C-finite recurrence (without the initial conditions)
+#tries to find a factorization into C-finite sequences of order
+#L[i],i=1..nops(L). 
+#It returns the factoriziation, if found, followed by the free parameters
+#and FAIL otherwise
+#For example, try:
+#Factorize([-3,106,-72,-576],[2,2]);
+Factorize:=proc(C,L) local gu,a,eq,var,i,var1,j,lu,k,lu1,mu:
+if nops(C)<>convert(L,`*`) then
+ print(`The number of elements of `, C):
+ print(`should be`, convert(L,`*`)):
+  ERROR(`Bad input`):
+fi:
+
+gu:=KefelSm(a,L):
+var:=gu[2]:
+gu:=gu[1]:
+eq:={seq(gu[i]=C[i],i=1..nops(gu))}:
+var1:=[solve(eq,var)]:
+
+if var1=[] then
+print(`There is no  solution`):
+RETURN(FAIL):
+fi:
+
+for k from 1 to nops(var1) do
+var1:=var1[k]:
+lu:={}:
+
+for i from 1 to nops(var1) do
+ if op(1,op(i,var1))=op(2,op(i,var1)) then
+   lu:=lu union {op(1,op(i,var1))}:
+ fi:
+od:
+
+
+
+if nops(lu)>0 then
+ mu:=[[seq([seq(subs(var1,a[i,j]),j=1..L[i])],i=1..nops(L))]]:
+ mu:=subs({seq(lu1=1,lu1 in lu)},mu):
+ RETURN(mu):
+fi:
+od:
+
+FAIL:
+end:
+
+
+
+
+#GuessRec1mini(L,d): inputs a sequence L and  guesses
+#a recurrence operator with constant cofficients of order d
+#satisfying it. It returns the initial d values and the operator
+# as a list. For example try:
+#GuessRec1mini([1,1,1,1,1,1],1);
+GuessRec1mini:=proc(L,d) local eq,var,a,i,n:
+
+if nops(L)<2*d then
+ print(`The list must be of size >=`, 2*d ):
+ RETURN(FAIL):
+fi:
+
+var:={seq(a[i],i=1..d)}:
+
+eq:={seq(L[n]-add(a[i]*L[n-i],i=1..d),n=d+1..nops(L))}:
+
+var:=solve(eq,var):
+
+if var=NULL then
+ RETURN(FAIL):
+else
+ RETURN([[op(1..d,L)],[seq(subs(var,a[i]),i=1..d)]]):
+fi:
+
+end:
+
+
+
+
+#ISF(L,k): given a sequence of integers finds all its
+#factors of length k. For example try:
+#ISF([1,4,9,16,32],3);
+ISF:=proc(L,k) local gu,gu1,lu,lu1:
+if k<0 then
+ RETURN({}):
+fi:
+
+if k>nops(L) then
+ print(`Bad input`):
+ RETURN(FAIL):
+fi:
+
+if k=0 then
+ RETURN({[]}):
+fi:
+gu:=ISF(L,k-1):
+lu:=divisors(L[k]):
+
+{seq(seq([op(gu1),lu1],lu1 in lu),gu1 in gu)}:
+
+
+end:
+
+
+
+#IISF(L,k): given a sequence of integers finds all its
+#increasing sequences
+#factors of length k. For example try:
+#IISF([1,4,9,16,32],3);
+IISF:=proc(L,k) local gu,gu1,lu,lu1,mu:
+if k<0 then
+ RETURN({}):
+fi:
+
+if k>nops(L) then
+ print(`Bad input`):
+ RETURN(FAIL):
+fi:
+
+if k=0 then
+ RETURN({[]}):
+fi:
+lu:=divisors(L[k]):
+if k=1 then
+ RETURN({seq([lu1],lu1 in lu)}):
+fi:
+
+gu:=IISF(L,k-1):
+
+
+mu:={}:
+for gu1 in gu do
+ for lu1 in lu do
+  if gu1[nops(gu1)]<lu1 then
+    mu:=mu union {[op(gu1),lu1]}:
+  fi:
+ od:
+od:
+mu:
+
+end:
+
+
+#FactorizeI1(C,k): Given a C finite integer sequence,C
+#tries to factorize it into a C finite sequence of
+#order k and order nops(C[1])-k. For example, try:
+#FactorizeI1(RtoC(TDB(t)[1],t),2);
+FactorizeI1:=proc(C,k) local gu,mu,mu1,lu,gu1,gu11,C1,i1:
+gu:=SeqFromRec(C,4*k):
+mu:=ISF(gu,2*k) minus {[1$(2*k)]}:
+
+for mu1 in mu do
+ lu:=GuessRec1mini(mu1,k):
+
+  if lu<>FAIL then
+   gu1:=SeqFromRec(lu,4*k):
+     if {seq(type(gu1[i1],integer),i1=1..nops(gu1))}={true} then
+      gu11:=[seq(gu[i1]/gu1[i1],i1=1..4*k)]:
+         if {seq(type(gu11[i1],integer),i1=1..nops(gu11))}={true} then
+          gu:=SeqFromRec(C,10*k):
+          gu1:=SeqFromRec(lu,10*k):
+          gu11:=[seq(gu[i1]/gu1[i1],i1=1..10*k)]:
+           C1:=GuessRec1(gu11,nops(C[2])/k):
+           if C1<>FAIL then
+              RETURN(lu,C1):
+           fi:
+         fi:
+     fi:
+   fi:
+
+  od:
+FAIL:
+end:
+
+
+
+
+#GuessPR1(C1,C2,d,x,y): Inputs two C-finite sequences and a pos. integer
+#d and outputs a polynomial P of degree d such that P(C1[n],C2[n])=0
+#for all n. If none found it returns FAIL. For example to solve
+#the Hugh Montgomery proposed (but not selected) Putnam problem,
+#(finding a polynomial of degree 4 such that P(F(n),F(n+1))=0,
+#where F(n) is the Fibonacci sequence type
+#GuessPR1([[0,1],[1,1]],[[1,1],[1,1]],4,x,y);
+GuessPR1:=proc(C1,C2,d,x,y) local eq,var,gu,a,S1,S2,N,var1,pol,n1,mu,v1:
+ gu:=GenPol([x,y],a,d):
+ var:=gu[2]:
+ gu:=gu[1]:
+ N:=nops(var):
+ S1:=SeqFromRec(C1,N+10):
+ S2:=SeqFromRec(C2,N+10):
+ eq:={seq(subs({x=S1[n1],y=S2[n1]},gu),n1=1..N+10)}:
+ var1:=solve(eq,var):
+ pol:=subs(var1,gu):
+  if pol=0 then
+    RETURN(FAIL):
+  fi:
+
+ S1:=SeqFromRec(C1,N+30):
+ S2:=SeqFromRec(C2,N+30):
+
+if {seq(normal(subs({x=S1[n1],y=S2[n1]},pol)),n1=N+11..N+30)}<>{0} then
+print(`The conjecture`, pol , `did not materialize`):
+RETURN(FAIL):
+fi:
+
+mu:={}:
+
+for v1 in var1 do
+ if op(1,v1)=op(2,v1) then
+  mu:=mu union {op(1,v1)}:
+ fi:
+od:
+
+if nops(mu)>1 then
+ print(`There are than one solution`):
+fi:
+
+factor(coeff(pol,mu[1],1)):
+
+end:
+
+
+
+#GuessPR(C1,C2,d,x,y): Inputs two C-finite sequences and a pos. integer
+#d and outputs a polynomial P of degree <=d such that P(C1[n],C2[n])=0
+#for all n. If none found it returns FAIL. For example to solve
+#the Hugh Montgomery proposed (but not selected) Putnam problem,
+#(finding a polynomial of degree 4 such that P(F(n),F(n+1))=0,
+#where F(n) is the Fibonacci sequence type
+#GuessPR([[0,1],[1,1]],[[1,1],[1,1]],6,x,y);
+GuessPR:=proc(C1,C2,d,x,y) local gu,d1:
+for d1 from 1 to d do
+ gu:=GuessPR1(C1,C2,d1,x,y):
+ if gu<>FAIL then
+  RETURN(gu):
+ fi:
+od:
+FAIL:
+end:
+
+
+
+#GenPol(Resh,a,deg): Given a list of variables Resh, a symbol a,
+#and a non-negative integer deg, outputs a generic polynomial
+#of total degree deg,in the variables Resh, indexed by the letter a of
+#followed by the set of coeffs. For example, try:
+#GenPol([x,y],a,1);
+GenPol:=proc(Resh,a,deg)
+local var,POL1,i,x,Resh1,POL:
+
+if not type(Resh,list) or nops(Resh)=0 then
+ ERROR(`Bad Input`):
+fi:
+
+x:=Resh[1]:
+if nops(Resh)=1 then
+RETURN(convert([seq(a[i]*x^i,i=0..deg)],`+`),{seq(a[i],i=0..deg)}):
+fi:
+
+Resh1:=[op(2..nops(Resh),Resh)]:
+var:={}:
+POL:=0:
+
+for i from 0 to deg do
+POL1:=GenPol(Resh1,a[i],deg-i):
+var:=var union POL1[2]:
+POL:=expand(POL+POL1[1]*x^i):
+od:
+POL,var:
+end:
+
+
+#GuessNLR1(C1,r,d,x): Inputs a C-finite sequence C and a pos. integer
+#d and outputs a polynomial P(x[1],..., x[r]) of degree d such that 
+#P(C1[n],C1[n-1],C1[n-r])=0
+#for all n. If none found it returns FAIL. For example to solve
+#the Hugh Montgomery proposed (but not selected) Putnam problem,
+#(finding a polynomial of degree 4 such that P(F(n),F(n+1))=0,
+#where F(n) is the Fibonacci sequence type
+#GuessNLR1([[0,1],[1,1]],1,4,x);
+GuessNLR1:=proc(C1,r,d,x) local eq,var,gu,a,S1,N,var1,pol,n1,mu,v1,i,i1:
+ gu:=GenPol([seq(x[i],i=0..r)],a,d):
+ var:=gu[2]:
+ gu:=gu[1]:
+ N:=nops(var)+r:
+ S1:=SeqFromRec(C1,N+10):
+ eq:={seq(subs({seq(x[i1]=S1[n1+i1],i1=0..r)},gu),n1=1..N+10-r)}:
+ var1:=solve(eq,var):
+ pol:=subs(var1,gu):
+  if pol=0 then
+    RETURN(FAIL):
+  fi:
+
+ S1:=SeqFromRec(C1,N+30):
+
+if 
+{seq(
+normal(subs({seq(x[i1]=S1[n1+i1-1],i1=0..r)},pol)),n1=N+11..N+30-r-1)}<>{0} then
+print(`The conjecture`, pol , `did not materialize`):
+RETURN(FAIL):
+fi:
+
+mu:={}:
+
+for v1 in var1 do
+ if op(1,v1)=op(2,v1) then
+  mu:=mu union {op(1,v1)}:
+ fi:
+od:
+
+if nops(mu)>1 then
+ print(`There are than one solution`):
+fi:
+
+factor(coeff(pol,mu[1],1)):
+
+end:
+
+
+
+#GuessNLR(C1,r,d,x): Inputs a C-finite sequence C and a pos. integer
+#d and outputs a polynomial P(x[1],..., x[r]) of degree<= d such that 
+#P(C1[n],C1[n-1],C1[n-r])=0
+#for all n. If none found it returns FAIL. For example to solve
+#the Hugh Montgomery proposed (but not selected) Putnam problem,
+#(finding a polynomial of degree 4 such that P(F(n),F(n+1))=0,
+#where F(n) is the Fibonacci sequence type
+#GuessNLR([[0,1],[1,1]],1,4,x);
+GuessNLR:=proc(C1,r,d,x) local gu,d1:
+
+for d1 from 1 to d do
+gu:=GuessNLR1(C1,r,d1,x):
+if gu<>FAIL then
+ RETURN(gu):
+fi:
+od:
+FAIL:
+end:
+
+
+
+
+#GuessNLRv(C1,r,d): Verbose form of GuessNLR(C1,r,d,x), i.e.
+#Inputs a C-finite sequence C and a pos. integer
+#d and outputs a polynomial P(x[1],..., x[r]) of degree<= d such that 
+#P(C1[n],C1[n-1],C1[n-r])=0
+#for all n. If none found it returns FAIL. For example to solve
+#the Hugh Montgomery proposed (but not selected) Putnam problem,
+#(finding a polynomial of degree 4 such that P(F(n),F(n+1))=0,
+#where F(n) is the Fibonacci sequence type
+#GuessNLRv([[0,1],[1,1]],1,4,x);
+GuessNLRv:=proc(C1,r,d) local gu,x,F,n,i1:
+gu:=GuessNLR(C1,r,d,x):
+
+if gu=FAIL then
+  RETURN(FAIL):
+fi:
+
+print(`Theorem: Let F(n) be the sequence defined by the recurrence`):
+print(F(n)=add(C1[2][i1]*F(n-i1),i1=1..nops(C1[2]))):
+print(`subject to the initial conditions`):
+print(seq(F(i1-1)=C1[1][i1],i1=1..nops(C1[1]))):
+print(`Then we have the following identity valid for every non-negative integer n`):
+print(subs({seq(x[i1]=F(n+i1),i1=0..r)},gu)=0):
+print(``):
+print(`Proof: Routine! (since everything in sight is C-finite).`):
+end:
+
+
+
+#FactorizeI1v(C1,k): Verbose form of FactorizeI1(C1,k), i.e.
+FactorizeI1v:=proc(C1,k) local gu,C2,C3,i1,n:
+gu:=FactorizeI1(C1,k): 
+
+C2:=gu[1]:
+C3:=gu[2]:
+
+if gu=FAIL then
+  RETURN(FAIL):
+fi:
+
+print(`Theorem: Let F(n) be the sequence defined by the recurrence`):
+print(F(n)=add(C1[2][i1]*F(n-i1),i1=1..nops(C1[2]))):
+print(`subject to the initial conditions`):
+print(seq(F(i1-1)=C1[1][i1],i1=1..nops(C1[1]))):
+
+print(``):
+print(`Let G(n) be the sequence defined on non-negative integers by the recurrence`):
+print(G(n)=add(C2[2][i1]*G(n-i1),i1=1..nops(C2[2]))):
+print(`subject to the initial conditions`):
+print(seq(G(i1-1)=C2[1][i1],i1=1..nops(C2[1]))):
+
+print(``):
+print(`Let H(n) be the sequence defined by the recurrence`):
+print(H(n)=add(C3[2][i1]*H(n-i1),i1=1..nops(C3[2]))):
+print(`subject to the initial conditions`):
+print(seq(H(i1-1)=C3[1][i1],i1=1..nops(C3[1]))):
+
+print(`Then the following is true for every non-negative integer n`):
+print(F(n)=G(n)*H(n)):
+print(``):
+print(`Proof: Routine! (since everything in sight is C-finite) .`):
+end:
+
+
+#mSect(C1,m,i): Given a C-finite sequence C1(n), finds
+#the C-finite description of C(m*n+i) where m is a pos. integer
+#and 0<=i<m. For example, try:
+#mSect([[0,1],[1,1]],2,0);
+mSect:=proc(C1,m,i) local S,n1:
+S:=SeqFromRec(C1,2*nops(C1[1])*(m+1)+3*m+10):
+S:=[seq(S[i+1+m*n1],n1=0..2*nops(C1[1])+3)]:
+GuessRec(S):
+end:
+
+
+
+#mSectV(C1,m,i): Verbose form of mSect(C1,m,i)
+#For example, try:
+#mSectV([[0,1],[1,1]],2,0);
+mSectV:=proc(C1,m,i) local C2,F,G,n,i1:
+C2:=mSect(C1,m,i):
+
+print(`Theorem: Let F(n) be the sequence defined by the recurrence`):
+print(F(n)=add(C1[2][i1]*F(n-i1),i1=1..nops(C1[2]))):
+print(`subject to the initial conditions`):
+print(seq(F(i1-1)=C1[1][i1],i1=1..nops(C1[1]))):
+print(``):
+print(`Define a new sequence`):
+print(G(n)=F(i+m*n)):
+print(`then G(n) satisfies the recurrence`):
+print(G(n)=add(C2[2][i1]*G(n-i1),i1=1..nops(C2[2]))):
+print(`subject to the initial conditions`):
+print(seq(G(i1-1)=C2[1][i1],i1=1..nops(C2[1]))):
+print(``):
+end:
+
+
+
+#BT(C1): The Binomial Transform of the C-finite sequence C,
+#in other words, the sequence add(binomial(n,i)*C1[i],i=0..n):
+#For example, try:
+#BT([[0,1],[1,1]]);
+BT:=proc(C1) local S,i1,n1:
+S:=SeqFromRec(C1,nops(C1[1])*3+5):
+S:=[seq(add(S[i1+1]*binomial(n1,i1),i1=0..n1),n1=0..nops(S)-1)]:
+GuessRec(S):
+end:
+
+
+#BTv(C1): Verbose form of mSect(C1,m,i)
+#For example, try:
+#BTv([[0,1],[1,1]]);
+BTv:=proc(C1) local C2,F,G,n,i1,i:
+C2:=BT(C1):
+
+print(`Theorem: Let F(n) be the sequence defined by the recurrence`):
+print(F(n)=add(C1[2][i1]*F(n-i1),i1=1..nops(C1[2]))):
+print(`subject to the initial conditions`):
+print(seq(F(i1-1)=C1[1][i1],i1=1..nops(C1[1]))):
+print(``):
+print(`Let G(n) be the sequence that is its Binomial Transform `):
+print(`In other words, the sequence defined by`):
+print(G(n)=Sum(binomial(n,i)*F(i),i=0..n)):
+print(`then G(n) satisfies the recurrence`):
+print(G(n)=add(C2[2][i1]*G(n-i1),i1=1..nops(C2[2]))):
+print(`subject to the initial conditions`):
+print(seq(G(i1-1)=C2[1][i1],i1=1..nops(C2[1]))):
+print(``):
+end:
+
+#Ux(x): The C-finite description of the Chebychev polynomials of
+#the second kind. Try: Ux(x);
+Ux:=proc(x):[[1,2*x],[2*x,-1]]:end:
+
+#Tx(x): The C-finite description of the Chebychev polynomials of
+#the first kind
+Tx:=proc(x):[[1,x],[2*x,-1]]:end:
+
+#Fn(): The C-finite description of the Fibonacci sequence
+Fn:=proc():[[0,1],[1,1]]:end:
+#Fn(): The C-finite description of fibonacci(n+1)
+fn:=proc():[[1,1],[1,1]]:end:
+#Ln(): The C-finite description of the Lucas Numbers
+Ln:=proc():[[2,1],[1,1]]:end:
+#Pn(): The C-finite description of the Pell Numbers
+Pn:=proc():[[0,1],[2,1]]:end:
+
+#Trn(): The C-finite description of the Triboanacci numbers Numbers
+Trn:=proc():[[1,1,2],[1,1,1]]:end:
+
+
+
+
+#KefelV(C1,C2): Verbose version of Kefel(S1,S2);
+#For example try:
+#KefelV([[1,2],[3,4]],[[2,5],[-1,6]]);
+KefelV:=proc(C1,C2) local F,G,H,n,t,C,i1,S1,S2,S,m:
+C:=Kefel(C1,C2):
+print(`A proof in the Spirit of Zeilberger of A C-finite Identity`):
+
+print(`Theorem: Let F(n) be the sequence defined by the recurrence`):
+print(F(n)=add(C1[2][i1]*F(n-i1),i1=1..nops(C1[2]))):
+print(`subject to the initial conditions`):
+print(seq(F(i1-1)=C1[1][i1],i1=1..nops(C1[1]))):
+print(``):
+print(`Equivalently, the ordinary generating function of F(n) w.r.t. to t is`):
+print(Sum(F(n)*t^n,n=0..infinity)=CtoR(C1,t)):
+print(`Also Let G(n) be the sequence defined by the recurrence`):
+print(G(n)=add(C2[2][i1]*G(n-i1),i1=1..nops(C2[2]))):
+print(`subject to the initial conditions`):
+print(seq(G(i1-1)=C2[1][i1],i1=1..nops(C2[1]))):
+print(`Equivalently, the ordinary generating function of G(n) w.r.t. to t is`):
+print(Sum(G(n)*t^n,n=0..infinity)=CtoR(C2,t)):
+print(`Let H(n)=F(n)G(n), then`):
+print(Sum(H(n)*t^n,n=0..infinity)=CtoR(C,t)):
+print(`or equivalently, H(n) is the sequence defined by the recurrence`):
+print(H(n)=add(C[2][i1]*H(n-i1),i1=1..nops(C[2]))):
+print(`subject to the initial conditions`):
+print(seq(H(i1-1)=C[1][i1],i1=1..nops(C[1]))):
+
+print(``):
+m:=nops(C1[1])*nops(C2[1])+nops(C[1]):
+print(`Proof: F(n) is a C-finite sequence of order`, nops(C1[2])):
+print(`and G(n) is a C-finite sequence of order`, nops(C2[2])):
+print(`Hence their product is a C-finite sequence of order`):
+print( nops(C1[1])*nops(C2[1])):
+print(`Since the claimed sequence for their product is a C-finite sequence`):
+print(`of order`, nops(C[1]),` it suffices to check the equality for`):
+print(`the first`, m, ` values `):
+
+S1:=expand(SeqFromRec(C1,m)):
+S2:=expand(SeqFromRec(C2,m)):
+S:=expand(SeqFromRec(C,m)):
+
+print(`The first`, m , `members of the sequence F(n) are`):
+print(S1):
+
+print(`The first`, m,  `members of the sequence G(n) are`):
+print(S2):
+print(`The first`, m, `members of the proposed   product are`):
+print(S):
+
+for i1 from 1 to m do
+if expand(S1[i1]*S2[i1]-S[i1])<>0 then
+ print(`Oops something is wrong `):
+ RETURN(FAIL):
+else
+ print(S1[i1], `times `, S2[i1], `is indeed `, S[i1]):
+fi:
+od:
+print(`QED!`):
+
+end:
+
+
+
+
+#CHseq(L,n,j,K): inputs  a list of pairs [C,e], where C is a C-finite
+#sequence, and e is an affine-linear expression in the symbols
+#n and j, of the form a*n+b*j+c, where a and a+b are non-negative
+#integers. Outputs the first K terms of
+#Sum(L[1][1](L[1][2])*L[2][1](L[2][2]),j=0..n-1)
+#using up to K values. For example, try:
+#CHseq([[Fn(),j],[Fn(),j],[Fn(),2*n-j],20);
+CHseq:=proc(L,n,j,K) local i1,S,j1,n1,Max1:
+
+Max1:=0:
+for i1 from 1 to nops(L) do
+ for n1 from 0 to K do
+   for j1 from 0 to n1-1 do
+   Max1:=max(Max1,subs({j=j1,n=n1},L[i1][2])):
+    if subs({j=j1,n=n1},L[i1][2])<0 then
+      RETURN(FAIL):
+    fi:
+   od:
+ od:
+od:
+
+for i1 from 1 to nops(L) do
+S[i1]:=SeqFromRec(L[i1][1],Max1+1):
+od:
+
+[
+seq(
+add(mul(S[i1][subs({j=j1,n=n1},L[i1][2])+1],i1=1..nops(L)),j1=0..n1-1),
+n1=0..K)]:
+
+end:
+
+
+#CH(L,n,j): 
+#Find a sequence of the style of Curtis Greene and
+#Herb Wilf ("Closed form summation of C-finite sequences",
+#Trans. AMS)
+#inputs  a list of pairs [C,e], where C is a C-finite
+#sequence, and e is an affine-linear expression in the symbols
+#n and j, of the form a*n+b*j+c, where a and a+b are non-negative
+#integers. Outputs the C-finite description of
+#Sum(L[1][1](L[1][2])*L[2][1](L[2][2]),j=0..n-1)
+#using up to K values. For example, try:
+#CH([[Fn(),j],[Fn(),j],[Fn(),2*n-j]);
+CH:=proc(L,n,j) local K, C:
+C:=GuessRec(CHseq(L,n,j,20)):
+
+if C<>FAIL then
+ RETURN(C):
+fi:
+for K from 25 by 5 while C=FAIL do
+C:=GuessRec(CHseq(L,n,j,K)):
+od:
+
+C:
+
+end:
+
+
+
+
+
+
+#####New stuff
+
+
+
+#GuessCH1(C1,r,d,x,C2): Inputs a C-finite sequence C1 and a pos. integer
+#d and outputs a polynomial P(x[1],..., x[r]) of degree d such that 
+#P(C1[n],C1[n-1],C1[n-r])=C2[n]
+#for all n. If none found it returns FAIL. For example to reproduce
+#Eq. (12) of the Greene-Wilf article
+# type
+#GuessCH1([[0,1],[1,1]],1,3,x,CH([[Fn(),j],[Fn(),j],[Fn(),2*n-j]],n,j));
+GuessCH1:=proc(C1,r,d,x,C2) local eq,var,gu,a,S1,N,var1,pol,n1,mu,v1,i,i1,S2,mu1:
+ gu:=GenPol([seq(x[i],i=0..r)],a,d):
+ var:=gu[2]:
+ gu:=gu[1]:
+ N:=nops(var)+r:
+ S1:=SeqFromRec(C1,N+11):
+ S2:=SeqFromRec(C2,N+11):
+ eq:={seq(subs({seq(x[i1]=S1[n1+i1+1],i1=0..r)},gu)-S2[n1+1],n1=1..N+10-r)}:
+ var1:=solve(eq,var):
+ pol:=subs(var1,gu):
+  if pol=0 then
+    RETURN(FAIL):
+  fi:
+
+
+ S1:=SeqFromRec(C1,N+30):
+ S2:=SeqFromRec(C2,N+30):
+
+if 
+{seq(
+normal(subs({seq(x[i1]=S1[n1+i1+1],i1=0..r)},pol)-S2[n1+1]),n1=N+11..N+30-r-2)
+}<>{0} then
+RETURN(FAIL):
+fi:
+
+mu:={}:
+
+for v1 in var1 do
+ if op(1,v1)=op(2,v1) then
+  mu:=mu union {op(1,v1)}:
+ fi:
+od:
+
+if mu<>{} then
+factor(subs({seq(mu1=0,mu1 in mu)},pol)):
+else factor(pol):
+fi:
+
+end:
+
+
+
+
+#FindCHg(C1,r,d, x,C2): Inputs a C-finite sequence C1 and a pos. integer
+#d and outputs a polynomial P(x[1],..., x[r]) of degree<= d such that 
+#P(C1[n],C1[n-1],C1[n-r])=C2[n]
+#for all n. If none found it returns FAIL. For example to reproduce
+#Eq. (12) of the Greene-Wilf article.
+#If there is none of degree <=d then it returns FAIL
+# type
+#FindCHg([[0,1],[1,1]],2,4,x,CH([[Fn(),j],[Fn(),j],[Fn(),2*n-j]],n,j));
+FindCHg:=proc(C1,r,d,x,C2) local gu,d1:
+
+for d1 from 1 to d do
+gu:=GuessCH1(C1,r,d1,x,C2):
+if gu<>FAIL then
+ RETURN(gu):
+fi:
+od:
+FAIL:
+end:
+
+###end new stuff
+
+
+
+#FindCH(C1,r,d, x,L,n,j): Inputs a C-finite sequence C1 and pos. integers
+#r and d, and a letter x, and a list L of affine-linear expressions
+#in n,j, and
+#and outputs a polynomial P(x[1],..., x[r]) of degree<= d such that 
+#P(C1[n],C1[n-1],C1[n-r])=C2[n]
+#where C2(n) is the sum(C1[L[1]]*C1[L[2]*...C1[L[nops(L)],j=0..n-1):
+#If none found it returns FAIL. For example to reproduce
+#Eq. (12) of the Greene-Wilf article.
+#If there is none of degree <=d then it returns FAIL
+# type
+#FindCH(Fn(),1,3,x,[j,j,2*n-j],n,j);
+FindCH:=proc(C1,r,d,x,L,n,j) local C2,i1,L1:
+L1:=[seq([C1,L[i1]],i1=1..nops(L))]:
+FindCHg([[0,1],[1,1]],r,d,x,CH(L1,n,j)):
+end:
+
+
+
+#FindCHv(C1,r,d, L,n,j): verbose version of FindCH(C1,r,d,x, L,n,j): 
+# type
+#FindCHv(Fn(),1,3,[j,j,2*n-j],n,j);
+FindCHv:=proc(C1,r,d,L,n,j) local gu,x,F,i1,t:
+gu:=FindCH(C1,r,d,x,L,n,j):
+
+if gu=FAIL then
+  RETURN(gu):
+fi:
+
+print(`Theorem: Let F(n) be the sequence defined by the recurrence`):
+print(F(n)=add(C1[2][i1]*F(n-i1),i1=1..nops(C1[2]))):
+print(`subject to the initial conditions`):
+print(seq(F(i1-1)=C1[1][i1],i1=1..nops(C1[1]))):
+print(``):
+print(`Equivalently, the ordinary generating function of F(n) w.r.t. to t is`):
+print(Sum(F(n)*t^n,n=0..infinity)=CtoR(C1,t)):
+print(`Also Let G(n) be the sequence defined by `):
+print(G(n)=Sum(mul(F(L[i1]),i1=1..nops(L)),j=0..n-1)):
+print(`then we have the following closed-form expression for G(n)`):
+print(G(n)=subs({seq(x[i1]=F(n+i1),i1=0..r)},gu)):
+print(``):
+print(`Proof: Both sides are C-finite, so it is enough to check the`):
+print(`first few terms, and this is left to the dear reader.`):
+
+end:
+
+
+#FindCHvTN(C1,r,d, L,n,j,mispar): verbose version of FindCH(C1,r,d,x, L,n,j): 
+# type
+#FindCHvTN(Fn(),1,3,[j,j,2*n-j],n,j,8);
+FindCHvTN:=proc(C1,r,d,L,n,j,mispar) local gu,x,F,i1,t:
+gu:=FindCH(C1,r,d,x,L,n,j):
+
+if gu=FAIL then
+  RETURN(gu):
+fi:
+
+print(`Theorem Number`, mispar):
+print( `Let F(n) be the sequence defined by the recurrence`):
+print(F(n)=add(C1[2][i1]*F(n-i1),i1=1..nops(C1[2]))):
+print(`subject to the initial conditions`):
+print(seq(F(i1-1)=C1[1][i1],i1=1..nops(C1[1]))):
+print(``):
+print(`Equivalently, the ordinary generating function of F(n) w.r.t. to t is`):
+print(Sum(F(n)*t^n,n=0..infinity)=CtoR(C1,t)):
+print(`Also Let G(n) be the sequence defined by `):
+print(G(n)=Sum(mul(F(L[i1]),i1=1..nops(L)),j=0..n-1)):
+print(`then we have the following closed-form expression for G(n)`):
+print(G(n)=subs({seq(x[i1]=F(n+i1),i1=0..r)},gu)):
+print(``):
+print(`Proof: Both sides are C-finite, so it is enough to check the`):
+print(`first few terms, and this is left to the dear reader.`):
+
+end:
+
+
+
+
+#Curt1(j,n,M): outputs 
+#all {a1n+b1j} with 0<=a1<=M and 0<=a1+b1<=M
+#Type: Curt1(j,n,4);
+Curt1:=proc(j,n,M)  local a1,b1:
+[seq(seq(a1*n+b1*j, b1=-a1..-1),a1=0..M),
+seq(seq(a1*n+b1*j, b1=1..M-a1 ),a1=0..M)]:
+end:
+
+#IV1(m,K): all the lists of weakly-increasing positive integers of size m
+#with largest element K. Do IV(3,5);
+IV1:=proc(m,K) local gu,i,gu1,gu11:
+option remember:
+if m=1 then
+ RETURN([seq([i],i=1..K)]):
+fi:
+gu:={}:
+for i from 1 to K do
+gu1:=IV1(m-1,i):
+gu:=gu union {seq([op(gu11),K],gu11 in gu1)}:
+od:
+gu:
+end:
+
+
+
+#IV(m,K): all the lists of weakly-increasing positive integers of size m
+#with largest element <=K. Do IV(3,5);
+IV:=proc(m,K) local i:
+{seq(op(IV1(m,i)),i=1..K)}:
+end:
+
+
+Khevre:=proc(m,j,n,M) local gu,mu,mu1,i1:
+gu:=Curt1(j,n,M):
+mu:=IV(m-1,nops(gu)):
+[seq([j,seq(gu[mu1[i1]],i1=1..m-1)],mu1 in mu)]:
+end:
+
+#SeferGW(m,d,M): outputs a book of Fibonacci identities with
+#right hand sides of degree at most d in F(n),F(n+1)
+#for Greene-Wilf type sums where the summand is
+#of the form F(j)*F(a1n+b1j)*... with m terms, for example, try:
+#SeferGW(2,5,2);
+SeferGW:=proc(m,d,M) local n,j,gu,mu,mu1,x,C1,co:
+co:=0:
+print(`A Book of Definite Summation Fibonacci Identities`):
+print(`in the style of Curtis Greene and Herbert Wilf`):
+print(``):
+print(`By Shalosh B. Ekhad `):
+
+C1:=Fn():
+mu:=Khevre(m,j,n,M):
+for mu1 in mu do
+gu:=FindCH(C1,1,d,x,mu1,n,j):
+
+ if gu<>FAIL then
+co:=co+1:
+print(`------------------------------------------------`):
+   FindCHvTN(C1,1,d,mu1,n,j,co):
+ fi:
+od:
+
+print(`------------------------------------------------`):
+print(`I hope that you enjoyed, dear reader, these`, co, `beautiful and`):
+print(`deep theorems. `):
+end:
+
+
+
+#GenHomPol(Resh,a,deg): Given a list of variables Resh, a symbol a,
+#and a non-negative integer deg, outputs a generic 
+#homogeneous polynomial
+#of degree deg,in the variables Resh, indexed by the letter a of
+#followed by the set of coeffs. For example, try:
+#GenHomPol([x,y],a,1);
+GenHomPol:=proc(Resh,a,deg)
+local var,POL1,i,x,Resh1,POL:
+
+if not type(Resh,list) or nops(Resh)=0 then
+ ERROR(`Bad Input`):
+fi:
+
+x:=Resh[1]:
+if nops(Resh)=1 then
+RETURN(a[1]*Resh[1]^deg,{a[1]}):
+fi:
+
+Resh1:=[op(2..nops(Resh),Resh)]:
+var:={}:
+POL:=0:
+
+for i from 0 to deg do
+POL1:=GenHomPol(Resh1,a[i],deg-i):
+var:=var union POL1[2]:
+POL:=expand(POL+POL1[1]*x^i):
+od:
+POL,var:
+end:
+
+
+#GuessInNLR1(C1,r,d,x): Inputs a C-finite sequence C and a pos. integer
+#d and outputs an
+#interesting polynomial P(x[0],..., x[r]) of degree d such that 
+#of the form x[0]*P1(x[1], ..., x[r])+P2(x[1], ...,x[r])+c
+#where P1,P2 are homog. of degree d, d-1 resp. such that
+#P(C1[n],C1[n-1],C1[n-r])=0
+#for all n. If none found it returns FAIL. For example to solve
+#the Hugh Montgomery proposed (but not selected) Putnam problem,
+#(finding a polynomial of degree 4 such that P(F(n),F(n+1))=0,
+#where F(n) is the Fibonacci sequence type
+#GuessInNLR1([[0,1],[3,-1]],2,2,x);
+GuessInNLR1:=proc(C1,r,d,x) local eq,var,
+gu,a,b,S1,N,var1,pol,n1,mu,v1,i,i1,gu1,gu2,c,lu,mu1:
+
+ gu1:=GenHomPol([seq(x[i],i=1..r)],a,d-1):
+ gu2:=GenHomPol([seq(x[i],i=1..r)],b,d):
+ var:=gu1[2] union gu2[2] union {c}:
+ gu:=expand(gu1[1]*x[0]+gu2[1]+c):
+ N:=nops(var)+r:
+ S1:=SeqFromRec(C1,N+10):
+ eq:={seq(subs({seq(x[i1]=S1[n1+i1],i1=0..r)},gu),n1=1..N+10-r)}:
+ var1:=solve(eq,var):
+ pol:=subs(var1,gu):
+  if pol=0 then
+    RETURN(FAIL):
+  fi:
+
+ S1:=SeqFromRec(C1,N+40):
+
+if 
+{seq(
+normal(subs({seq(x[i1]=S1[n1+i1-1],i1=0..r)},pol)),n1=N+11..N+40-r-1)}<>{0} then
+print(`The conjecture`, pol , `did not materialize`):
+RETURN(FAIL):
+fi:
+
+mu:={}:
+
+for v1 in var1 do
+ if op(1,v1)=op(2,v1) then
+  mu:=mu union {op(1,v1)}:
+ fi:
+od:
+
+lu:={}:
+
+for i from 1 to nops(mu) do
+
+ 
+mu1:=factor(coeff(pol,mu[i],1)):
+
+if not type(mu1,`*`) then
+ lu:=lu union {mu1}:
+fi:
+
+od:
+
+lu:
+
+end:
+
+
+
+
+
+
+
+
+#KefelSk(a,b): The recurrence operator
+#satisfied by the product of any solution of
+#the recurrence f[n]=a[1]*f[n-1]+...+a[d1]*f[n-d1]
+#and g[n]=b[1]*g[n-1]+...+b[d1]*g[n-d1]
+#where a and b are lists
+#For example, try:
+#KefelSk([a1,a2],[b1,b2]);
+KefelSk:=proc(a,b) local d1,d2,S1,S2,i,x,y,L,C,var,eq,L1,L2,gu,j:
+
+d1:=nops(a):
+d2:=nops(b):
+
+S1:=[[seq(x[-d1+i],i=0..d1-1)],a]:
+
+S2:=[[seq(y[-d2+i],i=0..d2-1)],b]:
+
+L1:=SeqFromRec(S1,d1*d2+1):
+L2:=SeqFromRec(S2,d1*d2+1):
+
+L:=expand([seq(L1[i]*L2[i],i=1..d1*d2+1)]):
+
+gu:=expand(L[d1*d2+1]-add(C[i]*L[d1*d2+1-i],i=1..d1*d2)):
+
+var:={seq(C[i],i=1..d1*d2)}:
+eq:={seq(seq(coeff(coeff(gu,x[-i],1),y[-j],1),j=1..d2),i=1..d1)}:
+var:=solve(eq,var):
+
+[seq(subs(var,C[i]),i=1..d1*d2)]:
+
+
+end:
+
+
+#Agel(p,z): inputs a polynomial p in floating-point, rounds it. Try:
+#Agel(1.00001+3.00001*z,z);
+Agel:=proc(p,z) local i,gu,gu1:
+gu:=add(round(coeff(p,z,i))*z^i,i=ldegree(p,z)..degree(p,z)):
+gu1:=gu-p:
+if max(seq(abs(coeff(gu1,z,i)),i=ldegree(p,z)..degree(p,z)))>10^(-6) then
+ RETURN(FAIL):
+else
+ RETURN(gu):
+fi:
+end:
+
+
+
+
+#DimerData(z): the list of length 10 whose i-th item is the C-finite representation (only the recurrence part)
+#of the sequence of weight-enumerators of tilings of an i by m rectangle, with weight z^(NumberOfVerticalTiles).
+#Try:
+#DimerData(z);
+DimerData:=proc(z)
+[[0, 1], [z, 1], [0, 2*z^2+2, 0, -1], [z^2, 3*z^2+2, z^2, -1], [0, 3*z^4+8*z^2+
+4, 0, -10*z^4-16*z^2-6, 0, 3*z^4+8*z^2+4, 0, -1], [z^3, 6*z^4+10*z^2+4, 5*z^5+5
+*z^3, z^6-13*z^4-20*z^2-6, -5*z^5-5*z^3, 6*z^4+10*z^2+4, -z^3, -1], [0, 4*z^6+
+20*z^4+24*z^2+8, 0, -52*z^8-192*z^6-256*z^4-144*z^2-28, 0, 64*z^10+416*z^8+892*
+z^6+844*z^4+360*z^2+56, 0, -16*z^12-160*z^10-744*z^8-1408*z^6-1216*z^4-480*z^2-\
+70, 0, 64*z^10+416*z^8+892*z^6+844*z^4+360*z^2+56, 0, -52*z^8-192*z^6-256*z^4-\
+144*z^2-28, 0, 4*z^6+20*z^4+24*z^2+8, 0, -1], [z^4, 10*z^6+30*z^4+28*z^2+8, 15*
+z^8+35*z^6+19*z^4, 7*z^10-78*z^8-300*z^6-354*z^4-168*z^2-28, z^12-75*z^10-230*z
+^8-217*z^6-63*z^4, -15*z^12+148*z^10+822*z^8+1442*z^6+1146*z^4+420*z^2+56, 69*z
+^12+232*z^10+303*z^8+182*z^6+43*z^4, -119*z^12-642*z^10-1673*z^8-2304*z^6-1644*
+z^4-560*z^2-70, 69*z^12+232*z^10+303*z^8+182*z^6+43*z^4, -15*z^12+148*z^10+822*
+z^8+1442*z^6+1146*z^4+420*z^2+56, z^12-75*z^10-230*z^8-217*z^6-63*z^4, 7*z^10-\
+78*z^8-300*z^6-354*z^4-168*z^2-28, 15*z^8+35*z^6+19*z^4, 10*z^6+30*z^4+28*z^2+8
+, z^4, -1], [0, 5*z^8+40*z^6+84*z^4+64*z^2+16, 0, -190*z^12-1200*z^10-3026*z^8-\
+3872*z^6-2632*z^4-896*z^2-120, 0, 655*z^16+7400*z^14+30734*z^12+65392*z^10+
+80039*z^8+58488*z^6+25116*z^4+5824*z^2+560, 0, -550*z^20-9600*z^18-75506*z^16-\
+291824*z^14-635896*z^12-847104*z^10-715572*z^8-384192*z^6-126672*z^4-23296*z^2-\
+1820, 0, 125*z^24+3000*z^22+41860*z^20+312560*z^18+1269923*z^16+3077832*z^14+
+4746678*z^12+4822192*z^10+3260653*z^8+1448360*z^6+404404*z^4+64064*z^2+4368, 0,
+-3275*z^24-63200*z^22-546320*z^20-2580000*z^18-7423128*z^16-13887552*z^14-\
+17518258*z^12-15134672*z^10-8937678*z^8-3532000*z^6-888888*z^4-128128*z^2-8008,
+0, 20775*z^24+326600*z^22+2165340*z^20+8191760*z^18+19832526*z^16+32436304*z^14
++36765756*z^12+29101024*z^10+15961703*z^8+5915064*z^6+1405404*z^4+192192*z^2+
+11440, 0, -41650*z^24-558400*z^22-3359060*z^20-11855040*z^18-27215340*z^16-\
+42684320*z^14-46777648*z^12-36011264*z^10-19292248*z^8-7003776*z^6-1633632*z^4-\
+219648*z^2-12870, 0, 20775*z^24+326600*z^22+2165340*z^20+8191760*z^18+19832526*
+z^16+32436304*z^14+36765756*z^12+29101024*z^10+15961703*z^8+5915064*z^6+1405404
+*z^4+192192*z^2+11440, 0, -3275*z^24-63200*z^22-546320*z^20-2580000*z^18-\
+7423128*z^16-13887552*z^14-17518258*z^12-15134672*z^10-8937678*z^8-3532000*z^6-\
+888888*z^4-128128*z^2-8008, 0, 125*z^24+3000*z^22+41860*z^20+312560*z^18+
+1269923*z^16+3077832*z^14+4746678*z^12+4822192*z^10+3260653*z^8+1448360*z^6+
+404404*z^4+64064*z^2+4368, 0, -550*z^20-9600*z^18-75506*z^16-291824*z^14-635896
+*z^12-847104*z^10-715572*z^8-384192*z^6-126672*z^4-23296*z^2-1820, 0, 655*z^16+
+7400*z^14+30734*z^12+65392*z^10+80039*z^8+58488*z^6+25116*z^4+5824*z^2+560, 0,
+-190*z^12-1200*z^10-3026*z^8-3872*z^6-2632*z^4-896*z^2-120, 0, 5*z^8+40*z^6+84*
+z^4+64*z^2+16, 0, -1], [z^5, 15*z^8+70*z^6+112*z^4+72*z^2+16, 35*z^11+140*z^9+
+171*z^7+65*z^5, 28*z^14-322*z^12-2265*z^10-5184*z^8-5768*z^6-3388*z^4-1008*z^2-\
+120, 9*z^17-566*z^15-3215*z^13-6692*z^11-6587*z^9-3087*z^7-551*z^5, z^20-255*z^
+18+1353*z^16+19012*z^14+68971*z^12+125890*z^10+133221*z^8+84938*z^6+32032*z^4+
+6552*z^2+560, -35*z^21+1984*z^19+15158*z^17+46708*z^15+77312*z^13+74348*z^11+
+41517*z^9+12474*z^7+1561*z^5, 411*z^22-3406*z^20-55574*z^18-291977*z^16-829849*
+z^14-1442558*z^12-1611098*z^10-1174278*z^8-552608*z^6-160888*z^4-26208*z^2-1820
+, -2164*z^23-15597*z^21-52968*z^19-105361*z^17-129494*z^15-99521*z^13-47920*z^
+11-14785*z^9-3114*z^7-395*z^5, 5527*z^24+61547*z^22+386154*z^20+1608919*z^18+
+4462986*z^16+8297046*z^14+10472463*z^12+9038642*z^10+5307687*z^8+2073470*z^6+
+512512*z^4+72072*z^2+4368, -6907*z^25-62987*z^23-295050*z^21-909216*z^19-\
+1898966*z^17-2657435*z^15-2455558*z^13-1463330*z^11-535745*z^9-108423*z^7-9163*
+z^5, 4508*z^26-4591*z^24-378657*z^22-2676224*z^20-9843835*z^18-22728088*z^16-\
+35204576*z^14-37654642*z^12-28066567*z^10-14480232*z^8-5043640*z^6-1125124*z^4-\
+144144*z^2-8008, -1591*z^27+41809*z^25+525554*z^23+2582552*z^21+7213271*z^19+
+12799308*z^17+15047773*z^15+11830501*z^13+6121965*z^11+1989750*z^9+365715*z^7+
+28765*z^5, 300*z^28-25078*z^26-95157*z^24+783883*z^22+7101270*z^20+25736222*z^
+18+55416381*z^16+78964798*z^14+77734646*z^12+53630348*z^10+25795557*z^8+8435826
+*z^6+1777776*z^4+216216*z^2+11440, -28*z^29+6237*z^27-90066*z^25-1297784*z^23-\
+6358401*z^21-17032260*z^19-28498360*z^17-31413624*z^15-23177509*z^13-11309780*z
+^11-3490046*z^9-613764*z^7-46563*z^5, z^30-694*z^28+42087*z^26+192164*z^24-\
+927407*z^22-9606494*z^20-34884094*z^18-73719263*z^16-102492918*z^14-98357116*z^
+12-66229900*z^10-31153572*z^8-9984576*z^6-2066064*z^4-247104*z^2-12870, 28*z^29
+-6237*z^27+90066*z^25+1297784*z^23+6358401*z^21+17032260*z^19+28498360*z^17+
+31413624*z^15+23177509*z^13+11309780*z^11+3490046*z^9+613764*z^7+46563*z^5, 300
+*z^28-25078*z^26-95157*z^24+783883*z^22+7101270*z^20+25736222*z^18+55416381*z^
+16+78964798*z^14+77734646*z^12+53630348*z^10+25795557*z^8+8435826*z^6+1777776*z
+^4+216216*z^2+11440, 1591*z^27-41809*z^25-525554*z^23-2582552*z^21-7213271*z^19
+-12799308*z^17-15047773*z^15-11830501*z^13-6121965*z^11-1989750*z^9-365715*z^7-\
+28765*z^5, 4508*z^26-4591*z^24-378657*z^22-2676224*z^20-9843835*z^18-22728088*z
+^16-35204576*z^14-37654642*z^12-28066567*z^10-14480232*z^8-5043640*z^6-1125124*
+z^4-144144*z^2-8008, 6907*z^25+62987*z^23+295050*z^21+909216*z^19+1898966*z^17+
+2657435*z^15+2455558*z^13+1463330*z^11+535745*z^9+108423*z^7+9163*z^5, 5527*z^
+24+61547*z^22+386154*z^20+1608919*z^18+4462986*z^16+8297046*z^14+10472463*z^12+
+9038642*z^10+5307687*z^8+2073470*z^6+512512*z^4+72072*z^2+4368, 2164*z^23+15597
+*z^21+52968*z^19+105361*z^17+129494*z^15+99521*z^13+47920*z^11+14785*z^9+3114*z
+^7+395*z^5, 411*z^22-3406*z^20-55574*z^18-291977*z^16-829849*z^14-1442558*z^12-\
+1611098*z^10-1174278*z^8-552608*z^6-160888*z^4-26208*z^2-1820, 35*z^21-1984*z^
+19-15158*z^17-46708*z^15-77312*z^13-74348*z^11-41517*z^9-12474*z^7-1561*z^5, z^
+20-255*z^18+1353*z^16+19012*z^14+68971*z^12+125890*z^10+133221*z^8+84938*z^6+
+32032*z^4+6552*z^2+560, -9*z^17+566*z^15+3215*z^13+6692*z^11+6587*z^9+3087*z^7+
+551*z^5, 28*z^14-322*z^12-2265*z^10-5184*z^8-5768*z^6-3388*z^4-1008*z^2-120, -\
+35*z^11-140*z^9-171*z^7-65*z^5, 15*z^8+70*z^6+112*z^4+72*z^2+16, -z^5, -1]]:
+end:
+
+#KastF(n,z): The C-finite representation (using numeric-floating point)
+#of the Kastelian solution to the Dimer problem for n by m rectangles
+#where z->1, z'->z. Try:
+#KastF(6,z):
+KastF:=proc(n,z) local i,gu:
+
+if not type(n/2,integer) then
+ print(`n must be an even integer`):
+fi:
+
+gu:=[2*z*cos(1*Pi/(n+1)),1];
+
+for i from 2 to n/2 do
+ gu:=KefelSk(gu, [2*z*cos(i*Pi/(n+1)),1]);
+od:
+
+[seq(Agel(evalf(gu[i]),z),i=1..nops(gu))]:
+
+end:
+
+
+#KastF1(n,z0): Like KastF(n,z) but for numeric z0 (to make it faster)
+#The C-finite representation (using numeric-floating point)
+#of the Kastelian solution to the Dimer problem for n by m rectangles
+#where z->1, z'->z0. z0 is a number.Try:
+#KastF1(6,3):
+KastF1:=proc(n,z0) local i,gu:
+
+
+if not type(n/2,integer) then
+ print(`n must be an even integer`):
+fi:
+
+gu:=evalf([2*z0*cos(1*Pi/(n+1)),1]);
+
+for i from 2 to trunc(n/2) do
+ gu:=KefelSk(gu, [2*z0*evalf(cos(i*Pi/(n+1))),1]);
+od:
+
+[seq(round(evalf(gu[i])),i=1..nops(gu))]:
+
+end:
+
+
