@@ -5,7 +5,7 @@ print(`For help, run "ezra();"`):
 
 ezra:=proc()
 if args=NULL then
- print(`The main procedures are: goodPells, intsolns, isGoodPell, badlines`):
+ print(`The main procedures are: goodPells, goodDiophs, intsolns, isGoodPell, badlines`):
  print(`For help with a specific procedure, type 'ezra(procedure_name);'`):
 
 elif nops([args])=1 and op(1,[args])=isGoodPell then
@@ -35,6 +35,14 @@ print(`such that a x^2 - b y^2 = (a u^2 - b y^2) has (x, y) = (u, v) as the`):
 print(`first positive integer solution iff (a, b) avoids all lines.`):
 print(`Try:`):
 print(`badlines(6, 28, a, b);`):
+
+elif nops([args])=1 and op(1,[args])=goodDiophs then
+print(`goodDiophs(p, params, x, y, u, v): returns the Diophantine equations p(x, y) = p(u, v)`):
+print(`such that (u, v) is the first positive solution, where p(x, y) depends on a set of parameters.`):
+print(`The parameter list is of the form [[a, A], [b, B], ...], where a ranges from 1 to A, b ranges`):
+print(`from 1 to B, and so on.`):
+print(`Try:`):
+print(`goodDiophs(a * x^2 - b * y^2, [[a, 30], [b, 2]], x, y, 6, 28)`):
 fi:
 end:
 
@@ -75,7 +83,6 @@ goodPells := proc(A, B, u, v, x, y)
     {seq(L[1] * x^2 - L[2] * y^2 = c(L), L in goods)}:
 end:
 
-# goodDiophs(a * x^2 - b * y^2, [[a, 30], [b, 1]], x, y, 6, 28)
 with(Iterator):
 goodDiophs := proc(expr, params, x, y, u, v)
     local goods, bounds, cur_expr, c, p, point, k:
