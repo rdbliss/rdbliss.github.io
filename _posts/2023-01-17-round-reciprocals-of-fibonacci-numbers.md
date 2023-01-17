@@ -156,8 +156,7 @@ These last two questions seem open.
 # Roots on the unit circle
 
 Let me demonstrate that "one root is outside the unit circle and the others are
-inside" is not a necessary condition. Take the example sequence $c(n) = 2^n
-- 1$, which has the characteristic polynomial $(x - 1)(x - 2)$. Let
+inside" is not a necessary condition. Take the example sequence $c(n) = 2^n - 1$, which has the characteristic polynomial $(x - 1)(x - 2)$. Let
 
 $$S(n) = \left( \sum_{k \geq n} \frac{1}{2^k - 1} \right)^{-1}.$$
 
