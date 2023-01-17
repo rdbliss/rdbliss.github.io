@@ -44,6 +44,7 @@ time, with a new column.
 | 5 |  1.8991   | 2
 | 6 |  3.0623   | 3
 | 7 |  4.9615   | 5
+| 8 |  8.0238   | 8
 
 If you round the tails, you get the Fibonacci numbers again! That is, it looks
 like
