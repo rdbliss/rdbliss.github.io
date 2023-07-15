@@ -1,6 +1,7 @@
 ---
 title: Factorio and the Josephus problem
 hide: true
+date: 2023-07-15
 ---
 
 Don't tell my advisor / employer / students, but I have been playing a lot of
