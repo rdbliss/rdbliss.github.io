@@ -62,9 +62,9 @@ telescoping, so summing again recovers $S(n)$ itself. The end-result will be
 
 $$S(n) = \sum_k (a(k, k) + b(k, k + 1) - b(k, 0)),$$
 
-where the bounds are too tedious to determine. By some standard theory about
-hypergeometric sequences, it turns out that $b(k, k + 1)$ and $b(k, 0)$ are
-rational multiples of $a(k, k)$, so we can write
+where the bounds are too tedious to determine. In our case it turns out that
+$b(k, 0) = 0$, and by some standard theory about hypergeometric sequences $b(k,
+k + 1)$ is a rational multiples of $a(k, k)$, so we can write
 
 $$S(n) = \sum_k R(k) a(k, k),$$
 
