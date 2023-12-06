@@ -7,45 +7,53 @@ author_profile: true
 
 {% include base_path %}
 
-Below is a list of my publications. You can find a more functional list on
-[Google Scholar](https://scholar.google.com/citations?user=9FN7rdsAAAAJ&hl=en),
-but here I can add little notes and thoughts to everything.
+Below is a list of my publications. You can find a more functional and
+up-to-date list on [Google
+Scholar](https://scholar.google.com/citations?user=9FN7rdsAAAAJ&hl=en).
+
+# 2023
+
+- [Hardinian Arrays](https://arxiv.org/abs/2309.00487), with Manuel Kauers.
+
+- [Lots and Lots of Perrin-Type Primality Tests and Their Pseudo-Primes](https://arxiv.org/abs/2307.16069), with Doron Zeilberger
+
+- [Exploring general Apery limits via the Zudilin-Straub
+  t-transform](https://arxiv.org/abs/2205.13601), with Doron Zeilberger.
+  Journal of Difference Equations and Applications.
 
 # 2022
 
-- [*The Meta-C-Finite Ansatz*](/publications/meta) by Robert Dougherty-Bliss.
+- [Gosper's algorithm and Bell numbers](https://arxiv.org/abs/2210.13520)
+- [Integral Recurrences from A to Z](https://arxiv.org/abs/2102.10170).
+  American Mathematical Monthly.
+
+- [Tweaking the Beukers integrals in search of more miraculous irrationality
+  proofs a la Apery](https://arxiv.org/abs/2101.08308), with Christoph
+  Koutschan and Doron Zeilberger. The Ramanujan Journal.
+
+- [The Meta-C-finite Ansatz](https://arxiv.org/abs/2206.14852). Proceedings of
+  the 20th International Conference on Fibonacci Numbers, The Fibonacci
+  Association.
 
 # 2021
 
-- [*Experimenting with Apery Limits and WZ pairs*](/publications/apery-limits),
-  by Robert Dougherty-Bliss and Doron Zeilberger. Featured contribution to
-  *Maple Transactions*, v. 2, issue 1 (2021).
-
-- [*Tweaking the Beukers Integrals in Search of More Miraculous Irrationality
-  Proofs À La Apéry*](/publications/beukers), by Robert Dougherty-Bliss,
-  Christoph Koutschan, and Doron Zeilberger. To appear in *The Ramanujan
-  Journal*.
-
-- [*Integral Recurrences from A to Z*](/publications/az-recurrences), by Robert
-  Dougherty-Bliss. To appear in *The American Mathematical Monthly*.
+- [Experimenting with Apery limits and WZ
+  pairs](https://arxiv.org/abs/2109.05359), with Doron Zeilberger. Maple
+  Transactions.
 
 # 2020
 
-- [*Enumerating Restricted Dyck Paths with Context-Free
-  Grammars*](/publications/dyck), by AJ Bu and Robert Dougherty-Bliss. To
-  appear in *Integers*.
+- [Enumerating restricted Dyck paths with context-free
+  grammars](https://arxiv.org/abs/2009.09061), with AJ Bu. Integers.
 
-- [*Automatic Conjecturing and Proving of Exact Values of Some Infinite
-  Families of Infinite Continued Fractions*](/publications/gcf), by Robert
-  Dougherty-Bliss and Doron Zeilberger. Appeared in *The Ramanujan Journal*.
+- [Automatic conjecturing and proving of exact values of some infinite families
+  of infinite continued fractions](https://arxiv.org/abs/2004.00090), with
+  Doron Zeilberger. The Ramanujan Journal.
 
 # 2019
 
-- [*Expressive Complexity of Computer Algebra
-  Systems*](/publications/ou-thesis), by Robert Dougherty-Bliss.
-
-- [*Global dynamics of a cancer stem cell treatment
-  model*](/publications/cancer), by Krysten Abernathy, Zachary Abernathy,
-  Robert Dougherty-Bliss, Caleb Mayer, and Heidi Whiteside. Appeared in
-  *International Journal of Dynamical Systems and Differential Equations*, v.
-  9, issue 2.
+- [Global dynamics of a cancer stem cell treatment
+  model](https://www.inderscienceonline.com/doi/abs/10.1504/IJDSDE.2019.100566)
+  (no arxiv link, sorry!), with Kristen Abernathy, Zachary Abernathy, Caleb
+  Mayer, and Heidi Whiteside. International Journal of Dynamical Systems and
+  Differential Equations.
