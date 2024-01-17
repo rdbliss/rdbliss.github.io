@@ -23,11 +23,11 @@ With all due respect to Euclid, in hindsight we know that mediating all of
 mathematics through lines and circles makes some things more difficult than
 they need to be.
 
-Things are better today now that we have symbolic notation. On occasion people
-fall into a Euclid-style trap and say that mathematics *is* symbol crunching.
-If you can move the right funny letters around in calculus, linear algebra, or
-differential equations, then you're a "good student." But of course math is not
-just symbol crunching, just like it isn't just lines and circles.
+Things are better today now that we have symbolic notation, though on occasion
+people fall into a Euclid-style trap and say that mathematics *is* symbol
+crunching. If you can move the right funny letters around in calculus, linear
+algebra, or differential equations, then you're a "good student." But of course
+math is not just symbol crunching, just like it isn't just lines and circles.
 
 This historical outline guides me when thinking about AI generated art. There
 has been a [lot of
