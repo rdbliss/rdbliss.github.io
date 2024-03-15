@@ -1,6 +1,5 @@
 ---
 title: The people I did not thank in my thesis
-hide: true
 date: 2024-03-15
 ---
 
