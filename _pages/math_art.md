@@ -49,3 +49,13 @@ This is a randomly drawn congressional map of Georgia using
 [2018 Voting Rights Data Institute](https://sites.tufts.edu/vrdi/). I don't
 think it solves [gerrymandering](https://en.wikipedia.org/wiki/Gerrymandering),
 but it sure is pretty.
+
+# Random number generation with C-finite sequences
+
+![Pseudorandomly colored bars](/images/lfsr.png)
+
+This is a visualization of five [linear feedback shift
+registers](https://en.wikipedia.org/wiki/Linear-feedback_shift_register) mod 9,
+which is a fancy way to say "some C-finite sequences evaluated mod 9." I don't
+remember what the recurrences or initial conditions were, but it should be easy
+to replicate this by just making some things up.
