@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Robert Dougherty-Bliss"
 title_separator          : "-"
 name                     : &name "Robert Dougherty-Bliss"
-description              : &description "A place, perchance, to dream"
+description              : &description ""
 url                      : "https://rwdb.xyz" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "rdbliss/rdbliss.github.io"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Robert Dougherty-Bliss"
   avatar           : Dougherty-Bliss_Robert_photo.jpg
-  bio              : "Mathematics student"
-  location         : "Rutgers University"
+  bio              : "Mathematician"
+  location         : "Dartmouth College"
   employer         :
   googlescholar    :
   email            : "robert.w.bliss@gmail.com"
