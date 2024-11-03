@@ -77,7 +77,7 @@ I admit, dear reader, that if you really don't like her policies, then it must
 sting to vote for "lying Kamala." Maybe someday I can convince you that you
 should become a Democrat. Or, who knows, maybe in 2028 Republicans will
 nominate a new Reagan and you can convince me to get on board. Maybe we can
-even agree to pass some voter ID laws before the midterms[^ID]! For now, let's
+even agree to pass some voter ID laws before the midterms![^ID] For now, let's
 just agree to get back on track.
 
 [^ID]: Because we have a [*real good* track record](https://en.wikipedia.org/wiki/Real_ID_Act) enforcing laws about ID.
