@@ -142,7 +142,7 @@ We can apply the kind of argument that we used before to show that these
 sequences are defined by linear, interlinked recurrences, which implies that
 they are C-finite.
 
-My point is that these kinds of recurrences because $x^2 e^x$ satisfies
+My point is that these kinds of recurrences exist because $x^2 e^x$ satisfies
 a linear differential equation with constant coefficients. There might be some
 little details that are nicer for polynomials times $e^x$, but the same flavor
 of argument would apply to, for example, $x^5 e^x \sin x$.
