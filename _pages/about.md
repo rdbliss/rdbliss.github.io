@@ -13,13 +13,16 @@ until I graduated high school. At this point I went by Robert Bliss rather than
 Robert Dougherty-Bliss. (There's a *different* Robert Bliss who painted
 nearly-naked men.)
 
-I spent time studying computer repair and programming in high school, but was
-eventually swayed to pursue math my Senior year by my teaching-hero, David
-Caldwell. I left South Carolina for Georgia and took up residence at Oglethorpe
-University in [Brookhaven](https://www.brookhavenga.gov/), a suburb of Atlanta.
-Oglethorpe gave me a healthy exposure to philosophy and the arts as well as
-(and sometimes at the expense of) math. I have very fond memories of my time at
-Oglethorpe and the people I knew there.
+I studied computer repair and programming in high school, but was eventually
+swayed to pursue math my Senior year by my teaching-hero, David Caldwell.
+I graduated from Oglethorpe University in Atlanta, where I got a healthy dose
+of philosophy and arts in addition to math.
 
-In 2019 I came to the mathematics department at Rutgers University in New
-Brunswick, New Jersey to begin a PhD.
+I received my PhD in math in 2024 under my advisor Doron Zeilberger at Rutgers
+University. I first learned about Zeilberger by reading a copy of his book *A
+= B* I found in my undergraduate library. As far as I know I was the only
+person to ever check this book out, so that might be the most influential copy
+of that book ever sold, percentage-wise.
+
+In 2024 I was hired to work under the puzzle master Peter Winkler as an
+Instructor of Applied and Computational Math at Dartmouth College.
