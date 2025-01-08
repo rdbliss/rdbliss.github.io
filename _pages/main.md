@@ -23,3 +23,6 @@ This site contains some information about me, my work, and a blog where I post
 ideas. Some are even good!
 
 My CV is [here](/files/cv.pdf).
+
+I was born in the year $\lfloor \pi^6 / \log \varphi \rfloor$, which makes me
+$\lceil e \pi^2 \rceil$ years old.
