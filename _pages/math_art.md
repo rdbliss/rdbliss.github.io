@@ -60,10 +60,11 @@ to replicate this by just making some things up.
 
 # Clustered roots
 
-![Circle of 10th roots of -1 and roots of 10th degree trinomials](/images/rouche.png)
+![Circle of 11th roots of -1 and roots of 11th degree trinomials](/images/rouche.png)
 
-This is a drawing of the roots of $x^{10} + 1$---the 10th roots of -1---and the
-trinomials $x^{10} - x^k + 1$ for $k = 1, 2, \dots, 9$. The diamonds are the
-roots of $x^{10} + 1$, and the hexagons are the other roots. Notice that the
-trinomial roots cluster around the roots of $-1$. This was really surprising to
-me.
+This is a drawing of the roots of $x^{11} + 1$---the 11th roots of -1---and the
+trinomials $x^{11} - x^k + 1$ for $k = 1, 2, \dots, 10$. The diamonds are the
+roots of $x^{11} + 1$, and the hexagons are the other roots. Notice that the
+trinomial roots cluster around the roots of $-1$, and that they "orbit" around
+them as they traverse the unit circle counterclockwise. This was really
+surprising to me.
