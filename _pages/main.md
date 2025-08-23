@@ -47,7 +47,7 @@ in each row and column? This turns out to be hard to answer, but if you fix
 $k$, then the number always satisfies a "nice" recurrence. I showed that $a(n) = B(n, 3)$, the number of $2n \times 6$ such matrices, satisfies this
 recurrence:
 
-![balanced matrices recurrence](/files/Bn3.png)
+![balanced matrices recurrence](/images/Bn3.png)
 
 It seems impossible to compute the recurrence for $B(n, 4)$ and higher.
 ([paper](https://arxiv.org/abs/2410.07435))
