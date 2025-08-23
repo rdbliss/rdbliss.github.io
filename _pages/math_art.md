@@ -22,9 +22,7 @@ to sum the results up, giving what looks like the skyline of a blocky city. I
 thought this was cooler than whatever I was trying to do, so I played with my
 mistake instead.
 
-Someday I would like to make an endless animation of this.
-
-Now in [cyberpunk](https://github.com/dhaitz/mplcyberpunk)!
+Also in [cyberpunk](https://github.com/dhaitz/mplcyberpunk)!
 
 ![Poisson city
 skylines](/images/skyline_cyber.png)
@@ -37,8 +35,8 @@ This plot shows the difference between the ["classical" Lotka–Volterra
 equations](https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations) and
 a stochastic version of them which adds some randomness. In the classical
 version, predator and prey populations enter a stable equilibrium (the
-oval-looking thing) and never leave it. The stochastic version lets you jump
-around more, and looks much more interesting.
+oval-looking thing) and never leave it. The stochastic version lets them jump
+around and do different things.
 
 # Random redistricting
 
@@ -59,3 +57,13 @@ registers](https://en.wikipedia.org/wiki/Linear-feedback_shift_register) mod 9,
 which is a fancy way to say "some C-finite sequences evaluated mod 9." I don't
 remember what the recurrences or initial conditions were, but it should be easy
 to replicate this by just making some things up.
+
+# Clustered roots
+
+![Circle of 10th roots of -1 and roots of 10th degree trinomials](/images/rouche.png)
+
+This is a drawing of the roots of $x^{10} + 1$---the 10th roots of -1---and the
+trinomials $x^{10} - x^k + 1$ for $k = 1, 2, \dots, 9$. The diamonds are the
+roots of $x^{10} + 1$, and the hexagons are the other roots. Notice that the
+trinomial roots cluster around the roots of $-1$. This was really surprising to
+me.
