@@ -32,24 +32,25 @@ old.
 ### Speeding up CRT
 
 You can break up big integer computations with the Chinese Remainder Theorem.
-In the right problem, the reduction / reconstruction steps of CRT can make up
-a significant part of your computational cost, and you can reduce these by
+In some problems, the reduction / reconstruction steps of CRT make up
+a significant part of the computational cost, but you can reduce these by
 choosing "custom" moduli. I recently studied moduli of the form $2^n - 2^k + 1$,
-which leads to studying resultants of the trinomials $x^n - x^k + 1$ and when
-they are divisible by different primes. These trinomials are very mysterious,
-and there is still a lot to learn about them and similar families.
+which leads to thinking about resultants of the trinomials $x^n - x^k + 1$ and
+when they are divisible by different primes. These trinomials are very
+mysterious. There is still a lot to learn about them and similar families.
 ([paper](https://arxiv.org/abs/2508.11043))
 
 ### Balanced Matrices
 
 How many 0-1 matrices are there of size $2n \times 2k$ with as many 0's as 1's
-in each row and column? This turns out to be hard to answer, but if you fix
-$k$, then the number always satisfies a "nice" recurrence. I showed that $a(n) = B(n, 3)$, the number of $2n \times 6$ such matrices, satisfies this
-recurrence:
+in each row and column? This turns out to be hard to answer for anything other
+than $k = 1$, but for fixed $k$ the number always satisfies a "nice"
+recurrence. I showed that $a(n) = B(n, 3)$, the number of $2n \times 6$ such
+matrices, satisfies this recurrence:
 
 ![balanced matrices recurrence](/images/Bn3.png)
 
-It seems impossible to compute the recurrence for $B(n, 4)$ and higher.
+It seems very difficult to compute the recurrence for $B(n, 4)$ and higher.
 ([paper](https://arxiv.org/abs/2410.07435))
 
 ### Comma sequences
