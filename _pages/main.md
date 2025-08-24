@@ -33,12 +33,12 @@ old.
 
 You can break up big integer computations with the Chinese Remainder Theorem.
 In some problems, the reduction / reconstruction steps of CRT make up
-a significant part of the computational cost, but you can reduce these by
-choosing "custom" moduli. I recently studied moduli of the form $2^n - 2^k + 1$,
-which leads to thinking about resultants of the trinomials $x^n - x^k + 1$ and
-when they are divisible by different primes. These trinomials are very
-mysterious. There is still a lot to learn about them and similar families.
-([paper](https://arxiv.org/abs/2508.11043))
+a significant part of the computational cost, but you can reduce the cost of
+these steps by choosing "custom" moduli. I recently studied moduli of the form
+$2^n - 2^k + 1$, which leads to thinking about resultants of the trinomials
+$x^n - x^k + 1$ and when they are divisible by different primes. These
+trinomials are very mysterious. There is still a lot to learn about them and
+similar families. ([paper](https://arxiv.org/abs/2508.11043))
 
 ### Balanced Matrices
 
