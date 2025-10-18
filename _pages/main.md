@@ -9,9 +9,10 @@ College. My research focuses on applying symbolic and numeric computation to
 problems in combinatorics or number theory. I'm always interested in finding
 new mathematical applications of computers.
 
-My expository work has appeared in the [*American Mathematical
-Monthly*](https://www.tandfonline.com/doi/full/10.1080/00029890.2022.2104069),
-an article of mine on primality testing was written about in [*Pour la
+My expository work has appeared in the *American Mathematical Monthly*
+([here](https://www.tandfonline.com/doi/full/10.1080/00029890.2022.2104069) and
+[here](https://www.tandfonline.com/doi/abs/10.1080/00029890.2025.2555161)), an
+article of mine on primality testing was written about in [*Pour la
 Science*](https://www.pourlascience.fr/sr/logique-calcul/des-nombres-premiers-aux-pseudo-premiers-26266.php),
 and two of my articles were cited in
 [*Nature*](https://www.nature.com/articles/s41586-021-03229-4) and the
@@ -24,8 +25,8 @@ where I post ideas. Some of the ideas are even good!
 My CV is [here](/files/cv.pdf).
 
 I was [born in the year](https://www.mrob.com/pub/ries/index.html) $\lfloor
-\pi^6 / \log \varphi \rfloor$, which makes me $\lceil e \pi^2 \rceil$ years
-old.
+\pi^6 / \log \varphi \rfloor$, which makes me *perfectly* 1 + 2 + 4 + 7 + 14
+years old.
 
 ## Recent / current projects
 
