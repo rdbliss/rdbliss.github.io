@@ -6,7 +6,10 @@ main:
       url: /teaching/
 
     - title: "Publications"
-      url: /publications/
+      url: https://scholar.google.com/citations?user=9FN7rdsAAAAJ&hl=en
+
+    - title: "CV"
+      url: /files/cv.pdf
 
     - title: "Blog"
       url: /blog/
