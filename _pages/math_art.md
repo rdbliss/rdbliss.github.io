@@ -34,10 +34,10 @@ replicate this by just making some things up.
 
 ![Dyadically resolving graph on 6th degree polynomials](/images/dyad-6-1.png)
 
-This is a graph whose vertices are monic, integer-coefficient, degree
-6 polynomials, with the edge $\{f, g\}$ if and only if the resultant of $f$ and
-$g$ is a signed power of 2. It's a really amazing picture, and I don't know why
-it looks like that.
+This is a graph whose vertices are all monic, integer-coefficient, degree
+6 polynomials with coefficients $\pm 1$ or $0$, and with an edge between $f$
+and $g$ if and only if the resultant of $f$ and $g$ is a signed power of 2.
+It's a really amazing picture, and I don't know why it looks like that.
 
 # Clustered roots
 
