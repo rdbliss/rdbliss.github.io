@@ -28,6 +28,11 @@ I was [born in the year](https://www.mrob.com/pub/ries/index.html) $\lfloor
 \pi^6 / \log \varphi \rfloor$, which makes me *perfectly* 1 + 2 + 4 + 7 + 14
 years old.
 
+## Upcoming events
+
+I'm co-organizing two sessions at the MAA's 2026 MathFest: *Computers and
+Combinatorics* and *Combinatorics and Probability*. More info soon!
+
 ## Recent / current projects
 
 ### Speeding up CRT
