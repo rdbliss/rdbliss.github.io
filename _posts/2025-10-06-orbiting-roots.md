@@ -241,7 +241,7 @@ $$\operatorname{res}(x^n - x^k + 1, x^d - 1) \approx \operatorname{res}(x^n + 1,
 This may be true in *some* sense, but it is not good enough for our problem.
 
 Why not? Because the roots of $x^n + x^k + 1$ are *also* close to the roots of
-$x^n + 1$, but the resultant
+$x^n + 1$, and the resultant
 
 $$\operatorname{res}(x^n + x^k + 1, x^d - 1)$$
 
