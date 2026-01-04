@@ -7,15 +7,10 @@ dangerous territory. This is why it brings me great pleasure that [recent
 events](https://www.nytimes.com/live/2025/10/23/nyregion/nba-illegal-gambling-arrests)
 give me a reason to share one of my favorite strong opinions.
 
-I hate sports betting companies. They make me sick. Their product is corrosive
-to the spirit and poisonous to the mind. If President Trump ever wanted to test
-his theory that he could shoot someone on Fifth Avenue without losing any
-voters, I would suggest taking aim at the closest bookie.
-
-This is not a *moral* position. I have no problem with gambling, just like
-I have no problem with a man who drinks, a greedy woman, or with my students
-who don't pay attention during lectures. I get it, vice is fun! To err is
-human, to forgive is divine.
+I hate sports betting companies. They make me sick. This is not a *moral*
+position. I have no problem with gambling, just like I have no problem with
+drunkards or sloths or with students who don't pay attention during lectures.
+I get it, vice is fun!
 
 My real problem with sports betting companies is that *they do not respect the
 game*. When you watch a [beer
@@ -32,16 +27,10 @@ The basic premise of sports betting commercials is that *sports are boring*.
 ["You want to make every game interesting? Put some skin in the
 game."](https://www.youtube.com/watch?v=kDZGKG756rE) The only thing that will
 save you from a who-cares matchup between the Panthers and the Jets *is to put
-some money on it!* They display a love for *nothing*, respect for *nothing*.
-Only simulated excitement matters to them.
+some money on it!*
 
-I cannot stand these commercials. I will welcome with open arms any company
-premised on vice if it acknowledges that sports are beautiful, that America is
-great, and that our icons are worth looking up to. Sports gambling companies do
-the exact opposite.
-
-I would strongly support slapping these companies with the same kinds of
-restrictions we put on tobacco companies: no television ads, prominent displays
-about the dangers of their products, and no advertising aimed towards children.
-Then, once we convince Americans about the dangers of these products, we should
-send bookies back to the slums where they belong: Atlantic City.
+We should slap betting companies with the same kinds of restrictions we put on
+tobacco companies. No television ads, prominent displays about the dangers of
+their products, and no advertising aimed towards children. Then, once we
+convince Americans about the dangers of these products, we should send bookies
+back to the slums where they belong: Atlantic City.
