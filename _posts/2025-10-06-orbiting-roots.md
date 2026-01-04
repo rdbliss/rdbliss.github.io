@@ -196,7 +196,7 @@ that
 
 $$a_{j + 10} \sim \frac{3^{18}}{10^{10}} a_j.$$
 
-Simply because $3^{18} = 387420489 < 10^{10}$, this implies that $a_j$ decays
+By a great coincidence, $3^{18} = 387420489 < 10^{10}$, so $a_j$ decays
 "exponentially quickly" for big $j$. So we *really can* plug in $\epsilon = 1$,
 and we expect the first few terms to be a good approximation to the real
 result.
