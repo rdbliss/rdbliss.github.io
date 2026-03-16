@@ -30,24 +30,37 @@ years old.
 
 ## Upcoming events
 
-I'm co-organizing two sessions at the MAA's 2026 MathFest: *Computers and
-Combinatorics* and *Combinatorics and Probability*. More info soon!
+There are four combinatorics-adjacent sessions at the MAA's 2026 MathFest in
+Boston:
+
+- *Combinatorics and Probability*, celebrating [Peter Winkler's](https://math.dartmouth.edu/~pw/) 80th birthday (organized by me, [Sergi Elizalde](https://math.dartmouth.edu/~sergi/), and [Chris Coscia](https://math.tufts.edu/people/faculty/chris-coscia))
+- *Computers and Combinatorics* (organized by me and [Jack Wesley](https://mathweb.ucsd.edu/~wjwesley/))
+- *Fibonacci Fun*
+- *Fifty Years of the Four Color Theorem*
 
 ## Recent / current projects
 
 ### Speeding up CRT
 
-You can break up big integer computations with the Chinese Remainder Theorem.
-In some problems, the reduction / reconstruction steps of CRT make up
-a significant part of the computational cost, and you can reduce this cost by
-choosing "custom" moduli. I recently studied moduli of the form $2^n - 2^k + 1$,
-which leads to thinking about resultants of the trinomials $x^n - x^k + 1$ and
-when they are divisible by different primes. There is still a lot to learn
-about these trinomials and similar families.
-([paper](https://arxiv.org/abs/2508.11043))
+Most of the time you analyze an algorithm, you assume that arithmetic
+operations happen in constant time. This is true if the numbers you work with
+have bounded size, but in many mathematical algorithms the numbers involved get
+very big. You can avoid this by doing the computations modulo relatively prime
+numbers and reconstructing the result with the Chinese remainder theorem.
 
-In some ways, the paper is really about graphs that look like this: ![n = 100
-trinomial graph](/images/G-100.svg)
+In some problems, the reduction / reconstruction steps of Chinese remaindering
+make up a significant part of the computational cost. You can reduce this cost
+by choosing "custom" moduli. I recently studied moduli of the form $2^n - 2^k + 1$,
+which leads to thinking about the trinomials $x^n - x^k + 1$. It turns out that
+two trinomials are "compatible" if their resultant is a power of 2. We don't
+know when this happens or how often it happens. There are a lot of open
+questions here! ([paper](https://arxiv.org/abs/2508.11043)) ([conference
+talk](http://www.ccas.ru/ca/_media/doughertybliss.pdf)) ([extended
+abstract](/files/MCA_2025_ExtendedAbstract.pdf))
+
+This project involves lots of pretty pictures:
+
+![n = 100 trinomial graph](/images/G-100.svg)
 
 ### Balanced Matrices
 
