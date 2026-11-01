@@ -1,5 +1,6 @@
 ---
 title: I'm not so sure about formalization
+date: 2026-11-01
 ---
 
 > Fallen man is not simply an imperfect creature who needs improvement; he is a rebel who must lay down his arms.
