@@ -114,23 +114,25 @@ they solved their tasks.
 
 AI agents have tried to introduce security vulnerabilities into open-source
 projects. They have tried to do this by [tricking maintainers into accepting
-bad code](https://x.com/hamandcheese/status/2084778457263722506). A few
-months ago, one agent tried to force a maintainer to accept code [*by
+bad code](https://x.com/hamandcheese/status/2084778457263722506). A few months
+ago, one agent tried to force a maintainer to accept code [*by
 blackmail*](https://theshamblog.com/an-ai-agent-published-a-hit-piece-on-me/).
 
 Here is a hypothetical: What if Famous Conjecture 117 is *false*? What if the
-agents was given an impossible task, and it tried to make us happy by
+agents were given an impossible task, and they tried to make us happy by
 exploiting crazy bugs in Lean? How would we know? Who could do an audit of
 this?
 
-Could you?
+Could you audit the Lean proof? Could you get another AI to do it? Which AI
+would you trust to check another AI? How would you check the work of the latter
+AI anyway?
 
 ### Conclusion
 
-When an AI tells me something is true, I give it a lot of weight. It knows more
-than me, can read more than me, and can write code and do experiments faster
-than me. If it says X is true, then X is probably true!
+When an AI tells me some mathematical statement is true, I give it a lot of
+weight. It knows more than me, can read more than me, and can write code and do
+experiments faster than me. If it says X is true, then X is probably true!
 
-But an AI-generated formalization is just an agent saying that it truly, deeply
-promises that the statement is true. I'm not sure that this moves the needle
-for me.
+An AI-generated formalization doesn't move the needle for me. Rather than
+a 'proof certificate,' it feels more like an agent saying that it truly, deeply
+promises that the statement is true.
